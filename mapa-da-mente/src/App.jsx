@@ -335,117 +335,2355 @@ const CARDS = [
 
 // ---- TRILHA: módulos e lições ----
 const MODULES = [
-  { id: "m1", title: "Fundamentos", emoji: "🌱", color: "#38bdf8", lessons: ["l1", "l2", "l3", "l4"] },
-  { id: "m2", title: "Os Químicos", emoji: "⚗️", color: "#ffb627", lessons: ["l5", "l6", "l7", "l8", "l9"] },
-  { id: "m3", title: "O Cérebro por Dentro", emoji: "🧠", color: "#a78bfa", lessons: ["l10", "l11", "l12", "l13"] },
-  { id: "m4", title: "Tudo Conectado", emoji: "🔗", color: "#2dd4bf", lessons: ["l14", "l15"] },
-  { id: "m5", title: "Casos Reais", emoji: "🔬", color: "#f472b6", lessons: ["l16", "l17", "l18", "l19"] },
+  {
+    "id": "m1",
+    "title": "Fundamentos",
+    "emoji": "🌱",
+    "color": "#38bdf8",
+    "lessons": [
+      "l1",
+      "l2",
+      "l3",
+      "l4"
+    ]
+  },
+  {
+    "id": "m2",
+    "title": "Os Químicos",
+    "emoji": "⚗️",
+    "color": "#ffb627",
+    "lessons": [
+      "l5",
+      "l6",
+      "l7",
+      "l8",
+      "l9"
+    ]
+  },
+  {
+    "id": "m3",
+    "title": "O Mapa do Cérebro",
+    "emoji": "🧠",
+    "color": "#a78bfa",
+    "lessons": [
+      "l10",
+      "l11",
+      "l12",
+      "l13"
+    ]
+  },
+  {
+    "id": "m4",
+    "title": "Tudo Conectado",
+    "emoji": "🔗",
+    "color": "#2dd4bf",
+    "lessons": [
+      "l14",
+      "l15",
+      "l16",
+      "l17"
+    ]
+  },
+  {
+    "id": "m5",
+    "title": "Casos Reais",
+    "emoji": "🔬",
+    "color": "#f472b6",
+    "lessons": [
+      "l18",
+      "l19",
+      "l20",
+      "l21"
+    ]
+  },
+  {
+    "id": "m6",
+    "title": "Aplicado à Vida",
+    "emoji": "🎯",
+    "color": "#4ade80",
+    "lessons": [
+      "l22",
+      "l23",
+      "l24"
+    ]
+  }
 ];
 
 const LESSONS = {
-  l1: { title: "Bem-vindo ao seu cérebro", emoji: "👋",
-    body: ["Seu cérebro tem cerca de 86 bilhões de neurônios. Eles não se tocam de verdade — conversam mandando sinais químicos de um para o outro, através de pequenos espaços chamados sinapses.",
-      "Pense numa orquestra gigante: cada músico (neurônio) toca sua parte, e a música (seus pensamentos, emoções e ações) só funciona porque todos se comunicam. Esses 'recados' químicos são o tema deste curso."],
-    check: { q: "Como os neurônios se comunicam entre si?", options: ["Tocando uns nos outros", "Por sinais químicos", "Por eletricidade pura"], correct: 1, why: "Eles trocam mensageiros químicos através das sinapses — esse é o segredo de tudo." } },
-  l2: { title: "O que é um mensageiro químico", emoji: "✉️",
-    body: ["Um mensageiro químico é uma substância que leva um 'recado' de uma parte do corpo para outra. Ele se encaixa em um receptor — como uma chave numa fechadura — e dispara uma resposta.",
-      "Serotonina, dopamina, cortisol... todos são tipos de mensageiros. O que muda é a velocidade e o alcance de cada recado, como você vai ver na próxima lição."],
-    check: { q: "Como um mensageiro químico ativa uma resposta?", options: ["Encaixando num receptor, como chave e fechadura", "Esquentando o neurônio", "Cortando o sinal"], correct: 0, why: "Cada mensageiro tem um formato que encaixa em receptores específicos." } },
-  l3: { title: "Neurotransmissor x Hormônio", emoji: "📲",
-    body: ["Os dois são mensageiros, mas agem diferente. O NEUROTRANSMISSOR é como um WhatsApp: rápido, direto, de um neurônio para o vizinho.",
-      "O HORMÔNIO é como um e-mail para muita gente: viaja pelo sangue e age no corpo todo, mais devagar e por mais tempo. Curiosidade: alguns, como a noradrenalina, fazem os dois papéis."],
-    check: { q: "Qual mensageiro viaja pelo sangue e age no corpo todo?", options: ["Neurotransmissor", "Hormônio", "Nenhum dos dois"], correct: 1, why: "O hormônio é o 'e-mail para vários': lento, mas de longo alcance." } },
-  l4: { title: "O quarteto do bem-estar (DOSE)", emoji: "😊",
-    body: ["Quatro químicos são tão ligados ao bem-estar que ganharam um apelido: DOSE. Dopamina (motivação), Ocitocina (vínculo), Serotonina (calma e humor) e Endorfina (alívio da dor).",
-      "Não existe 'truque mágico', mas hábitos simples ativam cada um: concluir tarefas, abraçar alguém, tomar sol e se exercitar. Você vai conhecer cada um a fundo no próximo módulo."],
-    check: { q: "O que significa o 'O' de DOSE?", options: ["Oxitocina/Ocitocina (vínculo)", "Ocitalina (sono)", "Octanina (foco)"], correct: 0, why: "Ocitocina é o hormônio do vínculo, dos abraços e da confiança." } },
-  l5: { title: "Dopamina: o combustível", emoji: "🔥",
-    body: ["A dopamina é a MOTIVAÇÃO — a vontade de ir atrás de algo. O detalhe genial: ela dispara mais na EXPECTATIVA da recompensa do que na recompensa em si.",
-      "É por isso que rolar o feed vicia: o cérebro fica esperando a próxima novidade. E quando os estímulos são rápidos demais o tempo todo, ele 'baixa o volume', e as coisas normais passam a parecer chatas."],
-    check: { q: "A dopamina dispara mais forte em qual momento?", options: ["Só depois da recompensa", "Na expectativa da recompensa", "Nunca dispara sozinha"], correct: 1, why: "A antecipação é o gatilho — o segredo por trás dos vícios em tela." } },
-  l6: { title: "Serotonina: a calmaria", emoji: "🌿",
-    body: ["A serotonina dá a sensação de 'estou seguro, tudo sob controle'. Estabiliza o humor, ajuda no sono e na saciedade.",
-      "Surpresa: cerca de 90% dela fica no intestino, não no cérebro. Por isso dizem que o intestino é o 'segundo cérebro', e o humor sofre quando a digestão vai mal. Sol de manhã e exercício ajudam a produzi-la."],
-    check: { q: "Onde fica a MAIOR parte da sua serotonina?", options: ["No cérebro", "No coração", "No intestino"], correct: 2, why: "Cerca de 90% está no intestino — o 'segundo cérebro'." } },
-  l7: { title: "Cortisol e adrenalina: o 911", emoji: "🚨",
-    body: ["Diante de uma ameaça, a adrenalina age em SEGUNDOS (coração dispara, força extra) e o cortisol vem logo atrás pra SUSTENTAR o estado de alerta liberando energia.",
-      "Isso é ótimo num perigo real e rápido. O problema é quando o estresse vira crônico: cortisol alto o tempo todo prejudica o sono, a imunidade e até encolhe o hipocampo (a memória)."],
-    check: { q: "Qual é o problema do cortisol?", options: ["Ele sempre faz mal", "Só quando fica alto cronicamente", "Ele nunca é útil"], correct: 1, why: "Em picos curtos ajuda; o vilão é o estresse crônico e prolongado." } },
-  l8: { title: "Acelerador x Freio", emoji: "⚖️",
-    body: ["Dois químicos fazem o cérebro funcionar em equilíbrio. O GLUTAMATO é o ACELERADOR: excita os neurônios e é essencial pra aprender. O GABA é o FREIO: acalma e impede o cérebro de disparar demais.",
-      "Quando o freio (GABA) está fraco, sobra aceleração: ansiedade, insônia, mente que não desliga. Calmantes e o álcool agem justamente reforçando o GABA."],
-    check: { q: "Qual químico é o FREIO do cérebro?", options: ["Glutamato", "GABA", "Dopamina"], correct: 1, why: "GABA acalma; glutamato acelera. O equilíbrio entre eles é tudo." } },
-  l9: { title: "Ocitocina e endorfina", emoji: "💞",
-    body: ["A OCITOCINA é o hormônio do vínculo: sobe em abraços, no parto, no carinho — e cria confiança e conexão com as pessoas (e pets!).",
-      "A ENDORFINA é o analgésico natural: alivia a dor e dá bem-estar. Seu nome vem de 'morfina interna', porque ela age nos mesmos receptores. É a responsável pelo 'barato' depois do exercício."],
-    check: { q: "Por que a endorfina tem esse nome?", options: ["Porque vem do fim do dia", "Por agir como morfina interna", "Por causar dor"], correct: 1, why: "'Endo' (interno) + 'morfina': ela alivia a dor naturalmente." } },
-  l10: { title: "Córtex pré-frontal: o CEO", emoji: "👔",
-    body: ["Logo atrás da testa fica o chefe: planeja, decide, pensa nas consequências e — o mais importante — FREIA os impulsos das emoções.",
-      "Ele é a última região a amadurecer, lá pelos 25 anos. Por isso adolescentes tendem a agir mais por impulso: o 'freio' ainda está em construção."],
-    check: { q: "Qual a função-chave do córtex pré-frontal nas emoções?", options: ["Acelerar o medo", "Frear os impulsos", "Guardar memórias"], correct: 1, why: "Ele é o adulto na sala que segura a amígdala." } },
-  l11: { title: "Amígdala e hipocampo", emoji: "🔔",
-    body: ["A AMÍGDALA é o alarme: dispara o medo e a raiva antes mesmo de você pensar. É rápida e exagerada de propósito — melhor errar por excesso do que ser comido por um leão.",
-      "O HIPOCAMPO é o arquivo: grava as experiências e dá contexto. Os dois trabalham juntos: a amígdala marca 'isso foi assustador', o hipocampo lembra 'onde e quando'."],
-    check: { q: "Qual região dispara o medo antes do pensamento?", options: ["Hipocampo", "Amígdala", "Cerebelo"], correct: 1, why: "A amígdala é o alarme veloz; o hipocampo é a memória." } },
-  l12: { title: "Hipotálamo e tálamo", emoji: "🎛️",
-    body: ["O TÁLAMO é a recepção: quase tudo que você vê, ouve e sente passa por ele primeiro e é encaminhado pra região certa. (Só o cheiro tem atalho direto.)",
-      "O HIPOTÁLAMO é o termostato e o maestro dos hormônios: controla fome, sono, temperatura e ordena a liberação de cortisol, adrenalina e ocitocina. Pequenininho, mas comanda quase tudo."],
-    check: { q: "Qual região funciona como 'recepção' dos sentidos?", options: ["Tálamo", "Hipotálamo", "Cerebelo"], correct: 0, why: "O tálamo distribui os sentidos; o hipotálamo comanda os hormônios." } },
-  l13: { title: "As outras peças", emoji: "🧩",
-    body: ["ÍNSULA: lê os sinais do corpo e cria o nojo, a empatia e a intuição (o 'frio na barriga'). GÂNGLIOS DA BASE: transformam repetição em hábito automático.",
-      "CEREBELO: equilíbrio e movimentos coordenados. OCCIPITAL: monta as imagens — você enxerga com o cérebro, não com os olhos. Cada peça tem um papel, e juntas formam o 'você'."],
-    check: { q: "Qual região transforma a repetição em hábito automático?", options: ["Ínsula", "Gânglios da base", "Occipital"], correct: 1, why: "Os gânglios da base rodam o 'piloto automático' dos hábitos." } },
-  l14: { title: "O sequestro da amígdala", emoji: "⚡",
-    body: ["Quando uma emoção é forte demais (raiva, pânico), a amígdala dispara tão alto que o córtex pré-frontal fica praticamente 'offline'. É o sequestro da amígdala: você age sem pensar e se arrepende depois.",
-      "A boa notícia: respirar fundo e devagar ativa o freio (GABA) e dá tempo do córtex voltar. Contar até 10 não é clichê — é neurociência funcionando."],
-    check: { q: "O que ajuda o córtex a voltar durante um 'sequestro'?", options: ["Gritar mais alto", "Respirar fundo e devagar", "Beber café"], correct: 1, why: "A respiração lenta ativa o GABA e devolve o comando à razão." } },
-  l15: { title: "Como cuidar do seu cérebro", emoji: "💪",
-    body: ["Quatro hábitos mexem com quase todos esses químicos de uma vez: SONO (limpa o cérebro e fixa memórias), EXERCÍCIO (libera endorfina e faz nascer neurônios), SOL DE MANHÃ (regula serotonina e o relógio do sono) e CONEXÃO com pessoas (ocitocina).",
-      "Você terminou a trilha! Agora não é só teoria: dá pra usar isso no dia a dia. Parabéns por chegar até aqui. 🎉"],
-    check: { q: "Qual hábito ajuda a fixar memórias e 'limpar' o cérebro?", options: ["Pular refeições", "Dormir bem", "Ficar no celular à noite"], correct: 1, why: "O sono é quando o cérebro consolida o aprendizado e se recupera." } },
-  l16: { title: "Caso: o que acontece no vício", emoji: "🎰",
-    body: ["Toda recompensa libera dopamina no núcleo accumbens. Drogas, jogos e redes sociais fazem isso de forma forte e RÁPIDA demais — muito acima do que comida ou um abraço fariam.",
-      "O cérebro tenta se proteger 'baixando o volume': reduz os receptores de dopamina. Resultado: você precisa de mais pra sentir o mesmo (tolerância), e as coisas normais ficam sem graça. É o ciclo do vício.",
-      "Sair dele é, em parte, dar tempo pro sistema de recompensa se recuperar e voltar a sentir prazer nas coisas simples."],
-    check: { q: "Por que o vício faz tudo o mais parecer 'sem graça'?", options: ["O cérebro reduz os receptores de dopamina", "A dopamina some pra sempre", "O accumbens desliga"], correct: 0, why: "Com estímulo forte demais, o cérebro reduz a sensibilidade à dopamina." } },
-  l17: { title: "Caso: a química da depressão", emoji: "🌧️",
-    body: ["A depressão é complexa e envolve muitos fatores (genética, vida, ambiente), mas no nível químico costuma aparecer uma sinalização reduzida de serotonina, dopamina e noradrenalina — o que ajuda a explicar a falta de prazer, energia e motivação.",
-      "O estresse crônico (cortisol alto) também tem papel, podendo afetar o hipocampo. Antidepressivos geralmente atuam aumentando esses sinais, e terapia e hábitos somam muito.",
-      "Importante: isto é informação educativa, não diagnóstico. Se você ou alguém sofre com isso, procurar um profissional de saúde faz toda a diferença."],
-    check: { q: "Qual fator químico costuma estar envolvido na depressão?", options: ["Excesso de endorfina", "Sinalização reduzida de serotonina e dopamina", "Falta de melatonina apenas"], correct: 1, why: "Costuma haver sinalização reduzida de serotonina, dopamina e noradrenalina — mas é multifatorial." } },
-  l18: { title: "Caso: ansiedade e o sono", emoji: "🌙",
-    body: ["Na ansiedade, a amígdala fica hiperativa e o freio (GABA) parece insuficiente: a mente acelera e o corpo entra em alerta com cortisol e noradrenalina, mesmo sem perigo real.",
-      "À noite isso é um problema: pra dormir, o cérebro precisa BAIXAR o alerta e subir a melatonina. Mas a mente acelerada mantém o cortisol alto, e a luz das telas bloqueia a melatonina — combinação perfeita pra insônia.",
-      "Por isso respiração lenta (ativa o GABA), escuro e telas longe ajudam tanto: eles desarmam o alerta e abrem espaço pro sono."],
-    check: { q: "Por que a ansiedade atrapalha tanto o sono?", options: ["Mantém o alerta/cortisol altos quando deveriam cair", "Aumenta a melatonina demais", "Desliga a amígdala"], correct: 0, why: "O sono precisa de alerta baixo; a ansiedade mantém o corpo ligado." } },
-  l19: { title: "Caso: por que amamos", emoji: "💞",
-    body: ["A paixão inicial parece um vício: a dopamina dispara pensando na pessoa (euforia, obsessão), a noradrenalina dá o coração acelerado, e a serotonina CAI — por isso a pessoa vira pensamento fixo.",
-      "Com o tempo, entra a ocitocina (e a vasopressina), o 'hormônio do vínculo', que transforma a paixão intensa em um amor mais calmo, seguro e duradouro.",
-      "Ou seja: apaixonar-se e amar a longo prazo são estados químicos diferentes — um é fogo, o outro é brasa."],
-    check: { q: "Qual químico transforma a paixão intensa em vínculo duradouro?", options: ["Cortisol", "Ocitocina", "Glutamato"], correct: 1, why: "A ocitocina sustenta o vínculo calmo e duradouro." } },
+  "l1": {
+    "title": "A Orquestra de 86 Bilhões",
+    "emoji": "🎼",
+    "key": "Neurônios não pensam sozinhos — a mente emerge da rede de conexões.",
+    "concept": "hipocampo",
+    "check": {
+      "q": "O que acontece na sinapse?",
+      "opts": [
+        "Neurônios se tocam diretamente",
+        "Químicos são liberados no espaço entre neurônios",
+        "Um pulso elétrico pula entre células"
+      ],
+      "correct": 1,
+      "why": "Na sinapse, o sinal elétrico vira químico — é justamente aqui que antidepressivos e ansiolíticos agem."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Agora mesmo, enquanto você lê isso, 86 bilhões de neurônios disparam em padrões que nunca existiram antes — e nunca se repetirão. Nenhum neurônio sozinho pensa. Mas juntos, eles criam memórias, emoções e tudo que você é. Como isso é possível?",
+        "question": "O que faz um cérebro 'funcionar'?"
+      },
+      {
+        "type": "conceito",
+        "title": "Anatomia de um neurônio",
+        "content": "Um neurônio é uma célula especializada em transmitir informação. Cada parte tem uma função específica:",
+        "items": [
+          {
+            "emoji": "🌿",
+            "label": "Dendritos",
+            "text": "As antenas: recebem sinais de até 10 mil outros neurônios ao mesmo tempo."
+          },
+          {
+            "emoji": "🔋",
+            "label": "Corpo celular",
+            "text": "Integra todos os sinais recebidos e decide: disparo ou silêncio?"
+          },
+          {
+            "emoji": "📡",
+            "label": "Axônio",
+            "text": "A linha de transmissão: carrega o impulso elétrico a até 1 metro de distância."
+          },
+          {
+            "emoji": "💊",
+            "label": "Sinapse",
+            "text": "O espaço entre neurônios — aqui o sinal elétrico vira mensagem química."
+          }
+        ]
+      },
+      {
+        "type": "flow",
+        "title": "O caminho do sinal",
+        "steps": [
+          {
+            "icon": "👁️",
+            "label": "Estímulo",
+            "text": "Você vê, ouve ou sente algo no ambiente."
+          },
+          {
+            "icon": "⚡",
+            "label": "Impulso elétrico",
+            "text": "O neurônio dispara um sinal que percorre o axônio."
+          },
+          {
+            "icon": "💊",
+            "label": "Sinapse",
+            "text": "No terminal, libera neurotransmissores no espaço sináptico."
+          },
+          {
+            "icon": "🔑",
+            "label": "Receptor",
+            "text": "O químico encaixa no receptor do próximo neurônio como chave-fechadura."
+          },
+          {
+            "icon": "🌊",
+            "label": "Resposta",
+            "text": "O sinal se propaga em rede — criando pensamento, emoção ou ação."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "O que acontece na sinapse?",
+        "opts": [
+          "Neurônios se tocam diretamente",
+          "Químicos são liberados no espaço entre neurônios",
+          "Um pulso elétrico pula entre células"
+        ],
+        "correct": 1,
+        "why": "Na sinapse o sinal elétrico vira químico. É aqui que antidepressivos (ISRS) e ansiolíticos agem — aumentando ou reduzindo o que fica disponível nesse espaço."
+      },
+      {
+        "type": "real",
+        "title": "Por que isso importa pra você",
+        "content": "Quando você aprende algo novo, neurônios que disparam juntos formam sinapses mais fortes. 'Memorizar' é literalmente remodelar conexões físicas. Cada repetição fortalece o circuito.",
+        "aplicacao": "Isso explica por que praticar muda fisicamente o cérebro. Um músico tem mais conexões nas áreas motoras correspondentes aos seus dedos. Um taxista tem hipocampo maior. Você é o que repete."
+      },
+      {
+        "type": "apply",
+        "text": "Hoje: escolha algo que quer aprender e pratique 15 minutos. Enquanto você dorme esta noite, o hipocampo vai consolidar as conexões novas — dormir após aprender é parte do aprendizado."
+      }
+    ]
+  },
+  "l2": {
+    "title": "A Sinapse — Onde a Magia Acontece",
+    "emoji": "💊",
+    "key": "Chave-fechadura: cada neurotransmissor só ativa o receptor certo.",
+    "check": {
+      "q": "O que é recaptação?",
+      "opts": [
+        "O receptor absorve o neurotransmissor",
+        "O neurônio puxa de volta o neurotransmissor sobrante",
+        "Um sinal elétrico reverso"
+      ],
+      "correct": 1,
+      "why": "Antidepressivos ISRS bloqueiam a recaptação de serotonina — mais dela fica na sinapse por mais tempo."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Por que uma xícara de café muda seu humor em minutos? Por que um abraço alivia a dor? A resposta está num espaço de 20 nanômetros entre dois neurônios. A sinapse não é só uma passagem — é onde toda a sua experiência interior é fabricada.",
+        "question": "O que controla como você se sente neste momento?"
+      },
+      {
+        "type": "conceito",
+        "title": "Os 4 momentos da sinapse",
+        "content": "A sinapse é uma conversa química ultra-precisa com quatro atos:",
+        "items": [
+          {
+            "emoji": "🏭",
+            "label": "Produção",
+            "text": "O neurônio pré-sináptico produz e armazena neurotransmissores em vesículas."
+          },
+          {
+            "emoji": "🌊",
+            "label": "Liberação",
+            "text": "O impulso elétrico abre as vesículas — os químicos são despejados na fenda sináptica."
+          },
+          {
+            "emoji": "🔑",
+            "label": "Recepção",
+            "text": "Cada químico encaixa só no receptor certo do neurônio seguinte (especificidade total)."
+          },
+          {
+            "emoji": "🧹",
+            "label": "Recaptação",
+            "text": "O neurônio 'aspira' o sobrante de volta — reutiliza ou destrói. É aqui que muitos remédios agem."
+          }
+        ]
+      },
+      {
+        "type": "compare",
+        "title": "Excitação × Inibição",
+        "left": {
+          "name": "Excitação",
+          "color": "#fb7185",
+          "emoji": "⚡",
+          "items": [
+            "Dispara o próximo neurônio",
+            "Aumenta a atividade elétrica",
+            "Exemplos: glutamato, noradrenalina",
+            "Essencial pra aprender e agir"
+          ]
+        },
+        "right": {
+          "name": "Inibição",
+          "color": "#38bdf8",
+          "emoji": "🛑",
+          "items": [
+            "Silencia o próximo neurônio",
+            "Reduz a atividade elétrica",
+            "Exemplos: GABA, serotonina",
+            "Essencial pra calma e sono"
+          ]
+        }
+      },
+      {
+        "type": "quiz",
+        "q": "Por que o café mantém você acordado?",
+        "opts": [
+          "Eleva a dopamina",
+          "Bloqueia receptores de adenosina (sonolência) sem ativá-los",
+          "Acelera o metabolismo cerebral"
+        ],
+        "correct": 1,
+        "why": "A cafeína ocupa os receptores de adenosina — a molécula que sinaliza cansaço — sem ativá-los. Você fica acordado enquanto a 'canseira química' se acumula por baixo. Por isso o crash depois."
+      },
+      {
+        "type": "real",
+        "title": "Como remédios psiquiátricos agem",
+        "content": "Quase todos agem na sinapse: antidepressivos ISRS bloqueiam a recaptação de serotonina (mais fica disponível), benzodiazepínicos turbinação o GABA (mais freio), Ritalina bloqueia a recaptação de dopamina e noradrenalina (mais foco).",
+        "aplicacao": "Isso explica por que remédios demoram 2-4 semanas para fazer efeito: o cérebro precisa se adaptar ao novo nível do químico, não é instantâneo. E por que parar abruptamente pode causar abstinência."
+      },
+      {
+        "type": "apply",
+        "text": "Reflita: existe alguma substância que você usa (café, álcool, cigarro, açúcar) que age na sinapse? Agora que você sabe o mecanismo, como isso muda sua relação com ela?"
+      }
+    ]
+  },
+  "l3": {
+    "title": "Neurotransmissor × Hormônio",
+    "emoji": "📡",
+    "key": "WhatsApp (rápido e local) vs. e-mail geral (lento e no corpo todo).",
+    "check": {
+      "q": "Qual mensageiro age em todo o corpo via corrente sanguínea?",
+      "opts": [
+        "Neurotransmissor",
+        "Hormônio",
+        "São iguais"
+      ],
+      "correct": 1,
+      "why": "O hormônio viaja pelo sangue e age em vários órgãos — por isso uma emoção pode durar horas, mesmo depois que o 'perigo' passou."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Você leva um susto. Em 0,2 segundos o coração dispara. Mas a sensação de nervoso pode durar uma hora depois. Como o mesmo 'sistema' pode agir em milissegundos e também em horas? São dois tipos de mensageiros diferentes trabalhando em paralelo.",
+        "question": "Por que emoções são tão rápidas — e às vezes tão duradouras?"
+      },
+      {
+        "type": "compare",
+        "title": "Dois mensageiros, dois alcances",
+        "left": {
+          "name": "Neurotransmissor",
+          "color": "#7dd3fc",
+          "emoji": "⚡",
+          "items": [
+            "Age só na sinapse (nanômetros)",
+            "Velocidade: milissegundos",
+            "Ex: dopamina, GABA, glutamato",
+            "Liberado por neurônios"
+          ]
+        },
+        "right": {
+          "name": "Hormônio",
+          "color": "#f472b6",
+          "emoji": "🩸",
+          "items": [
+            "Viaja pelo sangue (corpo todo)",
+            "Velocidade: minutos a horas",
+            "Ex: cortisol, insulina, ocitocina",
+            "Liberado por glândulas"
+          ]
+        }
+      },
+      {
+        "type": "conceito",
+        "title": "Os mensageiros duplos",
+        "content": "Alguns químicos são versáteis — agem nos dois sistemas dependendo de onde são liberados:",
+        "items": [
+          {
+            "emoji": "🔥",
+            "label": "Noradrenalina",
+            "text": "Neurotransmissor no cérebro (foco e alerta); hormônio (adrenalina) nas glândulas suprarrenais."
+          },
+          {
+            "emoji": "💞",
+            "label": "Ocitocina",
+            "text": "Neurotransmissor em redes de vínculo; hormônio durante o parto e amamentação."
+          },
+          {
+            "emoji": "😊",
+            "label": "Dopamina",
+            "text": "Principalmente neurotransmissor, mas também afeta rins, coração e sistema imune via sangue."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Por que uma discussão pode deixar você agitado por horas?",
+        "opts": [
+          "O Sistema 1 não desliga",
+          "Hormônios como cortisol circulam no sangue por tempo prolongado",
+          "Neurônios continuam disparando indefinidamente"
+        ],
+        "correct": 1,
+        "why": "O cortisol liberado durante o estresse circula no sangue por 1-3 horas. O 'perigo' passou, mas o hormônio ainda está lá — mantendo o alerta."
+      },
+      {
+        "type": "real",
+        "title": "O eixo do estresse (HPA)",
+        "content": "Hipotálamo detecta ameaça → manda sinal à hipófise → hipófise ordena às suprarrenais → suprarrenais liberam cortisol. Esse é o eixo HPA — a cadeia de comando do estresse.",
+        "aplicacao": "Respiração lenta (6 expiração, 4 inspiração) ativa o nervo vago que freia esse eixo. É o único controle voluntário direto que temos sobre o sistema hormonal de estresse."
+      },
+      {
+        "type": "apply",
+        "text": "Próxima vez que sentir estresse, observe: a ameaça sumiu mas o corpo ainda está ativado? Isso é cortisol no sangue. Dê 10 minutos antes de tomar qualquer decisão importante."
+      }
+    ]
+  },
+  "l4": {
+    "title": "Seus 3 Cérebros em 1",
+    "emoji": "🏛️",
+    "key": "Instinto, emoção e razão disputam o controle — e emoção quase sempre chega primeiro.",
+    "check": {
+      "q": "Por que é difícil 'só usar a razão' numa situação emocional intensa?",
+      "opts": [
+        "O neocórtex é lento demais",
+        "O sistema límbico é prioritário e age antes da razão",
+        "Emoções não afetam o raciocínio"
+      ],
+      "correct": 1,
+      "why": "O sistema límbico recebe sinais sensoriais antes do córtex. Quando a emoção é intensa, o córtex chega 'atrasado' — é o sequestro da amígdala."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Paul MacLean nos anos 60 propôs: dentro do seu crânio há três cérebros empilhados — um que quer sobreviver, um que quer pertencer, um que quer planejar. Eles não concordam sempre. E a sequência de quem 'fala primeiro' muda tudo.",
+        "question": "Quem está realmente comandando suas decisões agora?"
+      },
+      {
+        "type": "conceito",
+        "title": "Os 3 andares do cérebro",
+        "content": "Modelo simplificado, mas poderoso para entender prioridades:",
+        "items": [
+          {
+            "emoji": "🦎",
+            "label": "Tronco encefálico (reptiliano)",
+            "text": "Respiração, batimento cardíaco, reflexos. Liga ao nascer. Não pensa — só garante que você continue vivo."
+          },
+          {
+            "emoji": "🐘",
+            "label": "Sistema límbico (mamífero)",
+            "text": "Emoções, memória, vínculo social, sobrevivência. Age antes do pensamento consciente."
+          },
+          {
+            "emoji": "🧠",
+            "label": "Neocórtex (humano)",
+            "text": "Linguagem, raciocínio abstrato, planejamento, empatia avançada. Último a amadurecer (~25 anos)."
+          }
+        ]
+      },
+      {
+        "type": "flow",
+        "title": "A ordem de prioridade",
+        "steps": [
+          {
+            "icon": "🦎",
+            "label": "1º: Sobreviver",
+            "text": "Qualquer ameaça física? Tronco e amígdala reagem ANTES de qualquer pensamento."
+          },
+          {
+            "icon": "🐘",
+            "label": "2º: Pertencer",
+            "text": "Sem ameaça imediata? O límbico busca conexão, recompensa, e evita dor social."
+          },
+          {
+            "icon": "🧠",
+            "label": "3º: Pensar",
+            "text": "Com segurança e vínculo garantidos, o neocórtex entra para planejar e criar."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Uma apresentação importante amanhã deixa você ansioso hoje. Qual sistema está dominando?",
+        "opts": [
+          "Neocórtex — está planejando",
+          "Sistema límbico — está antecipando ameaça social",
+          "Tronco — está regulando a respiração"
+        ],
+        "correct": 1,
+        "why": "Ansiedade por apresentação é o sistema límbico interpretando 'julgamento social' como ameaça. O tronco acelera o coração e o neocórtex fica parcialmente 'sequestrado'."
+      },
+      {
+        "type": "real",
+        "title": "Na prática: design, vendas e persuasão",
+        "content": "Se você quiser influenciar uma decisão: 1) Elimine o medo (tronco+amígdala), 2) Crie pertencimento (límbico), 3) Então apresente os dados (neocórtex). Fazer na ordem errada não funciona.",
+        "aplicacao": "Marcas que criam FOMO ativam diretamente o límbico. Produtos que mostram especificações técnicas primeiro, sem criar segurança emocional, perdem para quem emociona antes de informar."
+      },
+      {
+        "type": "apply",
+        "text": "Observe uma decisão sua hoje e pergunte: qual dos 3 cérebros estava dirigindo? Nomear isso já cria distância entre o impulso e a ação."
+      }
+    ]
+  },
+  "l5": {
+    "title": "Dopamina — O Motor da Busca",
+    "emoji": "🔥",
+    "key": "Dopamina é QUERER, não TER — dispara mais na expectativa que na recompensa.",
+    "concept": "dopamina",
+    "check": {
+      "q": "Quando a dopamina dispara mais forte?",
+      "opts": [
+        "Só após a recompensa",
+        "Na expectativa da recompensa",
+        "Uniformemente o tempo todo"
+      ],
+      "correct": 1,
+      "why": "A antecipação é o pico. Por isso o scroll é mais viciante que o conteúdo que você acha — a busca dispara mais que o encontrado."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Por que você rola o feed mesmo sem esperar nada de bom? Por que checar e-mail compulsivamente mesmo vazio? Por que uma meta quase alcançada motiva mais que outra já conquistada? A dopamina responde tudo isso — e a resposta é contraintuitiva.",
+        "question": "O que te faz QUERER as coisas — e por que nunca parece suficiente?"
+      },
+      {
+        "type": "conceito",
+        "title": "Dopamina: desejo, não prazer",
+        "content": "O erro mais comum: confundir dopamina com 'hormônio do prazer'. Ela é o hormônio do QUERER — não do TER:",
+        "items": [
+          {
+            "emoji": "🎯",
+            "label": "Antecipação",
+            "text": "Sobe quando você ESPERA uma recompensa — não quando a recebe."
+          },
+          {
+            "emoji": "📉",
+            "label": "Pós-recompensa",
+            "text": "Cai imediatamente após receber. É a decepção pós-compra, pós-conquista."
+          },
+          {
+            "emoji": "🎰",
+            "label": "Recompensa variável",
+            "text": "Imprevisível (às vezes sim, às vezes não) = pico MÁXIMO de dopamina."
+          },
+          {
+            "emoji": "⚡",
+            "label": "Motivação",
+            "text": "Dopamina baixa = apatia. Alta = foco, iniciativa e energia para buscar."
+          }
+        ]
+      },
+      {
+        "type": "real",
+        "title": "O design do vício em tela",
+        "content": "Apps e redes sociais foram projetados com o princípio de recompensa variável: você nunca sabe quando vai aparecer algo bom no feed. Isso gera dopamina maior que uma recompensa garantida.",
+        "aplicacao": "É o mesmo mecanismo de uma slot machine: uma em cada X puxadas dá o prêmio. O cérebro aprende que 'vale continuar buscando' — e não para. Tristan Harris (ex-Google) chama isso de 'corrida armamentista pela atenção'."
+      },
+      {
+        "type": "quiz",
+        "q": "Por que completar uma tarefa difícil dá mais satisfação que uma fácil?",
+        "opts": [
+          "Tomou mais tempo",
+          "O esforço eleva dopamina no processo E na conclusão",
+          "Ativamos mais neurônios"
+        ],
+        "correct": 1,
+        "why": "Tarefas desafiadoras mantêm dopamina elevada durante o processo (antecipação da conquista). Fáceis demais não sustentam o sistema — o cérebro para de se engajar."
+      },
+      {
+        "type": "conceito",
+        "title": "Dopamina saudável vs. dopamina de curto prazo",
+        "content": "Nem toda dopamina é igual no impacto a longo prazo:",
+        "items": [
+          {
+            "emoji": "✅",
+            "label": "Dopamina saudável",
+            "text": "Conquistas reais, aprendizado, exercício, criação, progressos com esforço."
+          },
+          {
+            "emoji": "⚠️",
+            "label": "Dopamina de curto prazo",
+            "text": "Notificações, açúcar, scroll, likes — rápidas, sem esforço, dessensibilizam o sistema."
+          },
+          {
+            "emoji": "😶",
+            "label": "Dessensibilização",
+            "text": "Estímulos rápidos demais 'cansam' os receptores — a vida normal passa a parecer monótona."
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "text": "Por 24h: quando sentir vontade de checar o celular sem motivo real, espere 2 minutos. Observe o desconforto passar. Isso é seu sistema dopaminérgico sendo recondicinado — cada pausa fortalece o córtex pré-frontal."
+      }
+    ]
+  },
+  "l6": {
+    "title": "Serotonina — A Âncora do Humor",
+    "emoji": "🌿",
+    "key": "Serotonina = calma e contentamento. 90% mora no intestino — o segundo cérebro.",
+    "concept": "serotonina",
+    "check": {
+      "q": "Onde fica a maior parte da serotonina do seu corpo?",
+      "opts": [
+        "Cérebro",
+        "Coração",
+        "Intestino"
+      ],
+      "correct": 2,
+      "why": "~90% da serotonina está no intestino — por isso intestino saudável e humor estável são diretamente ligados."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Às vezes você acorda sem motivo aparente se sentindo 'off'. Humor baixo, tudo mais pesado, menos paciência — sem causa clara. Isso tem correlato químico preciso. E a sua dieta, sua exposição ao sol e suas relações afetam isso diretamente.",
+        "question": "O que regula o seu 'estado base' de humor?"
+      },
+      {
+        "type": "conceito",
+        "title": "O que a serotonina faz",
+        "content": "Diferente da dopamina (que te faz querer mais), a serotonina é o hormônio do contentamento — do 'estou bem assim':",
+        "items": [
+          {
+            "emoji": "😌",
+            "label": "Estabilidade de humor",
+            "text": "Reduz irritabilidade e dá a sensação de 'tudo sob controle'."
+          },
+          {
+            "emoji": "😴",
+            "label": "Precursora do sono",
+            "text": "É a matéria-prima da melatonina — sem serotonina, o sono fica irregular."
+          },
+          {
+            "emoji": "🍽️",
+            "label": "Saciedade",
+            "text": "Sinaliza ao cérebro que você comeu o suficiente."
+          },
+          {
+            "emoji": "👑",
+            "label": "Status social",
+            "text": "Sobe quando você sente que é respeitado e reconhecido pelo grupo."
+          }
+        ]
+      },
+      {
+        "type": "real",
+        "title": "O intestino como segundo cérebro",
+        "content": "Cerca de 90% da serotonina do corpo fica nas células enterocromafins do intestino. O nervo vago conecta intestino e cérebro em via dupla — por isso intestino inflamado frequentemente acompanha humor deprimido.",
+        "aplicacao": "Alimentos fermentados (iogurte, kefir, kimchi), fibras prebióticas e variedade alimentar afetam diretamente a produção intestinal de serotonina. 'Gut feelings' têm base neuroquímica real."
+      },
+      {
+        "type": "compare",
+        "title": "Serotonina × Dopamina",
+        "left": {
+          "name": "Serotonina",
+          "color": "#4ade80",
+          "emoji": "🌿",
+          "items": [
+            "Contentamento: 'tenho o suficiente'",
+            "Estabilidade — sem picos e quedas",
+            "Vem de sol, exercício, conexão",
+            "Baixa → depressão, irritabilidade"
+          ]
+        },
+        "right": {
+          "name": "Dopamina",
+          "color": "#fb7185",
+          "emoji": "🔥",
+          "items": [
+            "Desejo: 'quero mais'",
+            "Picos intensos e quedas",
+            "Vem de novidades e recompensas",
+            "Baixa → apatia, desmotivação"
+          ]
+        }
+      },
+      {
+        "type": "quiz",
+        "q": "Por que tomar sol de manhã melhora o humor?",
+        "opts": [
+          "Vitamina D eleva dopamina",
+          "Luz do dia ativa síntese de serotonina",
+          "O calor relaxa os músculos"
+        ],
+        "correct": 1,
+        "why": "A luz natural (especialmente matinal) estimula a síntese de serotonina. É por isso que depressão sazonal é muito mais comum em países com menos sol no inverno."
+      },
+      {
+        "type": "apply",
+        "text": "Experimento desta semana: 10 minutos de sol de manhã (antes das 10h), sem óculos escuros — luz nos olhos ativa o sinal. Anote seu humor nos 3 dias seguintes comparado com dias sem sol."
+      }
+    ]
+  },
+  "l7": {
+    "title": "Cortisol e Adrenalina — O Sistema 911",
+    "emoji": "🚨",
+    "key": "Adrenalina age em segundos; cortisol sustenta. O problema é quando não desligam.",
+    "concept": "cortisol",
+    "check": {
+      "q": "Qual é o problema do cortisol cronicamente elevado?",
+      "opts": [
+        "Sempre prejudica",
+        "Prejudica só o sono",
+        "Atinge sono, memória, imunidade e pode encolher o hipocampo"
+      ],
+      "correct": 2,
+      "why": "Cortisol crônico é um dos maiores danos ao cérebro — especialmente o hipocampo, que pode encolher com exposição prolongada."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Um freio de carro de repente. Em 0,2 segundos: coração disparado, músculos tensos, visão focada, força extra. Seu corpo virou uma máquina de sobrevivência. Como o cérebro faz isso tão rápido? E por que às vezes parece que nunca desliga?",
+        "question": "O que acontece no seu corpo sob ameaça — e por que o estresse crônico é tão destrutivo?"
+      },
+      {
+        "type": "flow",
+        "title": "O sistema 911 em ação",
+        "steps": [
+          {
+            "icon": "👁️",
+            "label": "Ameaça percebida",
+            "text": "Amígdala detecta perigo (real ou imaginado) e dispara alarme."
+          },
+          {
+            "icon": "⚡",
+            "label": "Adrenalina (segundos)",
+            "text": "Suprarrenais liberam adrenalina: coração dispara, pupilas dilatam, força aumenta."
+          },
+          {
+            "icon": "📈",
+            "label": "Cortisol (minutos)",
+            "text": "Cortisol sustenta o alerta, libera glicose e suprime funções não essenciais (digestão, reprodução)."
+          },
+          {
+            "icon": "✅",
+            "label": "Resposta",
+            "text": "Você luta, foge ou paralisa — o mais antigo dos sistemas de defesa."
+          },
+          {
+            "icon": "😮‍💨",
+            "label": "Recuperação",
+            "text": "Com segurança, cortisol deveria cair. Se não cai — começa o problema."
+          }
+        ]
+      },
+      {
+        "type": "conceito",
+        "title": "Agudo × Crônico: a diferença fatal",
+        "content": "O cortisol é essencial em doses certas. O problema é a exposição prolongada:",
+        "items": [
+          {
+            "emoji": "✅",
+            "label": "Cortisol agudo (horas)",
+            "text": "Energia, foco, resposta rápida à ameaça. Salva vidas."
+          },
+          {
+            "emoji": "⚠️",
+            "label": "Cortisol crônico (semanas)",
+            "text": "Insônia, memória ruim, imunidade baixa, ganho de peso abdominal."
+          },
+          {
+            "emoji": "❌",
+            "label": "Cortisol crônico (meses/anos)",
+            "text": "Hipocampo literalmente encolhe. Ansiedade estrutural. Burnout."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Por que uma crítica no trabalho ativa o mesmo sistema que um predador?",
+        "opts": [
+          "Erro evolutivo",
+          "A amígdala não distingue ameaça social de física — o cortisol responde igual",
+          "Hormônios são imprecisos"
+        ],
+        "correct": 1,
+        "why": "A amígdala evoluiu para reagir a qualquer ameaça. Uma crítica pública ou e-mail agressivo ativa o mesmo eixo HPA que um predador. O cortisol não sabe distinguir."
+      },
+      {
+        "type": "real",
+        "title": "Respiração como freio fisiológico",
+        "content": "Respiração diafragmática lenta (4s inspiração, 6s expiração) ativa o nervo vago, que freia o sistema nervoso simpático e começa a reduzir cortisol em cerca de 90 segundos.",
+        "aplicacao": "Não é relaxamento — é fisiologia. O nervo vago conecta pulmão ao tronco encefálico. Respirar devagar manda o sinal: 'não há perigo imediato'. É o único controle voluntário direto que temos sobre o sistema de estresse."
+      },
+      {
+        "type": "apply",
+        "text": "Experimente agora: 4 segundos inspirando, 6 expirando, por 2 minutos. Compare tensão antes e depois. Se funcionar, você encontrou uma ferramenta que pode usar em qualquer situação de estresse."
+      }
+    ]
+  },
+  "l8": {
+    "title": "GABA × Glutamato — Freio e Acelerador",
+    "emoji": "⚖️",
+    "key": "Glutamato acelera; GABA freia. Equilíbrio = saúde. Desequilíbrio = ansiedade ou letargia.",
+    "concept": "gaba",
+    "check": {
+      "q": "O que GABA faz no cérebro?",
+      "opts": [
+        "Acelera os neurônios",
+        "Inibe e acalma a atividade neural",
+        "Produz dopamina"
+      ],
+      "correct": 1,
+      "why": "GABA é o principal neurotransmissor inibitório — o freio de mão do cérebro. GABA baixo é um dos mecanismos da ansiedade e insônia."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Às vezes a mente acelera à noite e não para. Outras vezes trava e você não consegue começar nada. Dois neurotransmissores controlam esse ritmo — e quando saem de equilíbrio, é quando surgem ansiedade, insônia e letargia.",
+        "question": "O que controla a velocidade do seu cérebro?"
+      },
+      {
+        "type": "compare",
+        "title": "O par mais importante do cérebro",
+        "left": {
+          "name": "Glutamato",
+          "color": "#fb7185",
+          "emoji": "⚡",
+          "items": [
+            "Principal acelerador neural",
+            "Excita e ativa neurônios",
+            "Essencial para aprender",
+            "Excesso → ansiedade, convulsão"
+          ]
+        },
+        "right": {
+          "name": "GABA",
+          "color": "#38bdf8",
+          "emoji": "🛑",
+          "items": [
+            "Principal freio neural",
+            "Inibe e acalma neurônios",
+            "Essencial para calma e sono",
+            "Baixo → ansiedade, insônia"
+          ]
+        }
+      },
+      {
+        "type": "conceito",
+        "title": "O que acontece no desequilíbrio",
+        "content": "O problema não é ter um ou outro — é a proporção:",
+        "items": [
+          {
+            "emoji": "😰",
+            "label": "Muito glutamato / Pouco GABA",
+            "text": "Mente acelerada, ansiedade, pensamentos em loop, dificuldade de dormir."
+          },
+          {
+            "emoji": "😴",
+            "label": "Muito GABA / Pouco glutamato",
+            "text": "Letargia, pensamento lento, sedação. Efeito de álcool e benzodiazepínicos."
+          },
+          {
+            "emoji": "⚖️",
+            "label": "Equilíbrio",
+            "text": "Foco calmo, presença, capacidade de aprender e criar sem ansiedade."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Por que álcool parece 'soltar' na hora e causar letargia depois?",
+        "opts": [
+          "Bloqueia o glutamato apenas",
+          "Turbina o GABA (freio) e bloqueia o glutamato (acelerador) ao mesmo tempo",
+          "Eleva a serotonina"
+        ],
+        "correct": 1,
+        "why": "O álcool age nos dois: aumenta GABA (sedação, desinibição) e bloqueia glutamato (lentidão de reflexo e memória). O 'soltar' é GABA. O 'apagar' é falta de glutamato."
+      },
+      {
+        "type": "real",
+        "title": "Ansiedade como falha do GABA",
+        "content": "Transtornos de ansiedade frequentemente envolvem sistema GABAérgico hipoativo. Benzodiazepínicos (Rivotril, Lexotan) agem potencializando receptores GABA — por isso sedatam e acalmam rapidamente.",
+        "aplicacao": "Práticas que naturalmente elevam GABA: meditação regular, exercício aeróbico, respiração lenta, magnésio. Não substituem tratamento, mas têm mecanismo neural real — não são placebo."
+      },
+      {
+        "type": "apply",
+        "text": "Teste o freio agora: 5 respirações lentas (6 segundos de expiração). A expiração longa ativa o GABA via nervo vago parassimpático. É o único freio que você pode acionar voluntariamente."
+      }
+    ]
+  },
+  "l9": {
+    "title": "Ocitocina, Endorfina e Melatonina",
+    "emoji": "💞",
+    "key": "Ocitocina conecta, endorfina alivia, melatonina sincroniza o relógio.",
+    "concept": "ocitocina",
+    "check": {
+      "q": "Por que telas à noite atrapalham o sono?",
+      "opts": [
+        "Cansam os olhos",
+        "Luz azul suprime melatonina enganando o hipotálamo",
+        "O conteúdo estimula demais"
+      ],
+      "correct": 1,
+      "why": "A luz azul de telas tem comprimento de onda idêntico à luz do meio-dia — o hipotálamo lê como 'ainda é dia' e suprime a melatonina."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Por que um abraço de 20 segundos muda seu estado interno? Por que o 'barato' após o exercício é real e não imaginação? Por que usar celular à noite destrói o sono mesmo que você não se sinta acordado? Três químicos respondem tudo isso.",
+        "question": "O que conecta vínculo, dor e sono?"
+      },
+      {
+        "type": "conceito",
+        "title": "Ocitocina — o hormônio do vínculo",
+        "content": "Erroneamente chamada de 'hormônio do amor' (é mais seletiva que isso):",
+        "items": [
+          {
+            "emoji": "🤝",
+            "label": "Vínculo seletivo",
+            "text": "Reforça laços com quem você JÁ confia. Com estranhos pode aumentar desconfiança."
+          },
+          {
+            "emoji": "🤱",
+            "label": "Parto e amamentação",
+            "text": "Pico máximo no nascimento — forma o vínculo mãe-filho com força extrema."
+          },
+          {
+            "emoji": "🐶",
+            "label": "Pets também",
+            "text": "Acariciar um animal por 15 minutos eleva ocitocina — no humano E no animal."
+          },
+          {
+            "emoji": "🛡️",
+            "label": "Antiestresse",
+            "text": "Reduz cortisol — mecanismo pelo qual apoio social protege contra estresse."
+          }
+        ]
+      },
+      {
+        "type": "conceito",
+        "title": "Endorfina e Melatonina",
+        "content": "Dois outros químicos que mudam sua vida diária:",
+        "items": [
+          {
+            "emoji": "🏃",
+            "label": "Endorfina — o analgésico natural",
+            "text": "Liberada em esforço físico, gargalhadas e toque. Age nos mesmos receptores da morfina (endo+morfina = endorfina). É o 'barato' do exercício — real, não imaginação."
+          },
+          {
+            "emoji": "🌙",
+            "label": "Melatonina — o sinal do escuro",
+            "text": "Não é o 'hormônio do sono' — é o sinal de escuridão. Sobe na ausência de luz e avisa ao corpo: hora de dormir. A luz azul de telas mimetiza a luz do meio-dia."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Por que rir alivia a dor?",
+        "opts": [
+          "Distração mental",
+          "Gargalhada genuína libera endorfina",
+          "O corpo relaxa com o riso"
+        ],
+        "correct": 1,
+        "why": "A gargalhada é um dos maiores liberadores naturais de endorfina. Terapia do humor tem base neuroquímica — não é apenas psicológico."
+      },
+      {
+        "type": "real",
+        "title": "O protocolo do abraço",
+        "content": "Um abraço precisa de pelo menos 20 segundos para liberar ocitocina de forma mensurável. Abraços rápidos são protocolo social — abraços longos são neuroquímica.",
+        "aplicacao": "Pesquisa de Carnegie Mellon: pessoas que recebem mais abraços têm sistema imunológico mais forte e são menos suscetíveis a resfriados — mediado pela redução de cortisol via ocitocina."
+      },
+      {
+        "type": "apply",
+        "text": "Esta semana: abrace alguém por 20 segundos completos. E considere: o celular fica longe 1h antes de dormir? A melatonina precisa desse sinal para preparar o sono."
+      }
+    ]
+  },
+  "l10": {
+    "title": "Córtex Pré-frontal — O CEO",
+    "emoji": "👔",
+    "key": "O pré-frontal planeja, decide e freia impulsos — e é o primeiro a falhar sob estresse.",
+    "concept": "prefrontal",
+    "check": {
+      "q": "Por que decisões ruins aumentam quando você está cansado?",
+      "opts": [
+        "Você fica menos inteligente",
+        "O pré-frontal perde eficiência primeiro sob fadiga",
+        "Os hormônios ficam mais lentos"
+      ],
+      "correct": 1,
+      "why": "O pré-frontal é o mais sensível à fadiga e ao cortisol. Cansado ou estressado, você é literalmente menos capaz de resistir a impulsos."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Você sabe que não deveria comer aquilo às 23h — e come. Sabe que deveria começar o projeto — e procrastina. Sabe que vai se arrepender de responder na raiva — e responde. Por que o que você sabe e o que você faz são tão diferentes?",
+        "question": "Por que é tão difícil fazer o que você sabe que é certo?"
+      },
+      {
+        "type": "conceito",
+        "title": "O que o pré-frontal faz",
+        "content": "O córtex pré-frontal (CPF) é a região que mais nos diferencia de outros animais:",
+        "items": [
+          {
+            "emoji": "🗓️",
+            "label": "Planejamento",
+            "text": "Projeta consequências futuras — pensa no 'eu' de amanhã, não só de agora."
+          },
+          {
+            "emoji": "🛑",
+            "label": "Inibição de impulsos",
+            "text": "Freia reações automáticas do sistema límbico. O freio da razão sobre a emoção."
+          },
+          {
+            "emoji": "⚖️",
+            "label": "Tomada de decisão",
+            "text": "Integra informação emocional e racional para decidir — não separa os dois."
+          },
+          {
+            "emoji": "🪞",
+            "label": "Metacognição",
+            "text": "Pensa sobre o próprio pensamento — base da consciência de si."
+          },
+          {
+            "emoji": "👥",
+            "label": "Empatia avançada",
+            "text": "Simula o estado mental do outro — base da empatia cognitiva (não só emocional)."
+          }
+        ]
+      },
+      {
+        "type": "flow",
+        "title": "O pré-frontal e o impulso",
+        "steps": [
+          {
+            "icon": "💥",
+            "label": "Estímulo emocional",
+            "text": "Algo provoca uma reação do sistema límbico (medo, raiva, desejo)."
+          },
+          {
+            "icon": "🔥",
+            "label": "Amígdala (0,2s)",
+            "text": "Impulso de agir imediatamente — antes de qualquer pensamento."
+          },
+          {
+            "icon": "⏱️",
+            "label": "Pré-frontal (0,5s)",
+            "text": "Chega com a pergunta: 'Devo fazer isso? Qual é a consequência?'"
+          },
+          {
+            "icon": "⚡",
+            "label": "Resultado",
+            "text": "Com recursos: pré-frontal modera. Com estresse, cansaço ou álcool: o límbico vence."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Por que álcool piora as decisões mesmo quando você 'ainda está no controle'?",
+        "opts": [
+          "O álcool desliga a consciência",
+          "O pré-frontal é seletivamente afetado antes de outras funções",
+          "A memória falha"
+        ],
+        "correct": 1,
+        "why": "O pré-frontal é seletivamente inibido pelo álcool antes de funções motoras básicas. Você ainda fala e anda — mas a inibição de impulsos já falhou."
+      },
+      {
+        "type": "real",
+        "title": "Fadiga de decisão",
+        "content": "Steve Jobs usava a mesma roupa. Obama tomava grandes decisões de manhã. Não é filosofia — é gestão de recursos cognitivos. O pré-frontal tem energia limitada por dia.",
+        "aplicacao": "Decisões triviais (o que vestir, o que comer) gastam o mesmo recurso que decisões importantes. Automatizar escolhas rotineiras preserva pré-frontal para o que realmente importa."
+      },
+      {
+        "type": "apply",
+        "text": "Identifique 2 decisões triviais que você toma todo dia. Como poderia automatizá-las? Cada uma eliminada libera pré-frontal para o que realmente importa na sua vida."
+      }
+    ]
+  },
+  "l11": {
+    "title": "Amígdala e Hipocampo — Alarme e Arquivo",
+    "emoji": "🔔",
+    "key": "Amígdala dispara antes do pensamento; hipocampo arquiva com intensidade emocional.",
+    "concept": "amigdala",
+    "check": {
+      "q": "Por que memórias emocionais são tão vívidas?",
+      "opts": [
+        "Acontecem devagar",
+        "A amígdala carimba memórias intensas com cortisol",
+        "O hipocampo grava tudo em dobro"
+      ],
+      "correct": 1,
+      "why": "A amígdala adiciona uma 'tag de importância' às memórias — quanto mais intensa a emoção, mais forte e duradoura a memória."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Você se lembra exatamente onde estava em momentos de impacto emocional forte. Mas não sabe o que comeu no almoço há 3 dias. Por que emoção 'grava' tão melhor? E por que às vezes esse sistema nos prega peças?",
+        "question": "O que decide o que o cérebro guarda para sempre?"
+      },
+      {
+        "type": "conceito",
+        "title": "A amígdala: o alarme sempre ligado",
+        "content": "Duas estruturas em forma de amêndoa (amygdala em latim), uma em cada hemisfério:",
+        "items": [
+          {
+            "emoji": "🚨",
+            "label": "Detector de ameaças",
+            "text": "Escaneia continuamente o ambiente por sinais de perigo — 24 horas, mesmo durante o sono."
+          },
+          {
+            "emoji": "⚡",
+            "label": "Velocidade extrema",
+            "text": "Reage em 0,1-0,2 segundos — antes da sua percepção consciente."
+          },
+          {
+            "emoji": "🎭",
+            "label": "Emoções intensas",
+            "text": "Medo, raiva, nojo, mas também excitação e prazer extremo."
+          },
+          {
+            "emoji": "🔖",
+            "label": "Tagger de memória",
+            "text": "Adiciona intensidade emocional: 'isso foi importante, não esqueça'."
+          }
+        ]
+      },
+      {
+        "type": "conceito",
+        "title": "O hipocampo: o arquivo com contexto",
+        "content": "Do grego 'cavalo-marinho' (pela forma), é central para memória:",
+        "items": [
+          {
+            "emoji": "📚",
+            "label": "Memória episódica",
+            "text": "Grava 'quando e onde' — dá contexto temporal e espacial aos eventos."
+          },
+          {
+            "emoji": "🗺️",
+            "label": "Navegação espacial",
+            "text": "Cria mapas mentais. Taxistas de Londres têm hipocampo literalmente maior."
+          },
+          {
+            "emoji": "🌱",
+            "label": "Neurogênese",
+            "text": "Uma das poucas regiões que cria novos neurônios em adultos — exercício e aprendizado estimulam."
+          },
+          {
+            "emoji": "😟",
+            "label": "Vulnerável ao cortisol",
+            "text": "Estresse crônico encolhe o hipocampo — por isso estresse prolongado piora memória."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Você cheira um perfume e imediatamente lembra de alguém da infância. Por quê o olfato evoca memórias mais intensas?",
+        "opts": [
+          "O olfato é o sentido mais preciso",
+          "O cheiro vai direto ao sistema límbico sem passar pelo tálamo",
+          "Cheiros são processados mais devagar"
+        ],
+        "correct": 1,
+        "why": "O olfato é o único sentido com conexão direta à amígdala e ao hipocampo — sem passar pelo tálamo. Por isso cheiros evocam memórias emocionalmente poderosas de forma quase involuntária."
+      },
+      {
+        "type": "real",
+        "title": "O atalho e a análise do medo",
+        "content": "Joseph LeDoux descobriu dois caminhos para o medo: o atalho (tálamo → amígdala, 0,2s) e o caminho longo (tálamo → córtex → amígdala, 0,5s). O atalho salva vidas — mas também faz você pular com um galho que parece cobra.",
+        "aplicacao": "Fobias, gatilhos de trauma e preconceitos automáticos operam pelo atalho. Terapias de exposição e EMDR trabalham para reconectar a memória ao córtex — dar contexto racional ao gatilho emocional."
+      },
+      {
+        "type": "apply",
+        "text": "Próxima reação emocional forte e repentina: pergunte 'que memória a amígdala acessou agora?'. Nomear o processo já ativa o pré-frontal e reduz parcialmente a reatividade da amígdala."
+      }
+    ]
+  },
+  "l12": {
+    "title": "Hipotálamo, Tálamo e Tronco Encefálico",
+    "emoji": "🎛️",
+    "key": "Tálamo = central dos sentidos; hipotálamo = maestro hormonal; tronco = sobrevivência automática.",
+    "concept": "hipotalamo",
+    "check": {
+      "q": "O que o hipotálamo controla?",
+      "opts": [
+        "Apenas o sono",
+        "Fome, sede, temperatura, sono e liberação hormonal",
+        "Apenas hormônios sexuais"
+      ],
+      "correct": 1,
+      "why": "O hipotálamo é o termostato do corpo — regula tudo que mantém o equilíbrio interno (homeostase)."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Você não pensa 'preciso respirar agora'. Não agenda 'hora de sentir fome'. Não programa 'temperatura corporal = 36,8ºC'. Tudo isso acontece automaticamente, gerenciado por estruturas que nunca descansam — e raramente recebem crédito.",
+        "question": "Quem cuida do seu corpo enquanto você não está prestando atenção?"
+      },
+      {
+        "type": "conceito",
+        "title": "O tronco encefálico — base da vida",
+        "content": "A estrutura mais antiga evolutivamente — presente em todos os vertebrados:",
+        "items": [
+          {
+            "emoji": "💨",
+            "label": "Respiração automática",
+            "text": "Ritmo respiratório sem esforço consciente. Dano aqui = morte imediata."
+          },
+          {
+            "emoji": "❤️",
+            "label": "Batimento cardíaco",
+            "text": "Regula FC em resposta ao esforço, estresse e repouso."
+          },
+          {
+            "emoji": "😴",
+            "label": "Ciclos vigília-sono",
+            "text": "Controla quando você adormece e acorda via ritmo circadiano."
+          },
+          {
+            "emoji": "🤢",
+            "label": "Reflexos de proteção",
+            "text": "Vômito, tosse, espirro — defesas automáticas sem precisar pensar."
+          }
+        ]
+      },
+      {
+        "type": "compare",
+        "title": "Tálamo × Hipotálamo",
+        "left": {
+          "name": "Tálamo",
+          "color": "#a78bfa",
+          "emoji": "📡",
+          "items": [
+            "Central de distribuição sensorial",
+            "Todo sentido passa por aqui (exceto olfato)",
+            "Filtra e direciona ao córtex correto",
+            "'Gargalo' da percepção consciente"
+          ]
+        },
+        "right": {
+          "name": "Hipotálamo",
+          "color": "#ffce6b",
+          "emoji": "🎛️",
+          "items": [
+            "Maestro hormonal (só 4 gramas!)",
+            "Comanda fome, sede, temperatura, libido",
+            "Controla o eixo HPA (estresse)",
+            "Liga ao sistema nervoso autônomo"
+          ]
+        }
+      },
+      {
+        "type": "quiz",
+        "q": "Por que cheiros evocam memórias mais fortes que sons ou imagens?",
+        "opts": [
+          "O olfato é o sentido mais poderoso",
+          "Cheiro vai direto ao sistema límbico sem passar pelo tálamo",
+          "Cheiros são processados mais devagar"
+        ],
+        "correct": 1,
+        "why": "O olfato é o único sentido que bypassa o tálamo — vai direto à amígdala e ao hipocampo. Por isso um perfume pode trazer de volta uma memória de infância de forma avassaladora."
+      },
+      {
+        "type": "real",
+        "title": "O eixo HPA e o burnout",
+        "content": "Hipotálamo detecta ameaça → ordena à hipófise → hipófise ordena às suprarrenais → cortisol é liberado. Esse eixo HPA é a cadeia de comando do estresse. Quando cronicamente ativado, fica 'viciado' no estado de alerta.",
+        "aplicacao": "É a base fisiológica do burnout: o eixo HPA fica tão sensível após meses de estresse que dispara com estímulos mínimos. Tratamento envolve recuperação desse eixo — não só 'descanso'."
+      },
+      {
+        "type": "apply",
+        "text": "Liste 3 funções que seu corpo faz agora sem que você peça (respiração, batimento, temperatura). Tudo isso é o tronco e o hipotálamo. Depois de saber isso, como você trata o seu sono e o seu estresse?"
+      }
+    ]
+  },
+  "l13": {
+    "title": "Ínsula, Gânglios, Cerebelo e Occipital",
+    "emoji": "🧩",
+    "key": "Ínsula lê o corpo; gânglios criam hábitos; cerebelo coordena; occipital constrói imagens.",
+    "concept": "insula",
+    "check": {
+      "q": "Qual região transforma repetição em hábito automático?",
+      "opts": [
+        "Ínsula",
+        "Gânglios da base",
+        "Cerebelo"
+      ],
+      "correct": 1,
+      "why": "Os gânglios da base 'comprimem' comportamentos repetidos em rotinas automáticas — o piloto automático dos hábitos."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Você sente 'frio na barriga' antes de uma decisão difícil. Dirige para casa em piloto automático. Sente nojo ao ver algo repulsivo. Enxerga uma cena inteira com uma lanterna no escuro — e o cérebro 'pinta' o que não está iluminado. Quem faz tudo isso?",
+        "question": "Quais são as regiões esquecidas que moldam tudo?"
+      },
+      {
+        "type": "conceito",
+        "title": "Ínsula — o intérprete do corpo",
+        "content": "Escondida dentro do sulco lateral, a ínsula processa a experiência interna do corpo:",
+        "items": [
+          {
+            "emoji": "🤢",
+            "label": "Nojo",
+            "text": "Emoção mais fortemente ligada à ínsula — evoluiu para proteger de venenos e doenças."
+          },
+          {
+            "emoji": "💙",
+            "label": "Empatia somática",
+            "text": "Simula no SEU corpo o que outros sentem — base da empatia visceral."
+          },
+          {
+            "emoji": "🎯",
+            "label": "Interoepção",
+            "text": "Frio na barriga, coração acelerado, aperto no peito — a ínsula interpreta sinais internos."
+          },
+          {
+            "emoji": "🌶️",
+            "label": "Craving",
+            "text": "A fissura de vícios ativa fortemente a ínsula — por isso mindfulness ajuda em tratamentos."
+          }
+        ]
+      },
+      {
+        "type": "conceito",
+        "title": "Gânglios, Cerebelo e Occipital",
+        "content": "Três regiões essenciais frequentemente esquecidas:",
+        "items": [
+          {
+            "emoji": "🔄",
+            "label": "Gânglios da Base",
+            "text": "Convertem comportamentos repetidos em hábitos automáticos. Sede do Parkinson (dopamina nos gânglios) e do TOC."
+          },
+          {
+            "emoji": "🎯",
+            "label": "Cerebelo",
+            "text": "Coordenação motora fina e equilíbrio. Pesquisas recentes ligam ao timing cognitivo e aprendizado."
+          },
+          {
+            "emoji": "👁️",
+            "label": "Córtex Occipital",
+            "text": "Você enxerga com o CÉREBRO, não com os olhos. O occipital reconstrói a realidade visual — e pode 'ver' coisas que não existem (ilusões, sonhos)."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "O que é interoepção?",
+        "opts": [
+          "Percepção do ambiente externo",
+          "Leitura dos sinais internos do corpo pela ínsula",
+          "Coordenação motora"
+        ],
+        "correct": 1,
+        "why": "Interoepção é 'sentir o corpo por dentro'. Pessoas com melhor interoepção tomam decisões mais intuitivas e corretas — a 'intuição' tem base na leitura precisa dos sinais corporais."
+      },
+      {
+        "type": "real",
+        "title": "O loop do hábito (gânglios da base)",
+        "content": "Os gânglios gravam comportamentos repetidos como loops automáticos: gatilho → rotina → recompensa. Isso é eficiência neural — o cérebro automatiza o que repete para liberar o pré-frontal para o novo.",
+        "aplicacao": "Hábitos nos gânglios da base NUNCA são apagados — apenas suprimidos por novos loops mais fortes. É por isso que situações de estresse reativam velhos hábitos: o circuito original ainda está gravado."
+      },
+      {
+        "type": "apply",
+        "text": "Escolha um hábito que quer criar. Defina agora: Gatilho (quando/onde exatamente?), Rotina (o quê?), Recompensa (o quê imediatamente depois?). A especificidade do gatilho acelera a gravação nos gânglios."
+      }
+    ]
+  },
+  "l14": {
+    "title": "O Sequestro da Amígdala",
+    "emoji": "⚡",
+    "key": "Emoção intensa 'desliga' o pré-frontal. Respirar religa o freio — é fisiologia, não força de vontade.",
+    "check": {
+      "q": "O que é o sequestro da amígdala?",
+      "opts": [
+        "A amígdala cresce",
+        "Emoção intensa bloqueia o córtex pré-frontal",
+        "A memória é apagada temporariamente"
+      ],
+      "correct": 1,
+      "why": "Daniel Goleman: quando a amígdala dispara no máximo, o pré-frontal fica offline — você age por impulso e se arrepende depois."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Você respondeu um e-mail no calor da raiva e se arrependeu 10 minutos depois. Disse algo numa briga que nunca diria 'no controle'. Congelou num momento que precisava agir. Isso tem nome — e uma explicação neural precisa com uma janela de intervenção.",
+        "question": "Por que às vezes perdemos completamente o controle — e o que fazer nos 6 segundos antes?"
+      },
+      {
+        "type": "flow",
+        "title": "O sequestro em câmera lenta",
+        "steps": [
+          {
+            "icon": "💥",
+            "label": "Gatilho intenso",
+            "text": "Emoção muito forte (raiva, humilhação, medo) ativa a amígdala no máximo."
+          },
+          {
+            "icon": "🌊",
+            "label": "Flood emocional",
+            "text": "Cortisol e adrenalina inundam o sistema — corpo em modo emergência total."
+          },
+          {
+            "icon": "📵",
+            "label": "Pré-frontal offline",
+            "text": "O córtex pré-frontal perde recursos — menos ativo nos exames de imagem."
+          },
+          {
+            "icon": "🤯",
+            "label": "Agir sem pensar",
+            "text": "Você faz ou fala o que o impulso manda — sem acesso à razão ou consequências."
+          },
+          {
+            "icon": "😟",
+            "label": "Arrependimento",
+            "text": "20-30 minutos depois, o cortisol cai, o pré-frontal volta e você avalia o dano."
+          }
+        ]
+      },
+      {
+        "type": "conceito",
+        "title": "Por que existe — e a janela de 6 segundos",
+        "content": "O sequestro não é falha — é design evolutivo. E há uma janela:",
+        "items": [
+          {
+            "emoji": "🦁",
+            "label": "Útil no savana",
+            "text": "Frente a predador, pensar demais seria fatal. Agir pelo instinto salvou vidas."
+          },
+          {
+            "emoji": "💼",
+            "label": "Problema no escritório",
+            "text": "O mesmo sistema dispara com e-mail difícil, crítica pública, deadline impossível."
+          },
+          {
+            "emoji": "⏱️",
+            "label": "A janela de 6 segundos",
+            "text": "Há ~6 segundos entre o estímulo e o sequestro completo. É a janela de intervenção."
+          },
+          {
+            "emoji": "⏳",
+            "label": "Após o sequestro",
+            "text": "Tentativa de resolver conflito durante o pico é inútil — espere 20-30 min o cortisol cair."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Você está com raiva intensa de alguém. Qual estratégia funciona DURANTE o sequestro?",
+        "opts": [
+          "Tentar se explicar racionalmente",
+          "Afastar-se e deixar o cortisol cair (20-30 min)",
+          "Pedir desculpas imediatamente"
+        ],
+        "correct": 1,
+        "why": "Durante o sequestro, o pré-frontal está offline. Resolver conflito no pico é inútil — nenhum dos lados tem acesso pleno à razão. Esperar o cortisol cair não é fraqueza: é neurociência."
+      },
+      {
+        "type": "real",
+        "title": "Intervenções que funcionam nos 6 segundos",
+        "content": "Antes do sequestro ser completo, três coisas realmente funcionam: nomear a emoção ('estou com raiva' — ativa pré-frontal), respiração 4-6s (GABA via nervo vago), dar um passo físico para trás (quebra o loop).",
+        "aplicacao": "Matthew Lieberman (UCLA): nomear uma emoção reduz atividade da amígdala em exames de fMRI. Não é filosofia — é neurofisiologia mensurável."
+      },
+      {
+        "type": "apply",
+        "text": "Crie seu protocolo de 6 segundos AGORA — antes de precisar. Qual das 3 estratégias funciona pra você? Escreva em algum lugar visível. Quando sequestrado, você não vai lembrar sem ter praticado antes."
+      }
+    ]
+  },
+  "l15": {
+    "title": "Como Hábitos São Formados (e Mudados)",
+    "emoji": "🔄",
+    "key": "Loop: gatilho → rotina → recompensa. Hábitos nunca apagam — só sobrescrevem.",
+    "check": {
+      "q": "Por que é tão difícil eliminar um hábito ruim?",
+      "opts": [
+        "O cérebro o apaga com tempo",
+        "Os gânglios gravam o loop permanentemente — só é substituído por outro",
+        "Requer força de vontade pura"
+      ],
+      "correct": 1,
+      "why": "Hábitos gravados nos gânglios nunca são apagados — apenas suprimidos. Por isso velhos hábitos ressurgem em situações de estresse."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Você acorda e o ritual da manhã acontece quase sem pensar. Chega em casa e automaticamente abre a geladeira. Comportamentos automáticos representam ~40% das ações diárias. Mas o que cria esse piloto automático — e como reprogramá-lo?",
+        "question": "O que distingue uma ação deliberada de um hábito automático?"
+      },
+      {
+        "type": "flow",
+        "title": "O loop do hábito (Duhigg + neurociência)",
+        "steps": [
+          {
+            "icon": "🎯",
+            "label": "Gatilho",
+            "text": "O sinal que ativa o loop: hora, lugar, emoção, pessoa ou ação anterior."
+          },
+          {
+            "icon": "🔄",
+            "label": "Rotina",
+            "text": "O comportamento automático que os gânglios da base executam sem esforço."
+          },
+          {
+            "icon": "🎁",
+            "label": "Recompensa",
+            "text": "O benefício que reforça o loop: prazer, alívio, pertencimento, identidade."
+          },
+          {
+            "icon": "🔥",
+            "label": "Craving (anseio)",
+            "text": "Com repetição, o cérebro antecipa a recompensa ao ver o gatilho — cria o desejo antes da ação."
+          }
+        ]
+      },
+      {
+        "type": "conceito",
+        "title": "Por que hábitos nunca são apagados",
+        "content": "A descoberta mais importante sobre mudança de comportamento:",
+        "items": [
+          {
+            "emoji": "💾",
+            "label": "Gravação permanente",
+            "text": "Os gânglios da base gravam o loop em circuito físico — mesmo após anos sem usar."
+          },
+          {
+            "emoji": "🔁",
+            "label": "Reativação",
+            "text": "Estresse, ambiente familiar ou gatilhos antigos reativam hábitos que pareciam extintos."
+          },
+          {
+            "emoji": "🔄",
+            "label": "Substituição é a solução",
+            "text": "Não eliminar — mas substituir a ROTINA mantendo o mesmo gatilho e recompensa."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Você quer parar de checar o celular compulsivamente. Qual abordagem tem mais chance de funcionar?",
+        "opts": [
+          "Proibir-se completamente",
+          "Identificar o gatilho (tédio?) e substituir por outra rotina que satisfaça a mesma necessidade",
+          "Esconder o celular"
+        ],
+        "correct": 1,
+        "why": "A rotina é a parte maleável. O gatilho (tédio, estresse) e a recompensa (estímulo, alívio) costumam ser necessidades reais. Mudar só a rotina que as satisfaz é mais duradouro."
+      },
+      {
+        "type": "real",
+        "title": "Implementação intencional (Gollwitzer)",
+        "content": "Pesquisa: declarações 'se-então' aumentam adesão a novos hábitos em 2-3x: 'SE for 7h da manhã E estiver na cozinha, ENTÃO vou beber um copo de água antes do café'.",
+        "aplicacao": "Especificidade do gatilho é tão importante quanto a intenção. 'Vou me exercitar mais' falha porque o cérebro não sabe quando ativar o loop. 'Às 7h de segunda, quinta e sábado, calço o tênis' funciona."
+      },
+      {
+        "type": "apply",
+        "text": "Complete agora: 'Quando [gatilho específico: hora + lugar], farei [nova rotina], para obter [recompensa real].' Escreva e coloque onde vai ver no momento do gatilho."
+      }
+    ]
+  },
+  "l16": {
+    "title": "Sono — A Faxina Noturna do Cérebro",
+    "emoji": "🌙",
+    "key": "Sono não é inatividade — é consolidação de memória, limpeza de toxinas e regeneração. Privá-lo é devastador.",
+    "check": {
+      "q": "O que o hipocampo faz durante o sono profundo?",
+      "opts": [
+        "Fica inativo",
+        "Transfere memórias do dia para o córtex como memória de longo prazo",
+        "Produz melatonina"
+      ],
+      "correct": 1,
+      "why": "Consolidação da memória dependente do sono: o hipocampo 'repassa' os eventos do dia e os transfere para o córtex como memória de longo prazo."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Você passa 1/3 da vida dormindo. Nenhum animal deixou de evoluir o sono — mesmo sendo vulnerável durante ele. Isso prova que o custo de não dormir é maior que o risco de ser atacado. O que acontece de tão essencial que não pode esperar?",
+        "question": "O que o cérebro faz que só consegue fazer enquanto você dorme?"
+      },
+      {
+        "type": "flow",
+        "title": "Os estágios do sono",
+        "steps": [
+          {
+            "icon": "😴",
+            "label": "N1 (leve, 5-10 min)",
+            "text": "Transição vigília→sono. Você ainda acorda facilmente com qualquer estímulo."
+          },
+          {
+            "icon": "💤",
+            "label": "N2 (moderado, ~50%)",
+            "text": "Maior parte do sono. Memória procedimental consolidada aqui."
+          },
+          {
+            "icon": "🔵",
+            "label": "N3 (profundo, restaurador)",
+            "text": "Restauração física e imunológica. Sistema glinfático limpa toxinas — incluindo beta-amiloide."
+          },
+          {
+            "icon": "🎭",
+            "label": "REM (sonhos)",
+            "text": "Processamento emocional e consolidação da memória declarativa. Criatividade e conexões."
+          },
+          {
+            "icon": "🔄",
+            "label": "Ciclo de ~90 min",
+            "text": "4-6 ciclos por noite. Cortar sono reduz desproporcionalmente o REM (final dos ciclos)."
+          }
+        ]
+      },
+      {
+        "type": "conceito",
+        "title": "O sistema glinfático — a faxina",
+        "content": "Matthew Walker (Por Que Dormimos): uma descoberta que muda tudo:",
+        "items": [
+          {
+            "emoji": "🧹",
+            "label": "Sistema glinfático",
+            "text": "No sono profundo, o LCR varre o espaço entre neurônios removendo resíduos metabólicos."
+          },
+          {
+            "emoji": "☠️",
+            "label": "Beta-amiloide",
+            "text": "Proteína removida durante o sono — que se acumula em demência quando o sono é cronicamente ruim."
+          },
+          {
+            "emoji": "📈",
+            "label": "Uma noite ruim",
+            "text": "Uma noite de sono reduzido → 30% mais acúmulo de beta-amiloide no dia seguinte."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Por que estudar, dormir e revisar na manhã seguinte é mais eficiente que estudar muito de uma vez?",
+        "opts": [
+          "O descanso evita confusão",
+          "Dormir consolida e o sono é parte ativa do aprendizado",
+          "Acordado a memória apaga mais rápido"
+        ],
+        "correct": 1,
+        "why": "'Memória dependente do sono': o hipocampo consolida durante o sono o que você aprendeu. Revisar depois de dormir acessa a memória já consolidada no córtex."
+      },
+      {
+        "type": "real",
+        "title": "O custo real da privação",
+        "content": "Uma semana com 6h de sono vs 8h: reflexo equivalente a alcoolemia de 0,08%, risco de pré-diabetes começa, sistema imune cai 70%, aprendizado cai 40%, hormônios de fome desregulam.",
+        "aplicacao": "A privação é cumulativa e NÃO é recuperável 'dormindo no final de semana'. A dívida prejudica desempenho cognitivo mesmo sem você perceber que está comprometido."
+      },
+      {
+        "type": "apply",
+        "text": "Esta semana: durma e acorde no MESMO horário todos os dias (incluindo sábado e domingo). Consistência do horário é mais importante que quantidade de horas para regular o relógio circadiano."
+      }
+    ]
+  },
+  "l17": {
+    "title": "Exercício e Neuroplasticidade",
+    "emoji": "🏃",
+    "key": "Exercício é a maior intervenção conhecida para o cérebro: cria neurônios, protege e turbina a cognição.",
+    "check": {
+      "q": "O que o BDNF faz?",
+      "opts": [
+        "Eleva o cortisol",
+        "Estimula criação de novos neurônios e sinapses",
+        "Regula o sono"
+      ],
+      "correct": 1,
+      "why": "BDNF (Fator Neurotrófico Derivado do Cérebro) é chamado de 'MiracleGro do cérebro'. O exercício é o maior produtor natural de BDNF."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "John Ratey chama o exercício de 'o melhor remédio que existe para o cérebro'. Pesquisas mostram que 20 minutos de cardio moderado têm efeito comparável a uma dose de Ritalina em foco e atenção. O que está acontecendo?",
+        "question": "Por que mover o corpo muda a mente?"
+      },
+      {
+        "type": "conceito",
+        "title": "O que o exercício faz no cérebro",
+        "content": "Múltiplos mecanismos simultâneos:",
+        "items": [
+          {
+            "emoji": "🌱",
+            "label": "BDNF",
+            "text": "'MiracleGro do cérebro': cria novos neurônios no hipocampo e fortalece sinapses existentes."
+          },
+          {
+            "emoji": "😊",
+            "label": "Neurotransmissores",
+            "text": "Eleva dopamina, serotonina e noradrenalina simultaneamente — mais eficiente que muitos antidepressivos."
+          },
+          {
+            "emoji": "📉",
+            "label": "Cortisol",
+            "text": "Pico DURANTE o exercício, queda ABAIXO do basal depois. Treino cria resiliência ao estresse."
+          },
+          {
+            "emoji": "🧠",
+            "label": "Volume cerebral",
+            "text": "Exercício regular aumenta volume do hipocampo em 2% ao ano — contrabalança o encolhimento natural."
+          }
+        ]
+      },
+      {
+        "type": "conceito",
+        "title": "Neuroplasticidade — o cérebro que muda",
+        "content": "O cérebro adulto pode mudar estruturalmente. Isso é neuroplasticidade:",
+        "items": [
+          {
+            "emoji": "🔗",
+            "label": "Sinapses novas",
+            "text": "Aprendizado cria novas conexões. Uso fortalece, desuso enfraquece ('use it or lose it')."
+          },
+          {
+            "emoji": "🌿",
+            "label": "Neurogênese",
+            "text": "Novos neurônios nascem no hipocampo em adultos — mais em exercício e ambiente enriquecido."
+          },
+          {
+            "emoji": "🗺️",
+            "label": "Remapeamento",
+            "text": "Regiões podem assumir novas funções após lesão ou aprendizado intenso (plasticidade compensatória)."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Por que estudar imediatamente após exercício potencializa o aprendizado?",
+        "opts": [
+          "O cansaço aumenta a concentração",
+          "BDNF cria receptores de plasticidade que ficam ativos por ~2h pós-treino",
+          "A dopamina substitui a cafeína"
+        ],
+        "correct": 1,
+        "why": "O pico de BDNF após exercício prepara o hipocampo para aprender. É a janela ideal de aprendizado — a escola de Naperville aplicou isso e chegou ao topo mundial em ciências."
+      },
+      {
+        "type": "real",
+        "title": "A escola de Naperville",
+        "content": "Em Naperville, Illinois, alunos corriam antes das aulas mais difíceis. Resultado: ficaram em 1º lugar mundial em ciências e 6º em matemática. A escola mais 'problemática' virou referência — com custo zero extra.",
+        "aplicacao": "A conclusão é direta: exercício antes de aprender maximiza absorção. Não precisa de academia — 20 minutos de caminhada rápida antes de estudar já ativa o BDNF."
+      },
+      {
+        "type": "apply",
+        "text": "Por 5 dias: 20 minutos de caminhada rápida antes de trabalhar ou estudar. Compare seu foco e produção com dias sem exercício. Você vai notar diferença nos primeiros 3 dias."
+      }
+    ]
+  },
+  "l18": {
+    "title": "Vício — O Loop da Dopamina Sequestrado",
+    "emoji": "🎰",
+    "key": "Vício é o sistema de recompensa fisicamente alterado — não fraqueza moral.",
+    "concept": "dopamina",
+    "check": {
+      "q": "Por que é difícil parar um vício mesmo querendo?",
+      "opts": [
+        "Fraqueza de caráter",
+        "O sistema de recompensa é fisicamente alterado — receptores mudam",
+        "A memória é bloqueada"
+      ],
+      "correct": 1,
+      "why": "Vício cria mudanças físicas nos receptores de dopamina. É uma doença do sistema de recompensa, não fraqueza — e isso muda como deve ser tratado."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Uma pessoa que luta com vício pode ter perdido família, emprego e saúde — e continua usando. Isso não é falta de força de vontade. É um cérebro fisicamente alterado em suas estruturas mais fundamentais de recompensa. O que a neurociência mostra?",
+        "question": "O que a ciência mudou na nossa compreensão do vício?"
+      },
+      {
+        "type": "flow",
+        "title": "Como o vício se instala no cérebro",
+        "steps": [
+          {
+            "icon": "🎯",
+            "label": "1ª exposição",
+            "text": "Substância ou comportamento dispara dopamina muito acima do natural."
+          },
+          {
+            "icon": "📉",
+            "label": "Dessensibilização",
+            "text": "O cérebro reduz receptores para se adaptar ao excesso. A mesma dose gera menos prazer."
+          },
+          {
+            "icon": "⬆️",
+            "label": "Tolerância",
+            "text": "Precisa de mais para sentir o mesmo. O craving (desejo) aumenta em vez de diminuir."
+          },
+          {
+            "icon": "💔",
+            "label": "Abstinência",
+            "text": "Sem a substância, o sistema de recompensa fica abaixo do normal — nada parece prazeroso."
+          },
+          {
+            "icon": "🔄",
+            "label": "Compulsão",
+            "text": "O loop continua mesmo sem prazer — busca sem satisfação possível."
+          }
+        ]
+      },
+      {
+        "type": "conceito",
+        "title": "O que muda fisicamente no cérebro",
+        "content": "Pesquisas de Nora Volkow (NIDA) com exames de imagem:",
+        "items": [
+          {
+            "emoji": "📉",
+            "label": "Receptores D2 reduzidos",
+            "text": "Menos receptores de dopamina → menos sensibilidade a qualquer prazer (anedonia)."
+          },
+          {
+            "emoji": "🔥",
+            "label": "Amígdala hiperativa",
+            "text": "Estresse e abstinência ficam amplificados — o mínimo gatilho dispara craving intenso."
+          },
+          {
+            "emoji": "📵",
+            "label": "Pré-frontal enfraquecido",
+            "text": "Controle de impulsos comprometido — exatamente o que precisaria para resistir."
+          },
+          {
+            "emoji": "💾",
+            "label": "Memória de craving",
+            "text": "Gatilhos (lugares, pessoas, objetos) ativam o craving décadas depois — o circuito fica gravado."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Por que 'só mais uma vez' nunca funciona para quem tem vício instalado?",
+        "opts": [
+          "A pessoa não quer realmente parar",
+          "Cada exposição reativa e fortalece o circuito em vez de saciá-lo",
+          "Uma vez não faz diferença"
+        ],
+        "correct": 1,
+        "why": "A teoria do 'controle após o vício' ignora que o sistema de recompensa foi fisicamente reprogramado. 'Uma vez' reativa o loop completamente."
+      },
+      {
+        "type": "real",
+        "title": "Vício em telas: o mesmo circuito",
+        "content": "Vício em substâncias e vício em redes sociais compartilham mecanismos — recompensa variável, craving, checagem compulsiva mesmo sem satisfação. A diferença é de grau, não de tipo.",
+        "aplicacao": "Tristan Harris (ex-Google): 'Não é que você não tem força de vontade. É que 1000 engenheiros trabalharam para garantir que você não a use.'"
+      },
+      {
+        "type": "apply",
+        "text": "Reflexão sem julgamento: existe um comportamento na sua vida que você continua mesmo sem prazer real? Nomear o padrão com curiosidade (não culpa) é o primeiro passo que a neurociência recomenda."
+      }
+    ]
+  },
+  "l19": {
+    "title": "Depressão, Ansiedade e o Cérebro",
+    "emoji": "🌧️",
+    "key": "Não é 'fraqueza de caráter' — são alterações mensuráveis em regiões e circuitos.",
+    "concept": "serotonina",
+    "check": {
+      "q": "O que o hipocampo sofre na depressão crônica?",
+      "opts": [
+        "Cresce com plasticidade compensatória",
+        "Encolhe com exposição prolongada ao cortisol",
+        "Fica hiperativo"
+      ],
+      "correct": 1,
+      "why": "Cortisol crônico inibe neurogênese e pode reduzir o hipocampo — afetando memória, contexto e regulação emocional."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Depressão afeta 300 milhões de pessoas. Ansiedade é o transtorno mais prevalente do mundo. E ainda há quem diga 'é só força de vontade'. O que os exames de imagem mostram que está acontecendo fisicamente no cérebro?",
+        "question": "O que a ciência vê — e o que isso muda?"
+      },
+      {
+        "type": "conceito",
+        "title": "Depressão: o que muda no cérebro",
+        "content": "Depressão não é apenas tristeza — é um estado com correlatos físicos mensuráveis:",
+        "items": [
+          {
+            "emoji": "📉",
+            "label": "Serotonina, dopamina, noradrenalina baixas",
+            "text": "Sinalização reduzida nesses três sistemas — base do que a maioria dos antidepressivos tenta corrigir."
+          },
+          {
+            "emoji": "🔥",
+            "label": "Amígdala hiperativa",
+            "text": "Reatividade emocional elevada e viés de negatividade amplificado."
+          },
+          {
+            "emoji": "📵",
+            "label": "Pré-frontal hipoativo",
+            "text": "Dificuldade de controlar emoções, decidir e planejar."
+          },
+          {
+            "emoji": "🌧️",
+            "label": "Hipocampo menor",
+            "text": "Cortisol crônico inibe neurogênese e pode reduzir volume — piora memória e regulação."
+          }
+        ]
+      },
+      {
+        "type": "compare",
+        "title": "Depressão × Ansiedade (no cérebro)",
+        "left": {
+          "name": "Depressão",
+          "color": "#94a3b8",
+          "emoji": "🌧️",
+          "items": [
+            "Amígdala reativa ao negativo",
+            "Dopamina e serotonina baixas",
+            "Anedonia — nada dá prazer",
+            "Hipocampo comprometido"
+          ]
+        },
+        "right": {
+          "name": "Ansiedade",
+          "color": "#fb923c",
+          "emoji": "⚡",
+          "items": [
+            "Amígdala em estado de alerta",
+            "GABA baixo, noradrenalina alta",
+            "Antecipação constante de ameaça",
+            "Eixo HPA cronicamente ativado"
+          ]
+        }
+      },
+      {
+        "type": "quiz",
+        "q": "Por que exercício tem eficácia comprovada contra depressão leve-moderada?",
+        "opts": [
+          "Distrai dos pensamentos",
+          "Eleva BDNF, normaliza neurotransmissores e gera novos neurônios no hipocampo",
+          "Cansa e força o descanso"
+        ],
+        "correct": 1,
+        "why": "Múltiplos estudos mostram eficácia comparável a antidepressivos em casos leves-moderados — com vantagem de não ter efeitos colaterais."
+      },
+      {
+        "type": "real",
+        "title": "O que a ciência diz sobre tratamento",
+        "content": "Tratamento mais eficaz é multimodal: terapia (TCC e ACT têm mais evidência), exercício aeróbico, medicação quando indicada, sono de qualidade, conexão social significativa.",
+        "aplicacao": "IMPORTANTE: estas informações são educativas. Depressão e ansiedade clínicas precisam de avaliação e acompanhamento profissional. O conhecimento do mecanismo ajuda a reduzir o estigma — não substitui o tratamento."
+      },
+      {
+        "type": "apply",
+        "text": "Se você ou alguém próximo sofre com isso: o passo mais importante é buscar ajuda profissional. Conhecer a base neural pode ajudar a mudar a narrativa de 'fraqueza' para 'condição tratável com abordagem correta'."
+      }
+    ]
+  },
+  "l20": {
+    "title": "Paixão, Amor e o Cérebro",
+    "emoji": "💞",
+    "key": "Paixão é dopamina + noradrenalina (fogo); amor duradouro é ocitocina + vasopressina (brasa).",
+    "concept": "ocitocina",
+    "check": {
+      "q": "Por que a serotonina CAI no início da paixão?",
+      "opts": [
+        "A pessoa fica triste",
+        "A queda de serotonina cria pensamento obsessivo sobre o amado",
+        "A dopamina a substitui completamente"
+      ],
+      "correct": 1,
+      "why": "Na paixão, serotonina cai a níveis similares ao TOC — criando pensamentos obsessivos sobre a pessoa amada. É literalmente um estado de obsessão controlada."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Por que a paixão parece um vício? Por que você 'não consegue parar de pensar' na pessoa? Por que casais de longa data têm uma calma que apaixonados não têm? A química de cada fase do amor é completamente diferente.",
+        "question": "O amor é um sentimento — ou um estado químico com fases precisas?"
+      },
+      {
+        "type": "conceito",
+        "title": "Fase 1: Desejo (lust)",
+        "content": "Dominada por hormônios sexuais — a busca por parceiro:",
+        "items": [
+          {
+            "emoji": "🔥",
+            "label": "Testosterona / Estrogênio",
+            "text": "Criam o interesse inicial e o impulso de buscar — presentes em todos os mamíferos."
+          },
+          {
+            "emoji": "⏱️",
+            "label": "Duração",
+            "text": "Semanas a meses. O componente mais universal e menos seletivo."
+          }
+        ]
+      },
+      {
+        "type": "conceito",
+        "title": "Fase 2: Atração (apaixonar-se)",
+        "content": "O estado que parece loucura — porque quimicamente é próximo disso:",
+        "items": [
+          {
+            "emoji": "🎯",
+            "label": "Dopamina alta",
+            "text": "Euforia, energia extra, pensamento obsessivo sobre a pessoa."
+          },
+          {
+            "emoji": "💓",
+            "label": "Noradrenalina alta",
+            "text": "Coração acelerado, insônia, nervosismo — excitação constante."
+          },
+          {
+            "emoji": "📉",
+            "label": "Serotonina baixa",
+            "text": "Pensamento obsessivo: estudos mostram níveis similares ao TOC."
+          },
+          {
+            "emoji": "⏱️",
+            "label": "Duração",
+            "text": "6 meses a 2 anos — evolutivamente, tempo suficiente para conceber."
+          }
+        ]
+      },
+      {
+        "type": "conceito",
+        "title": "Fase 3: Vínculo (amor maduro)",
+        "content": "A transição química mais importante — e mais mal compreendida:",
+        "items": [
+          {
+            "emoji": "💞",
+            "label": "Ocitocina",
+            "text": "O hormônio do vínculo — sobe com toque, intimidade e cumplicidade. Cria confiança profunda."
+          },
+          {
+            "emoji": "🛡️",
+            "label": "Vasopressina",
+            "text": "Ligada à fidelidade e ao cuidado a longo prazo."
+          },
+          {
+            "emoji": "🕯️",
+            "label": "A transição",
+            "text": "Da euforia intensa ao calor constante. Muitos confundem com 'amor acabou' — é na verdade um amor mais profundo."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Casais de longa data felizes compartilham algo em comum. O quê?",
+        "opts": [
+          "Mantêm a intensidade da paixão inicial",
+          "Fazem experiências novas juntos regularmente (novidade + ocitocina)",
+          "Evitam conflitos"
+        ],
+        "correct": 1,
+        "why": "Helen Fisher: casais que ainda se reportam apaixonados após décadas fazem coisas novas juntos com frequência — ativando dopamina dentro do vínculo de ocitocina."
+      },
+      {
+        "type": "apply",
+        "text": "Na próxima semana: faça algo genuinamente novo com quem você ama — um lugar, uma atividade, uma conversa sobre algo nunca discutido. A novidade ativa dopamina; o contexto de segurança mantém a ocitocina."
+      }
+    ]
+  },
+  "l21": {
+    "title": "Decisão, Emoção e os Vieses",
+    "emoji": "⚖️",
+    "key": "Decidimos com emoção primeiro, razão depois. Sistema 1 é veloz e erra de forma previsível.",
+    "check": {
+      "q": "O que o caso Phineas Gage revelou?",
+      "opts": [
+        "Razão e emoção são completamente separadas",
+        "Sem emoção, decisão é impossível ou catastrófica",
+        "O cérebro pode funcionar sem pré-frontal"
+      ],
+      "correct": 1,
+      "why": "Gage perdeu o pré-frontal e manteve QI — mas passou a tomar decisões sociais e financeiras desastrosas. Damasio: emoção é necessária para decidir bem."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Phineas Gage, 1848: uma barra de ferro atravessou seu crânio destruindo o pré-frontal. Ele sobreviveu, manteve a inteligência e a linguagem — mas passou a tomar decisões completamente irresponsáveis. Isso prova algo fundamental sobre como decidimos.",
+        "question": "O que realmente guia as nossas decisões?"
+      },
+      {
+        "type": "conceito",
+        "title": "A hipótese do marcador somático (Damasio)",
+        "content": "Antonio Damasio descobriu que emoções são instrumentos de decisão, não obstáculos:",
+        "items": [
+          {
+            "emoji": "🤔",
+            "label": "Sem emoção",
+            "text": "Pacientes com lesão no pré-frontal ventromedial têm QI intacto mas decisões péssimas."
+          },
+          {
+            "emoji": "💡",
+            "label": "Marcadores somáticos",
+            "text": "O corpo 'vota' antes da razão — frio na barriga, aperto no peito são dados de decisão."
+          },
+          {
+            "emoji": "⚡",
+            "label": "Sistema 1 decide",
+            "text": "A decisão já está formada antes do pensamento consciente — a razão racionaliza depois."
+          },
+          {
+            "emoji": "⚖️",
+            "label": "O ideal",
+            "text": "Emoção + razão integradas — não um ou outro."
+          }
+        ]
+      },
+      {
+        "type": "compare",
+        "title": "Sistema 1 × Sistema 2 (Kahneman)",
+        "left": {
+          "name": "Sistema 1",
+          "color": "#fb7185",
+          "emoji": "⚡",
+          "items": [
+            "Rápido (milissegundos)",
+            "Automático e emocional",
+            "Usa atalhos (heurísticas)",
+            "Comete erros previsíveis (vieses)"
+          ]
+        },
+        "right": {
+          "name": "Sistema 2",
+          "color": "#7dd3fc",
+          "emoji": "🧠",
+          "items": [
+            "Lento (segundos)",
+            "Deliberado e racional",
+            "Analisa e pondera",
+            "Preguiçoso — evita trabalho extra"
+          ]
+        }
+      },
+      {
+        "type": "quiz",
+        "q": "Por que todos somos previsíveis nos nossos erros de julgamento?",
+        "opts": [
+          "Todos erramos aleatoriamente",
+          "Heurísticas do Sistema 1 criam erros sistemáticos iguais em todos",
+          "Inteligência determina os erros"
+        ],
+        "correct": 1,
+        "why": "Os vieses são erros sistemáticos — não aleatórios. Kahneman e Tversky mapearam padrões previsíveis que afetam CEOs e cientistas do mesmo jeito. Conhecê-los não os elimina — mas cria espaço."
+      },
+      {
+        "type": "real",
+        "title": "Vieses na prática",
+        "content": "Ancoragem: o primeiro número visto distorce tudo depois. Aversão à perda: perder R$100 dói 2x mais que ganhar R$100 alegra. Sunk cost: continuamos num mau investimento por 'já ter investido tanto'.",
+        "aplicacao": "Esses padrões são explorados conscientemente em preços ('de/por'), design de produtos (opção padrão), e políticas públicas. Consciência reduz (mas não elimina) o impacto."
+      },
+      {
+        "type": "apply",
+        "text": "Próxima decisão importante: anote sua primeira reação (Sistema 1). Depois, force 3 contra-argumentos (Sistema 2). Tome a decisão após esse processo — você vai notar como as duas etapas diferem."
+      }
+    ]
+  },
+  "l22": {
+    "title": "Regulação Emocional — Você no Controle",
+    "emoji": "🎮",
+    "key": "Emoção não é algo que acontece com você — é algo que você pode aprender a regular.",
+    "check": {
+      "q": "O que 'nomear para domar' faz no cérebro?",
+      "opts": [
+        "Suprime a emoção",
+        "Ativa o pré-frontal e reduz atividade da amígdala",
+        "Eleva o cortisol"
+      ],
+      "correct": 1,
+      "why": "Matthew Lieberman: nomear uma emoção ativa o pré-frontal ventrolateral e reduz a atividade da amígdala. Três palavras mudam a neurofisiologia."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Você não escolhe quais emoções surgem. Mas pode escolher o que faz com elas. Regulação emocional não é suprimir o que sente — é ter um repertório de estratégias que funcionam neurologicamente. E cada uma tem um mecanismo preciso.",
+        "question": "Qual é a diferença entre sentir uma emoção e ser controlado por ela?"
+      },
+      {
+        "type": "conceito",
+        "title": "Estratégias com base neural",
+        "content": "Gross (2015) mapeou estratégias de regulação com eficácia comprovada:",
+        "items": [
+          {
+            "emoji": "🏷️",
+            "label": "Nomear (labeling)",
+            "text": "'Estou sentindo ansiedade' — ativa pré-frontal e reduz amígdala imediatamente. O mais rápido."
+          },
+          {
+            "emoji": "🎭",
+            "label": "Reavaliação cognitiva",
+            "text": "Reinterpretar: 'essa crítica pode ser aprendizado'. Reduz amígdala de forma sustentada."
+          },
+          {
+            "emoji": "💨",
+            "label": "Regulação somática",
+            "text": "Respiração lenta, exercício, toque — acessam o sistema nervoso autonomamente."
+          },
+          {
+            "emoji": "🧘",
+            "label": "Aceitação (mindfulness)",
+            "text": "Observar sem julgamento — reduz reatividade da amígdala a longo prazo com prática regular."
+          }
+        ]
+      },
+      {
+        "type": "real",
+        "title": "O que NÃO funciona",
+        "content": "Supressão (forçar não sentir) funciona no curtíssimo prazo mas tem custo alto: aumenta atividade da amígdala, eleva pressão arterial e piora a saúde mental a longo prazo (James Gross, Stanford).",
+        "aplicacao": "Fingir que não sente não faz a emoção ir embora — faz ela aparecer de outras formas. Reconhecer e nomear é neurologicamente superior a suprimir."
+      },
+      {
+        "type": "quiz",
+        "q": "Por que mindfulness ajuda a regular emoções?",
+        "opts": [
+          "Elimina pensamentos negativos",
+          "Com prática, reduz fisicamente o volume da amígdala e espessa o pré-frontal",
+          "Distrai das emoções difíceis"
+        ],
+        "correct": 1,
+        "why": "Sara Lazar (Harvard): 8 semanas de mindfulness mostram espessamento do pré-frontal e redução do volume da amígdala — mudanças estruturais mensuráveis em exames de imagem."
+      },
+      {
+        "type": "apply",
+        "text": "Pratique 'nomear para domar' hoje: quando uma emoção surgir, diga mentalmente 'Estou notando [emoção]'. Três palavras que ativam o pré-frontal e reduzem a amígdala — neurociência aplicada em tempo real."
+      }
+    ]
+  },
+  "l23": {
+    "title": "Foco, Atenção e o Estado de Flow",
+    "emoji": "🎯",
+    "key": "Foco não é força de vontade — é neuroquímica. E o ambiente moderno foi projetado para destruí-lo.",
+    "check": {
+      "q": "Quanto tempo o cérebro leva para recuperar foco após uma interrupção?",
+      "opts": [
+        "30 segundos",
+        "Até 23 minutos (pesquisa UCI)",
+        "5 minutos"
+      ],
+      "correct": 1,
+      "why": "Uma distração de 3 segundos pode custar até 23 minutos de foco profundo. O custo não é a distração em si — é o tempo de reconexão ao estado anterior."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Microsoft (2015): span de atenção humano caiu de 12 para 8 segundos entre 2000 e 2015. Abaixo do peixe dourado (9s). Mas isso não é inevitável — é consequência de como usamos o ambiente. O que a neurociência diz sobre recuperar foco profundo?",
+        "question": "Por que é tão difícil se concentrar hoje — e o que fazer?"
+      },
+      {
+        "type": "conceito",
+        "title": "A neuroquímica do foco",
+        "content": "Quatro sistemas neurais sustentam o foco profundo:",
+        "items": [
+          {
+            "emoji": "🎯",
+            "label": "Noradrenalina",
+            "text": "Alerta e foco seletivo. Liberada em estado de leve estresse positivo (desafio adequado, não excessivo)."
+          },
+          {
+            "emoji": "🔥",
+            "label": "Dopamina",
+            "text": "Motivação para a tarefa. Alta quando ela é significativa ou tem progresso visível."
+          },
+          {
+            "emoji": "🛑",
+            "label": "GABA",
+            "text": "Inibe o ruído mental — silencia pensamentos irrelevantes. Meditação eleva GABA."
+          },
+          {
+            "emoji": "🌊",
+            "label": "Acetilcolina",
+            "text": "Sinaliza 'este momento importa': aumenta plasticidade e atenção seletiva."
+          }
+        ]
+      },
+      {
+        "type": "conceito",
+        "title": "Flow — foco sem esforço",
+        "content": "Csikszentmihalyi mapeou o estado de flow — foco total sem trabalho consciente:",
+        "items": [
+          {
+            "emoji": "⚖️",
+            "label": "Desafio = Habilidade",
+            "text": "Fácil demais: tédio (dopamina cai). Difícil demais: ansiedade (cortisol sobe). No ponto certo: flow."
+          },
+          {
+            "emoji": "🎭",
+            "label": "Hipofrontalidade",
+            "text": "O pré-frontal 'sai do caminho' — processamento fica fluido e sem autocrítica."
+          },
+          {
+            "emoji": "🚫",
+            "label": "Multitarefa é mito",
+            "text": "O cérebro alterna entre tarefas (task-switching), com custo a cada troca — não paraliza."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Por que colocar o celular em outro cômodo melhora o desempenho cognitivo?",
+        "opts": [
+          "Elimina a tentação visual",
+          "A presença do celular (mesmo silencioso) já ocupa recursos cognitivos (Ward et al., 2017)",
+          "O silêncio ajuda a pensar"
+        ],
+        "correct": 1,
+        "why": "Só a presença do celular na mesa — mesmo virado pra baixo, mesmo silencioso — já reduz capacidade cognitiva disponível. O cérebro usa recursos para não checar."
+      },
+      {
+        "type": "real",
+        "title": "O custo das interrupções",
+        "content": "Gloria Mark (UCI): após uma interrupção, leva em média 23 minutos para retornar ao nível de foco anterior. Uma notificação de 3 segundos custa ~23 minutos de estado profundo.",
+        "aplicacao": "Cal Newport: trabalho profundo é raro e valioso. Períodos ininterruptos de foco intenso produzem mais em 4 horas do que 8 horas fragmentadas."
+      },
+      {
+        "type": "apply",
+        "text": "Experimento amanhã: 90 minutos com celular em outro cômodo, notificações desligadas, trabalhando em UMA coisa. Compare a produção com um dia normal. A diferença vai surpreender."
+      }
+    ]
+  },
+  "l24": {
+    "title": "Bem-estar — Seu Plano Neural",
+    "emoji": "🌟",
+    "key": "Bem-estar não é um estado — é uma prática de quatro pilares com base em evidências.",
+    "check": {
+      "q": "O que o Estudo de Harvard sobre felicidade (85 anos) concluiu?",
+      "opts": [
+        "Dinheiro e sucesso profissional são chave",
+        "Qualidade dos relacionamentos é o maior preditor de saúde e longevidade",
+        "Saúde física é o único fator"
+      ],
+      "correct": 1,
+      "why": "Iniciado em 1938, o maior estudo longitudinal sobre felicidade humana: qualidade das relações — não fama, dinheiro ou sucesso — prediz melhor quem vai envelhecer saudável e feliz."
+    },
+    "stages": [
+      {
+        "type": "hook",
+        "content": "Você chegou ao fim da trilha com uma visão de como o cérebro funciona. Mas conhecimento só muda vidas quando vira ação. O que a neurociência — reunida em décadas de pesquisa — recomenda para uma vida com mais bem-estar?",
+        "question": "O que realmente move o ponteiro do bem-estar, com base em evidências?"
+      },
+      {
+        "type": "conceito",
+        "title": "Os 4 pilares neurais do bem-estar",
+        "content": "Consenso entre neurociência e psicologia positiva:",
+        "items": [
+          {
+            "emoji": "🏃",
+            "label": "Movimento",
+            "text": "20-30 min de cardio moderado, 3-5x/semana. Maior intervenção única para cognição, humor e longevidade."
+          },
+          {
+            "emoji": "🌙",
+            "label": "Sono",
+            "text": "7-9h, horário consistente. Consolidação de memória, limpeza glinfática e restauração hormonal."
+          },
+          {
+            "emoji": "🤝",
+            "label": "Conexão",
+            "text": "Relacionamentos profundos são o maior preditor de longevidade e saúde mental (Estudo de Harvard, 85 anos)."
+          },
+          {
+            "emoji": "🎯",
+            "label": "Sentido",
+            "text": "Propósito ativo — contribuir, crescer, criar. Não precisa ser grandioso."
+          }
+        ]
+      },
+      {
+        "type": "flow",
+        "title": "O Estudo de Harvard (85 anos)",
+        "steps": [
+          {
+            "icon": "📅",
+            "label": "Iniciado em 1938",
+            "text": "O maior estudo longitudinal sobre felicidade humana — 85 anos de acompanhamento."
+          },
+          {
+            "icon": "🔎",
+            "label": "Descoberta central",
+            "text": "QUALIDADE dos relacionamentos é o maior preditor de saúde e longevidade — mais que qualquer outro fator."
+          },
+          {
+            "icon": "❌",
+            "label": "O que não importou",
+            "text": "Fama, dinheiro e sucesso profissional correlacionaram pouco com bem-estar a longo prazo."
+          },
+          {
+            "icon": "✅",
+            "label": "O que importou",
+            "text": "Ter alguém em quem confiar completamente. A profundidade, não a quantidade, das conexões."
+          }
+        ]
+      },
+      {
+        "type": "quiz",
+        "q": "Se você pudesse implementar apenas UMA mudança hoje para bem-estar mental, qual tem mais evidência?",
+        "opts": [
+          "Meditação diária",
+          "Exercício aeróbico regular (20-30 min, 3-5x/semana)",
+          "Dieta sem açúcar"
+        ],
+        "correct": 1,
+        "why": "Todos têm evidência, mas exercício aeróbico regular tem o maior corpo de pesquisa para saúde mental, cognição e longevidade combinados — e o efeito é imediato e mensurável."
+      },
+      {
+        "type": "real",
+        "title": "Integrando o que você aprendeu",
+        "content": "Você agora sabe: dopamina precisa de busca real; serotonina de sol e reconhecimento; cortisol precisa ser regulado; o pré-frontal precisa de descanso; o hipocampo ama exercício; o sono consolida tudo.",
+        "aplicacao": "Um dia ideal para o seu cérebro: sol de manhã (serotonina), exercício (BDNF, dopamina, noradrenalina), trabalho focado (noradrenalina, acetilcolina), conexão real (ocitocina), escuridão à noite (melatonina). Você não precisa fazer tudo de uma vez."
+      },
+      {
+        "type": "apply",
+        "text": "Última pergunta da trilha: qual é a UMA coisa que você vai implementar esta semana com base no que aprendeu? Consistência com uma coisa supera perfeição com dez. Escreva. Comprometa-se."
+      }
+    ]
+  }
 };
 
-const LESSON_EXTRA = {
-  l1: { key: "Tudo no cérebro é conversa entre neurônios usando sinais químicos." },
-  l2: { key: "Mensageiro = chave; receptor = fechadura. Encaixou, dispara a resposta." },
-  l3: { key: "Neurotransmissor é rápido e local; hormônio é lento e age no corpo todo." },
-  l4: { key: "Dopamina, Ocitocina, Serotonina e Endorfina = os 4 do bem-estar (DOSE)." },
-  l5: { key: "Dopamina é a vontade de buscar — dispara mais na expectativa do que na recompensa." },
-  l6: { key: "Serotonina = calma e humor estável. 90% dela mora no intestino." },
-  l7: { key: "Adrenalina age em segundos; o cortisol sustenta o estresse depois." },
-  l8: { key: "Glutamato acelera, GABA freia. Saúde mental é equilíbrio entre os dois." },
-  l9: { key: "Ocitocina conecta (vínculo); endorfina alivia (dor e bem-estar)." },
-  l10: { key: "O córtex pré-frontal é o freio da razão sobre a emoção." },
-  l11: { key: "Amígdala = alarme rápido; hipocampo = arquivo da memória." },
-  l12: { key: "Tálamo distribui os sentidos; hipotálamo comanda os hormônios." },
-  l13: { key: "Cada região tem um papel: nojo, hábito, equilíbrio e visão." },
-  l14: { key: "Emoção forte demais 'desliga' a razão — respirar religa o freio." },
-  l15: { key: "Sono, exercício, sol e conexão cuidam de quase todos os químicos." },
-  l16: { key: "Estímulo rápido demais 'dessensibiliza' a dopamina — é o ciclo do vício." },
-  l17: { key: "Depressão é multifatorial; no químico, há menos serotonina, dopamina e noradrenalina." },
-  l18: { key: "Ansiedade mantém o alerta alto quando ele deveria cair pra dormir." },
-  l19: { key: "Paixão é dopamina (fogo); amor duradouro é ocitocina (brasa)." },
-};
+const LESSON_EXTRA = Object.fromEntries(Object.entries(LESSONS).map(([k,v])=>[k,{key:v.key}]));
+
+const LESSON_CONCEPT = {"l5": "dopamina", "l6": "serotonina", "l7": "cortisol", "l8": "gaba", "l9": "ocitocina", "l10": "prefrontal", "l11": "amigdala", "l12": "hipotalamo", "l13": "insula", "l18": "dopamina", "l19": "serotonina", "l20": "ocitocina"};
 
 const LESSON_ORDER = MODULES.flatMap((m) => m.lessons);
 
@@ -464,7 +2702,7 @@ const MITOS = [
 ];
 
 // ---- Prova final (puxa os quizzes das lições) ----
-const PROVA = LESSON_ORDER.map((id) => ({ ...LESSONS[id].check }));
+const PROVA = LESSON_ORDER.map((id) => LESSONS[id] && LESSONS[id].check ? { ...LESSONS[id].check } : null).filter(Boolean);
 
 // ---- Revisão espaçada (Leitner) ----
 const SRS_DAYS = { 1: 0, 2: 1, 3: 3, 4: 7, 5: 16 };
@@ -473,11 +2711,6 @@ const yesterdayStr = () => new Date(Date.now() - 86400000).toISOString().slice(0
 const DAILY_GOAL = 30;
 
 // conceito principal de cada lição (pro mapa de domínio)
-const LESSON_CONCEPT = {
-  l5: "dopamina", l6: "serotonina", l7: "cortisol", l8: "gaba", l9: "ocitocina",
-  l10: "prefrontal", l11: "amigdala", l12: "talamo", l13: "insula",
-  l16: "dopamina", l17: "serotonina", l18: "amigdala", l19: "ocitocina",
-};
 // conceitos exibidos no mapa de domínio
 const MASTERY_CONCEPTS = [...Object.keys(NEUROS), "prefrontal", "amigdala", "hipocampo", "hipotalamo", "talamo", "insula", "accumbens"];
 const conceptName = (id) => (NEUROS[id] ? NEUROS[id].name : REGIONS[id] ? REGIONS[id].name : id);
@@ -742,7 +2975,7 @@ function NavBtn({ active, onClick, icon, label, badge }) {
 // =========================================================================
 
 function Trilha() {
-  const { progress, completeLesson, addXp } = useGame();
+  const { progress, completeLesson } = useGame();
   const [openLesson, setOpenLesson] = useState(null);
 
   const isDone = (id) => !!progress.lessons[id];
@@ -756,12 +2989,7 @@ function Trilha() {
   if (openLesson) {
     return <LessonView id={openLesson}
       onClose={() => setOpenLesson(null)}
-      onComplete={() => {
-        const was = isDone(openLesson);
-        completeLesson(openLesson);
-        if (!was) addXp(20, "Lição concluída!");
-        setOpenLesson(null);
-      }} />;
+      onComplete={() => { completeLesson(openLesson); setOpenLesson(null); }} />;
   }
 
   const doneCount = LESSON_ORDER.filter(isDone).length;
@@ -770,7 +2998,7 @@ function Trilha() {
     <div className="fade">
       <div style={styles.trilhaHead}>
         <h2 style={styles.h2}>Trilha de Aprendizado</h2>
-        <p style={styles.pMuted}>{doneCount}/{LESSON_ORDER.length} lições · siga o caminho de cima pra baixo</p>
+        <p style={styles.pMuted}>{doneCount}/{LESSON_ORDER.length} lições · cada uma tem múltiplas etapas com fixação</p>
       </div>
 
       {MODULES.map((m) => {
@@ -791,10 +3019,12 @@ function Trilha() {
             <div style={styles.path}>
               {m.lessons.map((id, i) => {
                 const L = LESSONS[id];
+                if (!L) return null;
                 const done = isDone(id);
                 const unlocked = isUnlocked(id);
                 const current = id === firstUndone;
                 const side = i % 2 === 0 ? "flex-start" : "flex-end";
+                const stageCount = (L.stages || []).length;
                 return (
                   <div key={id} style={{ display: "flex", justifyContent: side, position: "relative" }}>
                     <button
@@ -803,13 +3033,17 @@ function Trilha() {
                       className={current ? "pulse-node" : ""}
                       style={{
                         ...styles.lessonNode,
-                        borderColor: done ? "#4ade80" : current ? m.color : "#2c3e60",
-                        background: done ? "#4ade8018" : current ? m.color + "22" : "#10192c",
+                        borderColor: done ? "#4ade80" : current ? m.color : "rgba(255,255,255,0.12)",
+                        background: done ? "#4ade8018" : current ? m.color + "22" : GLASS,
+                        backdropFilter: GBLUR, WebkitBackdropFilter: GBLUR,
                         opacity: unlocked ? 1 : 0.5,
                         cursor: unlocked ? "pointer" : "not-allowed",
                       }}>
                       <span style={{ fontSize: 26 }}>{done ? "✅" : unlocked ? L.emoji : "🔒"}</span>
                       <span style={styles.lessonTitle}>{L.title}</span>
+                      {unlocked && !done && stageCount > 0 && (
+                        <span style={{ fontSize: 10, color: m.color, fontWeight: 700 }}>{stageCount} etapas</span>
+                      )}
                     </button>
                   </div>
                 );
@@ -979,64 +3213,234 @@ function LessonVisual({ id }) {
   }
 }
 
+// ── STAGE renderers ────────────────────────────────────────────────
+function StageHook({ stage }) {
+  return (
+    <div style={styles.stageHook}>
+      <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "#e6eefc", margin: 0, fontFamily: "Fraunces, serif" }}>{stage.content}</p>
+      {stage.question && (
+        <div style={styles.stageQuestion}>
+          <span style={{ fontSize: 18 }}>💭</span>
+          <b style={{ color: "#ffce6b", fontSize: 14 }}>{stage.question}</b>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function StageConceito({ stage }) {
+  return (
+    <div className="fade">
+      <h3 style={styles.stageTitle}>{stage.title}</h3>
+      {stage.content && <p style={styles.stagePara}>{stage.content}</p>}
+      <div style={styles.stageItems}>
+        {(stage.items || []).map((item, i) => (
+          <div key={i} style={styles.stageItem}>
+            <span style={{ fontSize: 26, flexShrink: 0 }}>{item.emoji}</span>
+            <div>
+              <b style={{ color: "#ffce6b", fontSize: 13.5, display: "block" }}>{item.label}</b>
+              <span style={{ fontSize: 13, color: "#c8d4ea", lineHeight: 1.5 }}>{item.text}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function StageFlow({ stage }) {
+  return (
+    <div className="fade">
+      <h3 style={styles.stageTitle}>{stage.title}</h3>
+      <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+        {(stage.steps || []).map((step, i) => (
+          <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+            <div style={styles.stageFlowStep}>
+              <span style={{ fontSize: 22, flexShrink: 0 }}>{step.icon}</span>
+              <div>
+                <b style={{ color: "#ffce6b", fontSize: 13, display: "block" }}>{step.label}</b>
+                <span style={{ fontSize: 13, color: "#c8d4ea", lineHeight: 1.45 }}>{step.text}</span>
+              </div>
+            </div>
+            {i < stage.steps.length - 1 && (
+              <div style={{ width: 2, height: 18, background: "rgba(255,206,107,0.25)", marginLeft: 22, borderRadius: 99 }} />
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function StageCompareLesson({ stage }) {
+  const { left: L, right: R } = stage;
+  return (
+    <div className="fade">
+      <h3 style={styles.stageTitle}>{stage.title}</h3>
+      <div style={{ display: "flex", gap: 9 }}>
+        {[L, R].map((side, si) => (
+          <div key={si} style={{ flex: 1, padding: "13px 11px", borderRadius: 14, border: `1px solid ${side.color}44`, background: side.color + "10" }}>
+            <div style={{ textAlign: "center", marginBottom: 8 }}>
+              <span style={{ fontSize: 22 }}>{side.emoji}</span>
+              <b style={{ display: "block", color: side.color, fontSize: 13.5 }}>{side.name}</b>
+            </div>
+            {(side.items || []).map((item, i) => (
+              <div key={i} style={{ fontSize: 12.5, color: "#c8d4ea", lineHeight: 1.45, padding: "4px 0", borderTop: i > 0 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>{item}</div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function StageQuiz({ stage, onAnswer, answered, picked }) {
+  const correct = answered && picked === stage.correct;
+  return (
+    <div className="fade">
+      <div style={styles.stageQuizBadge}>🧠 Fixação</div>
+      <p style={{ fontSize: 15, fontWeight: 600, color: "#e6eefc", lineHeight: 1.5, margin: "8px 0 14px" }}>{stage.q}</p>
+      <div style={{ display: "flex", flexDirection: "column", gap: 9 }}>
+        {(stage.opts || []).map((opt, i) => {
+          let bd = "rgba(255,255,255,0.12)", bg = "rgba(255,255,255,0.03)", cl = "#dce8fb";
+          if (answered) {
+            if (i === stage.correct) { bd = "#4ade80"; bg = "rgba(74,222,128,0.12)"; cl = "#9be8b4"; }
+            else if (i === picked)   { bd = "#f87171"; bg = "rgba(248,113,113,0.12)"; cl = "#f8b4b4"; }
+          }
+          return (
+            <button key={i} onClick={() => !answered && onAnswer(i)} disabled={answered}
+              style={{ ...styles.quizOpt, borderColor: bd, background: bg, color: cl, textAlign: "left" }}>
+              {opt}
+            </button>
+          );
+        })}
+      </div>
+      {answered && (
+        <div className="fade" style={{ marginTop: 12, padding: "12px 14px", borderRadius: 13,
+          borderColor: correct ? "#4ade8055" : "#fb923c55",
+          background: (correct ? "#4ade80" : "#fb923c") + "12",
+          border: "1px solid" }}>
+          <b style={{ color: correct ? "#4ade80" : "#fb923c" }}>{correct ? "Isso! 🎉" : "Quase! A correta está em verde."}</b>
+          <p style={{ ...styles.lessonPara, margin: "5px 0 0", fontSize: 13.5 }}>{stage.why}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function StageReal({ stage }) {
+  return (
+    <div className="fade">
+      <h3 style={styles.stageTitle}>{stage.title}</h3>
+      <p style={styles.stagePara}>{stage.content}</p>
+      {stage.aplicacao && (
+        <div style={styles.stageAplicacao}>
+          <span style={{ fontSize: 11, fontWeight: 800, color: "#7dd3fc", display: "block", marginBottom: 5, letterSpacing: 0.5 }}>NA PRÁTICA</span>
+          <p style={{ fontSize: 13.5, color: "#dbe4f3", lineHeight: 1.55, margin: 0 }}>{stage.aplicacao}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function StageApply({ stage }) {
+  return (
+    <div style={styles.stageApply}>
+      <span style={{ fontSize: 24, marginBottom: 6 }}>🎯</span>
+      <b style={{ color: "#ffce6b", fontSize: 14, display: "block", marginBottom: 8 }}>Experimente hoje</b>
+      <p style={{ fontSize: 14, color: "#e6eefc", lineHeight: 1.6, margin: 0 }}>{stage.text}</p>
+    </div>
+  );
+}
+
+function StageLink({ stage }) {
+  return (
+    <div style={styles.stageLink}>
+      <p style={{ fontSize: 13.5, color: "#c8d4ea", margin: "0 0 10px" }}>{stage.text}</p>
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+        {(stage.targets || []).map((t) => (
+          <div key={t.id} style={{ padding: "8px 13px", borderRadius: 12, background: "rgba(255,206,107,0.10)", border: "1px solid rgba(255,206,107,0.35)", fontSize: 13, color: "#ffce6b", fontWeight: 600 }}>
+            {t.emoji} {t.name}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function LessonView({ id, onClose, onComplete }) {
+  const { addXp } = useGame();
   const L = LESSONS[id];
-  const [picked, setPicked] = useState(null);
-  const correct = picked === L.check.correct;
+  const [si, setSi] = useState(0);
+  const [answers, setAnswers] = useState({});
   useBackHandler(true, onClose);
+
+  if (!L || !L.stages) return null;
+
+  const stages = L.stages;
+  const stage = stages[si];
+  const isLast = si === stages.length - 1;
+  const isQuiz = stage.type === "quiz";
+  const answered = answers[si] !== undefined;
+  const canNext = !isQuiz || answered;
+
+  const next = () => {
+    if (isLast) { addXp(20, "Lição!"); onComplete(); }
+    else setSi(s => s + 1);
+  };
+
+  const answerQuiz = (i) => {
+    if (answered) return;
+    setAnswers({ ...answers, [si]: i });
+  };
+
+  const STAGE_LABELS = { hook: "Introdução", conceito: "Conceito", flow: "Como funciona", compare: "Comparação", quiz: "Fixação", real: "Na prática", apply: "Aplicar", link: "Próximos passos" };
 
   return (
     <div className="fade">
-      <button onClick={onClose} style={styles.backBtn}><ArrowLeft size={16} /> Voltar à trilha</button>
-      <div style={{ textAlign: "center", margin: "6px 0 14px" }}>
-        <div style={{ fontSize: 40 }}>{L.emoji}</div>
-        <h2 style={{ ...styles.h2, fontSize: 22 }}>{L.title}</h2>
-        <button onClick={() => speak(L.title + ". " + (LESSON_EXTRA[id] ? LESSON_EXTRA[id].key + ". " : "") + L.body.join(" "))} style={{ ...styles.miniBtn, margin: "8px auto 0" }}><Volume2 size={14} /> Ouvir a lição</button>
+      <button onClick={onClose} style={styles.backBtn}><ArrowLeft size={16} /> Voltar</button>
+
+      <div style={{ textAlign: "center", margin: "4px 0 16px" }}>
+        <div style={{ fontSize: 38 }}>{L.emoji}</div>
+        <h2 style={{ ...styles.h2, fontSize: 20, margin: "6px 0 4px" }}>{L.title}</h2>
       </div>
 
-      <LessonVisual id={id} />
+      {/* progress dots */}
+      <div style={{ display: "flex", gap: 5, justifyContent: "center", marginBottom: 18 }}>
+        {stages.map((st, i) => (
+          <div key={i} title={STAGE_LABELS[st.type] || st.type} style={{
+            width: i === si ? 22 : 8, height: 8, borderRadius: 99, transition: "all .25s",
+            background: i < si ? "#4ade80" : i === si ? "#ffce6b" : "rgba(255,255,255,0.15)"
+          }} />
+        ))}
+      </div>
 
-      {LESSON_EXTRA[id] && (
-        <div style={styles.keyBox}>
-          <span style={styles.keyLabel}>💡 IDEIA-CHAVE</span>
-          <p style={{ margin: "5px 0 0", fontSize: 15, lineHeight: 1.5, color: "#e6eefc", fontFamily: "Fraunces, serif" }}>{LESSON_EXTRA[id].key}</p>
-        </div>
+      {/* stage label */}
+      <div style={{ fontSize: 11, fontWeight: 800, color: "#8aa0c4", letterSpacing: 1, textTransform: "uppercase", marginBottom: 10 }}>
+        {STAGE_LABELS[stage.type] || stage.type} · {si + 1}/{stages.length}
+      </div>
+
+      {/* render stage */}
+      {stage.type === "hook"    && <StageHook stage={stage} />}
+      {stage.type === "conceito" && <StageConceito stage={stage} />}
+      {stage.type === "flow"    && <StageFlow stage={stage} />}
+      {stage.type === "compare" && <StageCompareLesson stage={stage} />}
+      {stage.type === "quiz"    && <StageQuiz stage={stage} onAnswer={answerQuiz} answered={answered} picked={answers[si]} />}
+      {stage.type === "real"    && <StageReal stage={stage} />}
+      {stage.type === "apply"   && <StageApply stage={stage} />}
+      {stage.type === "link"    && <StageLink stage={stage} />}
+
+      {/* next button */}
+      {canNext && (
+        <button onClick={next} className="fade"
+          style={{ ...styles.ctrlBtn, ...styles.playBtn, width: "100%", marginTop: 20 }}>
+          {isLast ? "Concluir lição (+20 XP) 🎉" : stage.type === "quiz" ? "Continuar →" : "Próximo →"}
+          <ChevronRight size={17} />
+        </button>
       )}
-
-      {L.body.map((para, i) => <p key={i} style={styles.lessonPara}>{para}</p>)}
-
-      <div style={styles.quizBox}>
-        <span style={styles.quizLabel}>✓ Vamos checar? (opcional)</span>
-        <p style={{ ...styles.lessonPara, fontWeight: 600, margin: "6px 0 12px", color: "#e6eefc" }}>{L.check.q}</p>
-        <div style={{ display: "flex", flexDirection: "column", gap: 9 }}>
-          {L.check.options.map((opt, i) => {
-            let bg = "#10192c", bc = "#2c3e60", cl = "#dce8fb";
-            if (picked !== null) {
-              if (i === L.check.correct) { bg = "#4ade8018"; bc = "#4ade80"; cl = "#9be8b4"; }
-              else if (i === picked) { bg = "#f8717118"; bc = "#f87171"; cl = "#f8b4b4"; }
-            }
-            return (
-              <button key={i} onClick={() => picked === null && setPicked(i)}
-                disabled={picked !== null}
-                style={{ ...styles.quizOpt, background: bg, borderColor: bc, color: cl }}>
-                {opt}
-              </button>
-            );
-          })}
-        </div>
-
-        {picked !== null && (
-          <div className="fade" style={{ ...styles.whyBox, borderColor: correct ? "#4ade8055" : "#fb923c55", background: (correct ? "#4ade80" : "#fb923c") + "12" }}>
-            <b style={{ color: correct ? "#4ade80" : "#fb923c" }}>{correct ? "Isso! 🎉" : "Quase! A resposta certa está em verde."}</b>
-            <p style={{ ...styles.lessonPara, margin: "5px 0 0", fontSize: 13.5 }}>{L.check.why}</p>
-          </div>
-        )}
-      </div>
-
-      <button onClick={onComplete}
-        style={{ ...styles.ctrlBtn, ...styles.playBtn, width: "100%", marginTop: 16 }}>
-        Entendi! Concluir (+20 XP) <ChevronRight size={17} />
-      </button>
+      {isQuiz && !answered && (
+        <p style={{ ...styles.pMuted, textAlign: "center", marginTop: 12 }}>Escolha uma resposta para continuar</p>
+      )}
     </div>
   );
 }
@@ -3200,6 +5604,17 @@ const styles = {
   uxScreenImg: { height: 90, borderRadius: 12, background: "linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))", border: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 38 },
   deckPile: { position: "relative", height: 210, marginTop: 8, cursor: "pointer" },
   deckBack: { position: "absolute", left: "50%", top: "50%", width: 180, height: 200, marginLeft: -90, marginTop: -100, borderRadius: 18, border: "1px solid rgba(255,206,107,0.4)", background: "linear-gradient(160deg, rgba(255,206,107,0.14), rgba(255,255,255,0.03))", backdropFilter: GBLUR, WebkitBackdropFilter: GBLUR, boxShadow: GSHADOW, display: "flex", alignItems: "center", justifyContent: "center" },
+  stageHook: { padding: "20px 16px", borderRadius: 18, background: "linear-gradient(160deg, rgba(99,102,241,0.12), rgba(255,255,255,0.03))", border: "1px solid rgba(99,102,241,0.25)", backdropFilter: GBLUR, WebkitBackdropFilter: GBLUR, marginBottom: 4 },
+  stageQuestion: { display: "flex", alignItems: "flex-start", gap: 10, marginTop: 14, padding: "12px 14px", borderRadius: 13, background: "rgba(255,206,107,0.08)", border: "1px solid rgba(255,206,107,0.28)" },
+  stageTitle: { fontFamily: "Fraunces, serif", fontSize: 18, fontWeight: 600, color: "#f1f5fc", margin: "0 0 8px" },
+  stagePara: { fontSize: 14, color: "#c8d4ea", lineHeight: 1.65, margin: "0 0 10px" },
+  stageItems: { display: "flex", flexDirection: "column", gap: 10 },
+  stageItem: { display: "flex", gap: 12, alignItems: "flex-start", padding: "12px 13px", borderRadius: 14, background: GLASS, border: GBORDER, backdropFilter: GBLUR, WebkitBackdropFilter: GBLUR },
+  stageFlowStep: { display: "flex", gap: 12, alignItems: "flex-start", padding: "11px 12px", borderRadius: 13, background: GLASS, border: GBORDER, backdropFilter: GBLUR, WebkitBackdropFilter: GBLUR, width: "100%" },
+  stageQuizBadge: { display: "inline-block", padding: "4px 11px", borderRadius: 99, background: "rgba(255,206,107,0.15)", border: "1px solid rgba(255,206,107,0.4)", color: "#ffce6b", fontSize: 12, fontWeight: 800, marginBottom: 8 },
+  stageAplicacao: { padding: "13px 14px", borderRadius: 13, background: "rgba(125,211,252,0.08)", border: "1px solid rgba(125,211,252,0.25)", marginTop: 10 },
+  stageApply: { display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", padding: "22px 18px", borderRadius: 18, background: "rgba(255,206,107,0.10)", border: "1px solid rgba(255,206,107,0.35)", backdropFilter: GBLUR, WebkitBackdropFilter: GBLUR },
+  stageLink: { padding: "16px", borderRadius: 16, background: GLASS, border: GBORDER, backdropFilter: GBLUR, WebkitBackdropFilter: GBLUR },
 };
 
 const css = `
