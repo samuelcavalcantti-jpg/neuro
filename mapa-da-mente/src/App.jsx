@@ -2890,6 +2890,430 @@ function useBackHandler(active, fn) {
 }
 function runBack() { const top = _backStack[_backStack.length - 1]; if (top) { top.fn(); return true; } return false; }
 
+
+// =========================================================================
+//  MBA — dados e componentes
+// =========================================================================
+
+const MBA_MODULES = [
+  { id:"mba1", title:"Neuro & Consumo", emoji:"🧠", color:"#6366f1", lessons:["ml1","ml2","ml3"] },
+  { id:"mba2", title:"Decisão & Vieses", emoji:"⚡", color:"#f59e0b", lessons:["ml4","ml5","ml6"] },
+  { id:"mba3", title:"Emoção & Memória", emoji:"💞", color:"#ec4899", lessons:["ml7","ml8","ml9"] },
+  { id:"mba4", title:"Persuasão", emoji:"🎯", color:"#10b981", lessons:["ml10","ml11","ml12"] },
+  { id:"mba5", title:"Branding & UX", emoji:"✨", color:"#8b5cf6", lessons:["ml13","ml14","ml15"] },
+  { id:"mba6", title:"Pesquisa & Futuro", emoji:"🔬", color:"#06b6d4", lessons:["ml16","ml17","ml18"] },
+];
+
+const MBA_LESSONS = {
+ "ml1":{
+  "title":"Advertising e a Mente Humana","emoji":"📺",
+  "key":"95% das decisões de compra são inconscientes. A publicidade age no cérebro antes da consciência.",
+  "stages":[
+   {"type":"hook","content":"Um anúncio de 30 segundos ativa mais de 11 regiões cerebrais distintas antes de você decidir se gostou ou não. A pergunta não é 'você viu o anúncio?' — é 'o que seu cérebro fez com ele enquanto você nem percebeu?'","question":"O que realmente decide se um anúncio funciona?"},
+   {"type":"conceito","title":"O cérebro que assiste propaganda","content":"A publicidade opera em três camadas simultâneas no cérebro:","items":[
+    {"emoji":"👁️","label":"Atenção (0-130ms)","text":"O olho é guiado por movimento, cor e rostos humanos antes de qualquer escolha consciente. Eye-tracking mostra que a fóvea (área de foco) cobre apenas 2° do campo visual."},
+    {"emoji":"💊","label":"Processamento emocional (130ms-2s)","text":"A amígdala 'vota' antes do córtex: o anúncio é seguro ou ameaçador? Desejável ou repulsivo? Esse voto emocional pré-consciente determina se você vai continuar assistindo."},
+    {"emoji":"🧠","label":"Racionalização (2s+)","text":"Só depois o córtex pré-frontal cria uma 'razão' para a resposta já tomada. 'Achei bonito' é a narrativa — o cérebro já decidiu antes."},
+   ]},
+   {"type":"scenario","title":"Você está criando um anúncio","context":"Você tem que criar um banner para um novo chocolate premium. Qual abordagem você escolhe?",
+    "choices":[
+     {"label":"🍫 Close do chocolate derretendo com iluminação perfeita","result":"Acerto neuro! Texturas, movimento implícito (o derretimento) e cor âmbar-dourada ativam o córtex gustativo e o sistema de recompensa. Estudos de fMRI mostram aumento de salivação mensurável. Isso é priming sensorial clássico.","quality":"good"},
+     {"label":"🏆 Lista de premiações e avaliações 4,9 estrelas","result":"Funciona, mas é mais fraco sozinho. Dados e prêmios ativam o córtex pré-frontal (avaliação racional), mas exigem que o cérebro 'trabalhe'. Para impulso de compra, emoção primeiro, lógica depois.","quality":"neutral"},
+     {"label":"💑 Casal sorrindo compartilhando o chocolate","content":"Bom! Rostos são superativadores — a amígdala e o sistema de neurônios-espelho respondem instantaneamente a expressões humanas. O sorriso cria empatia e associação afetiva. Cuidado: o rosto não pode competir com o produto no campo visual.","quality":"good"},
+    ]},
+   {"type":"conceito","title":"Métricas de neuromarketing","content":"Diferença entre o que pesquisas tradicionais e neuro captam:","items":[
+    {"emoji":"📊","label":"Pesquisa tradicional (declara)","text":"Pergunta ao consumidor. Ele responde com o que acha que faz, não o que faz. 80% das previsões de vendas baseadas em grupos focais erram."},
+    {"emoji":"🧪","label":"EEG (Eletroencefalograma)","text":"Mede atividade elétrica neural em tempo real. Mostra exatamente em qual frame do vídeo o engajamento cai ou sobe."},
+    {"emoji":"👁️","label":"Eye-tracking","text":"Rastreia onde o olhar foi — não onde o participante acha que olhou. Revela que logotipos no canto inferior direito são frequentemente ignorados."},
+    {"emoji":"❤️","label":"Resposta galvânica da pele","text":"Mede ativação emocional (sudorese leve). Alta ativação = memorável, não necessariamente positivo. A cena mais lembrada pode ser a mais perturbadora."},
+   ]},
+   {"type":"quiz","q":"Uma pesquisa de grupo focal aprova muito um anúncio, mas as vendas caem após o lançamento. Qual é a explicação mais provável?","opts":["O criativo foi alterado depois da pesquisa","Grupos focais captam intenção declarada, não resposta emocional inconsciente real","A mídia foi insuficiente"],"correct":1,"why":"Daniel Kahneman e pesquisas do Ehrenberg-Bass Institute mostram que o que as pessoas dizem em grupo focal difere do que seus cérebros fazem frente à decisão real de compra. O social desejability bias distorce as respostas."},
+   {"type":"insight_stack","title":"O que o neuromarketing descobriu sobre publicidade","insights":[
+    {"emoji":"⏱️","title":"3 segundos ou nada","text":"Uma embalagem na gôndola tem 3 segundos para capturar atenção. Anúncios online têm 1,7 segundos. O cérebro decide 'relevante ou não' antes da consciência."},
+    {"emoji":"🎵","title":"Música muda o sabor","text":"Pesquisas da Oxford (Charles Spence) mostram que música de piano faz vinho parecer mais refinado; música grave faz cerveja parecer mais amarga. A trilha sonora é um ingrediente."},
+    {"emoji":"👃","title":"Cheiro tem memória de 65%","text":"Após 1 ano, lembramos de 35% do que vimos, 15% do que tocamos, mas 65% do que cheiramos. Lojas que usam aromatização têm ticket médio 20-35% maior."},
+    {"emoji":"🔴","title":"Vermelho acelera decisão","text":"Rótulos vermelhos aumentam velocidade de decisão de compra (urgência). Azul aumenta confiança. Mas: o efeito muda radicalmente por categoria e cultura."},
+   ]},
+   {"type":"apply","text":"Pegue um anúncio que você fez ou viu recentemente. Responda: (1) O que ativa nos primeiros 3 segundos? (2) Qual emoção a amígdala 'lê' primeiro? (3) A racionalização que o copy oferece faz sentido depois dessa emoção? Redesenhe com esse olhar."},
+  ]
+ },
+ "ml2":{
+  "title":"Neurologia do Comportamento do Consumidor","emoji":"🔬",
+  "key":"Comportamento de compra emerge de circuitos neurais evolutivamente antigos — não de 'escolha racional'.",
+  "stages":[
+   {"type":"hook","content":"Ratos de laboratório e humanos num shopping compartilham o mesmo circuito de busca por recompensa. Isso não é insulto — é uma das descobertas mais valiosas para entender por que compramos o que compramos (e por que o que planejamos raramente é o que levamos no carrinho).","question":"O que tem em comum um rato pressionando uma alavanca e um consumidor num shopping?"},
+   {"type":"flow","title":"Os 3 sistemas neurais do comportamento de compra","steps":[
+    {"icon":"🦎","label":"Sistema Límbico (quero)","text":"Amígdala e accumbens: desejo, recompensa e aversão à perda. Age antes de qualquer pensamento. É aqui que nasce o impulso de compra."},
+    {"icon":"🧮","label":"Córtex Pré-frontal (devo?)","text":"Avalia consequências, compara preço/valor, controla impulso. Funciona bem quando descansado — fica fraco sob estresse, cansaço e pressão de tempo."},
+    {"icon":"🔄","label":"Memória e Hábito (automático)","text":"Hipocampo + gânglios da base: compras habituais (marca de sempre, lista fixa) não passam pelo pré-frontal — são loops automáticos."},
+   ]},
+   {"type":"conceito","title":"O 'pain of paying' (Prelec & Loewenstein, 1998)","content":"Pagar fisicamente dói. Neuralmente, literalmente:","items":[
+    {"emoji":"💳","label":"Cartão de crédito vs. dinheiro","text":"fMRI mostra que pagar com dinheiro ativa a ínsula (desconforto, 'dor'). Pagar com cartão, quase nenhuma ativação. Por isso gastos são maiores com cartão."},
+    {"emoji":"📱","label":"Apple Pay / carteiras digitais","text":"Ainda mais dissociado: um tap no celular gera praticamente zero ativação de 'dor'. Design intencional de redução de fricção = aumento de gasto."},
+    {"emoji":"🏷️","label":"Preço 'sem vírgula'","text":"R$100 (sem centavos) ativa menos dor que R$99,99 — o cérebro percebe o 100 como round number e processa mais fluidamente (menos esforço cognitivo)."},
+    {"emoji":"🎁","label":"Implicação de design","text":"Quanto mais você remove a 'dor' do pagamento (fluxo de checkout, salvar cartão, compra com 1 clique), mais você aumenta conversão — mas também o risco de superendividamento do consumidor."},
+   ]},
+   {"type":"scenario","title":"Análise de caso: loja física vs. e-commerce","context":"Você é o diretor de e-commerce. As conversões no mobile caem 60% comparadas ao desktop, mesmo com design idêntico. O que o neuromarketing sugere como causa?",
+    "choices":[
+     {"label":"📐 O layout mobile é confuso","result":"Possível, mas secondary. A interface idêntica elimina essa variável. O neuromarketing aponta para outro fator primário.","quality":"neutral"},
+     {"label":"🖐️ Toque na tela cria mais 'pain of paying' que clique","result":"Exato! Pesquisas (Peck & Wiggins, 2006; Brasel & Gips, 2014) mostram que toque físico em telas ativa maior sensação de posse E maior dor ao 'soltar' (pagar). O paradoxo: o toque aumenta o desejo, mas também o desconforto ao comprar. Solução: reduzir steps de checkout ao máximo no mobile.","quality":"good"},
+     {"label":"🔋 A bateria baixa cria ansiedade e reduce compra","result":"Surpreendentemente, isso é real (pesquisa da NYU, 2019)! Bateria baixa ativa escassez de recurso e muda comportamento — as pessoas ficam mais avessas a risco. Mas não é a causa principal aqui.","quality":"neutral"},
+    ]},
+   {"type":"quiz","q":"Por que produtos 'edição limitada' vendem mais rápido mesmo quando a qualidade é idêntica à versão padrão?","opts":["Marketing cria expectativa artificial","Escassez percebida aumenta o valor hedônico e ativa o medo de perder (amígdala) — o produto literalmente 'vale mais' no cérebro","Consumidores testam antes de comprar"],"correct":1,"why":"Ciampa & Nagel (2021) demonstraram com fMRI que produtos rotulados 'exclusivos' ativam o córtex orbito-frontal (valor percebido) de forma significativamente maior. A escassez não é enganação — ela redefine neuronalmente o valor do item."},
+   {"type":"apply","text":"Mapeie a jornada de compra de um produto que você vende (ou usa). Em cada ponto de contato, identifique: (1) Qual sistema neural está ativo? (2) O que aumenta ou diminui 'pain of paying'? (3) Onde o hábito substitui a decisão consciente? Esse mapa é a base do seu plano de neuromarketing."},
+  ]
+ },
+ "ml3":{
+  "title":"Cérebro e Design","emoji":"🎨",
+  "key":"O cérebro constrói a realidade visual — design eficaz fala a língua dessa construção.",
+  "stages":[
+   {"type":"hook","content":"Você nunca viu o mundo como ele é. Seu cérebro recebe dados brutos dos olhos e constrói ativamente uma realidade. 40% do processamento cerebral é dedicado à visão — e designers que entendem esse processo têm uma vantagem enorme.","question":"O que o design 'diz' ao cérebro antes de você ler uma palavra?"},
+   {"type":"conceito","title":"Princípios da Gestalt e o cérebro","content":"O cérebro não vê partes — vê padrões completos. A Gestalt mapeou como:","items":[
+    {"emoji":"🔲","label":"Proximidade","text":"Elementos perto um do outro são percebidos como grupo. Usar bem: agrupar produto e CTA. Usar mal: agrupar produto com elemento negativo."},
+    {"emoji":"〰️","label":"Continuidade","text":"O olho segue linhas e curvas naturalmente. Setas implícitas (olhares de personagens, linhas de produto) guiam a atenção sem que o usuário perceba."},
+    {"emoji":"⬜","label":"Fechamento","text":"O cérebro completa formas incompletas. Logos como FedEx (seta implícita) e Amazon (sorriso que vai de A a Z) exploram isso."},
+    {"emoji":"🔵","label":"Figura-Fundo","text":"O cérebro precisa separar o objeto do fundo. Quando isso é ambíguo, gera tensão. Às vezes intencional (logos icônicos) — às vezes um erro que ninguém notou até viralizar."},
+   ]},
+   {"type":"insight_stack","title":"O que o Eye-Tracking revela que designers não esperam","insights":[
+    {"emoji":"👁️","title":"O padrão F e o padrão Z","text":"Em páginas de texto, o olho lê em F (duas horizontais e uma vertical). Em visuais, em Z (diagonal). O headline e o CTA precisam estar nas zonas de ativação — não onde o designer acha bonito."},
+    {"emoji":"👶","title":"Rostos puxam o olhar","text":"A amígdala detecta rostos humanos em 13ms. Um rosto num banner rouba 70% da atenção — o que pode ajudar (criar conexão) ou atrapalhar (competir com o produto)."},
+    {"emoji":"🔴","title":"O efeito da cor na periferia","text":"A visão periférica (fora do foco direto) só processa cor e movimento — não texto ou detalhe. A cor de fundo de um banner influencia mesmo quando o usuário 'não está olhando'."},
+    {"emoji":"📏","title":"Espaço em branco não é vazio","text":"Eye-tracking mostra que espaço em branco direciona o olhar ao elemento principal com mais eficácia que bordas ou setas. Apple é mestre nisso."},
+   ]},
+   {"type":"scenario","title":"Redesign de embalagem","context":"Uma marca de sucos 'saudáveis' tem conversão baixa na gôndola. O produto tem boa qualidade mas a embalagem tem muita informação. Qual mudança neuro tem maior impacto?","choices":[
+    {"label":"🌿 Aumentar o tamanho dos elementos naturais (frutas, folhas)","result":"Correto e poderoso. Elementos naturais (biofilia) reduzem cortisol e aumentam percepção de qualidade. Além disso, imagens de alimentos in natura ativam o córtex gustativo antes mesmo de saborear. Prioridade alta.","quality":"good"},
+    {"label":"📝 Reduzir texto para apenas 3 elementos visuais principais","result":"Excelente! O cérebro em modo de compra (rápido, periférico) não lê texto — identifica padrões. Três elementos = o máximo que a memória de trabalho processa eficientemente. Menos informação, mais processamento.","quality":"good"},
+    {"label":"🏷️ Adicionar selos e certificações de saúde","result":"Intuitivo mas contraproducente aqui. Mais elementos = mais carga cognitiva. Se o design já está sobrecarregado, selos adicionam ruído. Um selo bem posicionado pode funcionar — cinco criam confusão.","quality":"warning"},
+   ]},
+   {"type":"quiz","q":"Por que muitas marcas premium usam embalagens com muito espaço em branco?","opts":["É mais barato de produzir","O espaço em branco sinaliza exclusividade e força o cérebro a focar no produto — reduzindo carga cognitiva e aumentando percepção de valor","É tendência do design contemporâneo"],"correct":1,"why":"Roper e Fill (2012) documentaram que espaço em branco funciona como 'luxo visual' — o cérebro associa abundância de espaço com abundância de recursos. Marcas premium pagam caro por menos elementos."},
+   {"type":"apply","text":"Escolha uma peça de design (embalagem, site, anúncio) que você criou ou admira. Analise: (1) Onde o olho vai primeiro? (2) Quais princípios Gestalt estão ativos? (3) Há algum elemento competindo com o foco principal? (4) O que acontece se você remover 30% dos elementos?"},
+  ]
+ },
+ "ml4":{
+  "title":"(In)consciente na Tomada de Decisão","emoji":"⚡",
+  "key":"O inconsciente processa 11 milhões de bits/segundo. O consciente, apenas 40. A 'decisão racional' é frequentemente a racionalização de uma decisão já tomada.",
+  "stages":[
+   {"type":"hook","content":"Benjamin Libet mediu algo perturbador em 1983: a atividade elétrica que precede uma decisão começa 550ms ANTES da pessoa ter consciência de que decidiu. O livre-arbítrio, pelo menos no sentido clássico, pode ser uma ilusão — ou pelo menos uma narrativa posterior.","question":"Você realmente decide o que compra — ou o inconsciente decide e você rationaliza?"},
+   {"type":"compare","title":"Processamento consciente vs. inconsciente","left":{"name":"Consciente","color":"#7dd3fc","emoji":"🧠","items":["40 bits/segundo de processamento","Serial (uma coisa por vez)","Lento — segundos a minutos","Linguagem e lógica","Consome muito energia (glicose)","Decide ~5% das nossas ações"]},"right":{"name":"Inconsciente","color":"#fb7185","emoji":"⚡","items":["11.000.000 bits/segundo","Paralelo (tudo simultâneo)","Rápido — milissegundos","Padrões, imagens, emoções","Eficiente energeticamente","Decide ~95% das nossas ações"]}},
+   {"type":"conceito","title":"Os quatro tipos de processamento de decisão","content":"Gerald Zaltman (Harvard) mapeou como o cérebro decide de compra:","items":[
+    {"emoji":"🦎","label":"Processamento automático","text":"Reflexos e hábitos. Compras habituais ('minha marca de sempre') não passam pela consciência. Uma vez instalado o hábito, é difícil competir."},
+    {"emoji":"🎭","label":"Processamento emocional","text":"Memórias e emoções passadas moldam a resposta atual. Uma experiência ruim com uma marca pode persistir por anos no sistema emocional."},
+    {"emoji":"🤝","label":"Processamento social","text":"O que 'pessoas como eu' fazem? Normas sociais são poderosas referências inconscientes. Por isso depoimentos e prova social funcionam."},
+    {"emoji":"🧩","label":"Processamento racional","text":"Consciente e deliberado. Entra em cena quando as outras camadas não resolvem — ou quando o produto é de alto envolvimento (carro, imóvel)."},
+   ]},
+   {"type":"scenario","title":"Você está analisando por que um produto de alta qualidade não vende","context":"Um suplemento vitamínico tem formulação comprovadamente superior, preço competitivo e boas avaliações — mas vendas estagnadas. Pesquisa tradicional mostra satisfação alta entre quem já compra. O que o entendimento do inconsciente sugere?","choices":[
+    {"label":"💰 Baixar o preço para estimular experimentação","result":"Contraproducente! Para produtos de saúde/suplementos, preço baixo ativa desconfiança inconsciente: 'se é tão bom, por que é barato?' A percepção de qualidade está associada ao preço nessa categoria.","quality":"warning"},
+    {"label":"🔄 O produto não criou um gatilho de hábito — ele está fora da rotina do consumidor","result":"Exato! A maioria das compras repetidas são hábitos — não decisões conscientes. Se o suplemento não encontrou um 'slot' na rotina (junto com o café da manhã, antes de dormir), ele não existe na vida do consumidor. Solução: ancoragem comportamental (linked habits).","quality":"good"},
+    {"label":"📣 Aumentar investimento em mídia paga para gerar mais awareness","result":"Awareness não é o problema — a qualidade e avaliações já provam isso. Mais mídia sem mudar a estratégia de hábito vai apenas desperdiçar budget. Primeiro resolva o mecanismo de adoção.","quality":"neutral"},
+   ]},
+   {"type":"quiz","q":"Gerald Zaltman afirma que 95% das decisões de compra são inconscientes. O que isso implica para pesquisas de mercado?","opts":["Pesquisa qualitativa é suficiente","Perguntar ao consumidor o que ele quer é fundamentalmente limitado — é preciso acessar o inconsciente via metáforas, imagens e técnicas projetivas (ZMET)","Dados de venda são suficientes"],"correct":1,"why":"A técnica ZMET (Zaltman Metaphor Elicitation Technique) usa imagens selecionadas pelos participantes para revelar estruturas mentais inconscientes. É radicalmente diferente de focus groups tradicionais porque não depende de autodeclaração."},
+   {"type":"apply","text":"Conduza uma mini-pesquisa ZMET: peça a 3 consumidores do seu produto para trazerem 5 imagens (de qualquer fonte) que 'representam como se sentem ao usar o produto'. Analise os padrões — não as palavras que eles usam para explicar. O que as imagens revelam que as palavras não revelaram?"},
+  ]
+ },
+ "ml5":{
+  "title":"Processo de Tomada de Decisão no Consumo","emoji":"🗺️",
+  "key":"A decisão de compra é uma sequência de heurísticas (atalhos) — e cada atalho é um ponto de influência.",
+  "stages":[
+   {"type":"hook","content":"O modelo clássico de marketing diz: problema → busca → avaliação → compra → pós-compra. O modelo neural diz: estímulo emocional → atalho mental → ação → justificativa. A diferença não é acadêmica — ela determina onde você deve investir no funil.","question":"Onde de verdade o consumidor decide? E como você pode estar lá?"},
+   {"type":"flow","title":"O funil real de decisão do consumidor","steps":[
+    {"icon":"💥","label":"Gatilho (consciente ou inconsciente)","text":"Pode ser uma necessidade real, um anúncio visto, um cheiro na rua, ou uma menção casual. O gatilho aciona o sistema de busca."},
+    {"icon":"📱","label":"Momento de busca ('Zero Moment of Truth')","text":"Google, redes, influencers, amigos. Este é onde mais de 70% das decisões já estão em curso. A marca que não existe neste momento não existe para o consumidor."},
+    {"icon":"🏪","label":"Primeiro Momento da Verdade (FMOT)","text":"O ponto de venda: físico ou digital. Aqui entram todas as heurísticas visuais: embalagem, posição, preço relativo, selos."},
+    {"icon":"🎁","label":"Segundo Momento da Verdade (SMOT)","text":"A experiência com o produto. É onde marcas constroem (ou destroem) memórias emocionais que vão influenciar a próxima decisão."},
+    {"icon":"📣","label":"Terceiro Momento — o consumidor vira mídia","text":"Compartilhamento, review, UGC. Este terceiro momento alimenta o Zero Moment de outros consumidores. O ciclo fecha."},
+   ]},
+   {"type":"conceito","title":"As 7 heurísticas de decisão do consumidor","content":"O cérebro usa atalhos para decidir rápido. Cada um é influenciável:","items":[
+    {"emoji":"👑","label":"1. Reconhecimento de marca","text":"Simplesmente reconhecer uma marca já ativa preferência inconsciente (efeito de mera exposição). Marcas conhecidas exigem menos esforço cognitivo — o cérebro as 'prefere' por default."},
+    {"emoji":"⭐","label":"2. Satisfação prévia","text":"A melhor heurística: 'funcionou antes'. Memória episódica positiva cria lealdade mais forte que qualquer campanha."},
+    {"emoji":"👥","label":"3. O que outros como eu compram","text":"Prova social poderosa. 'Clientes que compraram X também compraram Y' é a implementação algorítmica desta heurística."},
+    {"emoji":"💰","label":"4. Preço como indicador de qualidade","text":"Em categorias de alto risco (saúde, luxo, tecnologia), preço mais alto = qualidade percebida mais alta. Preço baixo demais pode ser fatal."},
+    {"emoji":"🥇","label":"5. Primeiro da lista/prateleira","text":"Posição importa mais que a maioria das marcas aceita. O primeiro resultado de busca tem CTR 10x maior que o décimo."},
+    {"emoji":"⏱️","label":"6. Escassez e urgência","text":"O cérebro valoriza mais o que pode perder. 'Últimas unidades' ativa amígdala mais que 'grande oferta'."},
+    {"emoji":"🎁","label":"7. Reciprocidade","text":"Um brinde, uma amostra, um conteúdo útil cria senso de dívida inconsciente. O sistema límbico registra presentes e espera retribuição."},
+   ]},
+   {"type":"quiz","q":"Uma marca de software B2B quer aumentar conversão no trial gratuito. Qual mudança tem maior impacto segundo o entendimento de heurísticas?","opts":["Adicionar mais features ao trial","Fazer o trial com cartão de crédito (não cobrado) em vez de sem cartão — usando o efeito de posse e ancoragem","Reduzir o período do trial de 30 para 14 dias"],"correct":1,"why":"Pesquisas de SaaS consistentemente mostram que trials com cartão cadastrado (mas sem cobrança imediata) convertem 2-4x mais. O efeito: a pessoa 'já pagou psicologicamente' (ancoragem de posse) e cancelar requer mais esforço que continuar."},
+   {"type":"apply","text":"Mapeie o funil de decisão para um cliente real. Para cada etapa (gatilho, ZMOT, FMOT, SMOT), liste: (1) Qual heurística está mais ativa? (2) O que sua marca faz bem ali? (3) O que um concorrente faz melhor? O gap entre 2 e 3 é seu roadmap de crescimento."},
+  ]
+ },
+ "ml6":{
+  "title":"Heurísticas e Vieses no Marketing","emoji":"🎲",
+  "key":"Vieses não são falhas — são features do cérebro que evoluíram para sobrevivência. O marketing que entende isso não manipula: otimiza.",
+  "stages":[
+   {"type":"hook","content":"Daniel Kahneman ganhou o Nobel de Economia (2002) por provar que humanos não são racionais — são sistematicamente irracionais de maneiras previsíveis. Para o marketing, isso é ouro: se os erros são previsíveis, as oportunidades também são.","question":"Quais erros previsíveis do cérebro seu marketing ainda não está usando eticamente?"},
+   {"type":"conceito","title":"Os vieses mais valiosos para o marketing","content":"Seleção dos vieses com maior ROI comprovado em aplicações de marketing:","items":[
+    {"emoji":"⚓","label":"Ancoragem","text":"O primeiro número visto distorce tudo. 'De R$499 por R$249' funciona porque 499 âncora a percepção de valor. Mas âncoras também se formam com o produto mais caro do menu — que poucos compram, mas que existe para fazer o meio parecer razoável."},
+    {"emoji":"😱","label":"Aversão à Perda (2x)","text":"Perder R$100 dói 2x mais que ganhar R$100 alegra. 'Você vai perder X por não assinar hoje' é neurologicamente mais poderoso que 'ganhe X assinando hoje'."},
+    {"emoji":"🎰","label":"Efeito de Dotação","text":"Possuir algo aumenta seu valor percebido. Trials gratuitos, 'experimente em casa', 'retorne se não gostar' — criam posse antes da compra. Depois, devolver dói."},
+    {"emoji":"🔍","label":"Viés de Confirmação","text":"Depois de decidir, buscamos informação que confirma. Reviews positivos pós-compra, emails de onboarding que reforçam 'você fez uma ótima escolha' reduzem dissonância cognitiva e churn."},
+   ]},
+   {"type":"scenario","title":"Pricing strategy com vieses","context":"Você precisa precificar um novo plano SaaS com 3 opções. Como estrutura os preços?","choices":[
+    {"label":"Básico R$49 | Pro R$99 | Enterprise R$199","result":"Funciona, mas perde a chance de usar o 'efeito isca' (decoy). Sem uma opção que claramente parece pior que outra, o consumidor compara todos os três — e pode ficar paralisado ou escolher o mais barato.","quality":"neutral"},
+    {"label":"Básico R$49 | Pro R$149 | Business R$159 (isca) | Enterprise R$299","result":"Excelente uso do Decoy Effect! O Business a R$159 (quase o mesmo preço que Pro a R$149 mas com menos features) faz o Pro parecer absurdamente vantajoso. A maioria migrará para o Pro. Dan Ariely documentou este efeito na The Economist com resultado de 84% escolhendo a opção 'armadilha'.","quality":"good"},
+    {"label":"Apenas 1 plano com preço único, simples","result":"Elimina o paradoxo da escolha (menos decisão = mais conversão), mas perde a oportunidade de segmentação por disposição a pagar. Funciona melhor para produtos de entrada ou audiências avessas à complexidade.","quality":"neutral"},
+   ]},
+   {"type":"quiz","q":"O efeito de enquadramento (framing) diz que '90% de aprovação' e '10% de rejeição' são a mesma informação, mas produzem respostas diferentes. Por quê?","opts":["As pessoas não entendem estatística","O cérebro processa o frame emocional antes do conteúdo lógico — positivo vs negativo ativa circuitos neurais distintos antes da análise","É apenas percepção, sem base neural"],"correct":1,"why":"Estudos de fMRI (Kahneman, Tversky) mostram que 'positivo' e 'negativo' ativam regiões distintas do córtex pré-frontal antes do processamento lógico. O frame emocional é a primeira informação que o cérebro processa."},
+   {"type":"apply","text":"Reescreva 3 elementos de comunicação da sua marca (headline, CTA, email subject) usando: (1) Aversão à perda em vez de ganho, (2) Ancoragem de preço, (3) Enquadramento positivo. A/B teste. A diferença de conversão vai te mostrar quanto cada viés vale em reais."},
+  ]
+ },
+ "ml7":{
+  "title":"Conexão Emocional e Consumo","emoji":"💞",
+  "key":"Marcas com conexão emocional têm ticket médio 3,4x maior e churn 50% menor. Emoção não é soft — é o KPI mais duro que existe.",
+  "stages":[
+   {"type":"hook","content":"Apple não vende computadores. Harley-Davidson não vende motos. Starbucks não vende café. Eles vendem identidade, pertencimento e significado. E o cérebro processa 'eu me identifico com isso' de forma neurologicamente idêntica ao amor romântico — mesmas regiões, mesmos neurotransmissores.","question":"Sua marca faz o cérebro do consumidor sentir o que, exatamente?"},
+   {"type":"conceito","title":"Os 4 níveis de conexão emocional com marca","content":"Pesquisa do Harvard Business Review com 300+ marcas mapeou a escada emocional:","items":[
+    {"emoji":"😐","label":"Nível 1: Satisfação","text":"'Funciona como prometido.' Sem diferencial. Consumidores substituem por qualquer alternativa similar mais barata."},
+    {"emoji":"😊","label":"Nível 2: Confiança","text":"'Sei que não vai me decepcionar.' Começa a reduzir a busca por alternativas. Mas ainda não é lealdade."},
+    {"emoji":"🥰","label":"Nível 3: Afinidade","text":"'Eu gosto desta marca.' O consumidor defende a marca em conversas. Resistência moderada a substitutos."},
+    {"emoji":"❤️","label":"Nível 4: Identificação","text":"'Esta marca me representa.' A marca se torna parte da identidade do consumidor. Lealdade quase irracional. NPS altíssimo. Tatuagem na pele (Harley-Davidson)."},
+   ]},
+   {"type":"insight_stack","title":"Neurociência da conexão afetiva com marcas","insights":[
+    {"emoji":"🪞","title":"Neurônios-espelho e identificação","text":"Quando vemos alguém usando uma marca que admiramos, neurônios-espelho simulam a experiência em nós. Campanhas com personagens autênticos são simulações neurais gratuitas da experiência."},
+    {"emoji":"🧠","title":"A mesma área que amar pessoas","text":"Uma pesquisa de neuroimagem (Yoon et al., 2006) mostrou que admiradores fervorosos de marcas ativam o córtex pré-frontal medial — a mesma região ativa no amor interpessoal."},
+    {"emoji":"😢","title":"Perder uma marca é como uma perda real","text":"Quando marcas icônicas são descontinuadas, consumidores relatam 'luto'. Não é exagero — as estruturas neurais ativadas são as mesmas do luto."},
+    {"emoji":"🛡️","title":"Amor de marca cria imunidade a crises","text":"Consumidores com alta identificação de marca processam informações negativas sobre ela com ativação menor do córtex de avaliação — literalmente as veem como menos ameaçadoras."},
+   ]},
+   {"type":"quiz","q":"Qual estratégia cria conexão emocional mais duradoura?","opts":["Campanhas de awareness massivas","Experiências marcantes no primeiro uso + comunicação de valores compartilhados + comunidade","Desconto frequente e promoções relâmpago"],"correct":1,"why":"A regra do pico-fim (Kahneman) mostra que lembramos experiências pelo pico emocional e pelo fim. Uma experiência de primeiro uso memorável + um encerramento poderoso (embalagem, onboarding, follow-up) cria a memória afetiva que gera lealdade."},
+   {"type":"apply","text":"Mapeie as emoções que sua marca provoca em cada touchpoint. Para cada emoção mapeada, classifique em 0 (indiferença) a 4 (identificação). Some os pontos. Onde está sua média? E qual touchpoint tem a maior queda? Aquele é o seu maior risco de churn."},
+  ]
+ },
+ "ml8":{
+  "title":"Cognição, Memória e Aprendizagem","emoji":"🗂️",
+  "key":"Memória de marca não é recall — é a reconstituição ativa de experiências emocionalmente marcadas.",
+  "stages":[
+   {"type":"hook","content":"Você provavelmente lembra do cheiro da casa da sua avó com mais nitidez do que do que comeu na semana passada. Isso não é acidente — é arquitetura neural. E marcas que entenderam essa arquitetura constroem presença permanente na memória dos consumidores.","question":"Que memória sua marca está criando — e em qual sistema de memória ela mora?"},
+   {"type":"flow","title":"Os 4 sistemas de memória relevantes para marketing","steps":[
+    {"icon":"⚡","label":"Memória Sensorial (1-3 segundos)","text":"Tudo que seus sentidos captam. 99,9% é descartado imediatamente. O que sobrevive: emocionalmente relevante ou repetido."},
+    {"icon":"🔄","label":"Memória de Trabalho (segundos-minutos)","text":"'RAM' do cérebro. Capacidade: 7±2 itens (Miller, 1956). Sobrecarregar com informação mata a retenção. Design e comunicação devem respeitar esse limite."},
+    {"icon":"📚","label":"Memória de Longo Prazo Explícita","text":"Fatos e episódios. O nome da marca, a proposta de valor, a história. Construída por repetição espaçada e conexão emocional."},
+    {"icon":"🤖","label":"Memória Implícita/Procedural","text":"Hábitos e associações automáticas. Quando você 'pensa em refrigerante', qual cor vem primeiro? Isso é memória implícita de marca — o mais valioso e difícil de construir."},
+   ]},
+   {"type":"conceito","title":"Efeitos de memória exploráveis em marketing","content":"Fenômenos cognitivos com aplicações diretas:","items":[
+    {"emoji":"📍","label":"Efeito Von Restorff","text":"O diferente é lembrado. Um único elemento visual radicalmente diferente em uma categoria toda igual pode garantir recall de 80%. É o científico por trás de 'seja o polegar vermelho entre polegares cinzas'."},
+    {"emoji":"🔁","label":"Efeito de Espaçamento","text":"Repetição distribuída no tempo cria memória mais forte que repetição concentrada. Jingle ouvido 3x em 3 semanas > 9x em 1 dia. Implicação: calendário de mídia importa tanto quanto verba."},
+    {"emoji":"🔚","label":"Regra do Pico-Fim","text":"Lembramos experiências pelo momento mais intenso e pelo final. Um produto mediano com um final memorável (embalagem premium, email de confirmação criativo) é mais lembrado que um produto excelente com final indiferente."},
+    {"emoji":"🌐","label":"Efeito de Profundidade de Processamento","text":"Informações que exigem elaboração ativa (reflexão, conexão com o próprio) são lembradas muito mais. Perguntar ao consumidor em vez de afirmar = memória mais profunda."},
+   ]},
+   {"type":"quiz","q":"Por que repetir o mesmo anúncio 15 vezes na mesma semana pode ser menos eficaz que veiculá-lo 5 vezes ao longo de 5 semanas?","opts":["É mais caro veicular em mais semanas","O efeito de espaçamento: intervalos entre exposições fortalecem consolidação de memória. Exposições concentradas geram desgaste e resistência (wear-out)","Algoritmos penalizam alta frequência"],"correct":1,"why":"Pesquisa clássica de Ebbinghaus (curva do esquecimento) e replicações modernas mostram que recall cai rapidamente após exposição concentrada mas se recupera e acumula com exposições espaçadas. A memória se consolida nos intervalos, não durante a exposição."},
+   {"type":"apply","text":"Audit de memória da sua marca: (1) Qual associação sensorial você criou? (cheiro, cor, som, textura) (2) Qual é o 'pico' e o 'fim' da experiência do cliente? (3) Com que frequência e espaçamento sua marca aparece na vida do consumidor? Onde há gap entre o que você quer que seja lembrado e o que provavelmente é lembrado?"},
+  ]
+ },
+ "ml9":{
+  "title":"O Poder do Storytelling","emoji":"🎭",
+  "key":"Histórias são a tecnologia original de transmissão cultural. O cérebro evoluiu para ser capturado por narrativas — marcas que entendem isso têm vantagem evolutiva.",
+  "stages":[
+   {"type":"hook","content":"Quando você lê uma lista de fatos, ativam 2 áreas cerebrais. Quando você lê uma história com os mesmos fatos, ativam 7 áreas — incluindo regiões sensoriais e motoras. Uma história faz o cérebro simular a experiência. Dados informam. Histórias transformam.","question":"O que sua marca narra — e quem é o herói dessa história?"},
+   {"type":"conceito","title":"A estrutura narrativa que o cérebro ama","content":"Joseph Campbell mapeou o monomito — o padrão narrativo universal que aparece em todas as culturas. Marcas de sucesso seguem essa estrutura:","items":[
+    {"emoji":"🌍","label":"O Mundo Comum","text":"Quem é o consumidor antes da marca? Qual é sua situação atual, suas frustrações, seus desejos não atendidos?"},
+    {"emoji":"⚡","label":"O Chamado à Aventura","text":"O problema que a marca resolve. Não o produto — o problema. 'E se houvesse uma maneira de...'"},
+    {"emoji":"🗡️","label":"O Mentor / A Ferramenta","text":"Aqui entra a marca — não como herói, como MENTOR. O herói é sempre o consumidor. A marca é o Gandalf, não o Frodo."},
+    {"emoji":"🏆","label":"A Transformação","text":"Como fica o consumidor depois? Qual versão melhor de si mesmo ele se torna usando a marca?"},
+   ]},
+   {"type":"scenario","title":"Qual narrativa de marca funciona?","context":"Uma marca de tênis de corrida quer lançar uma campanha. Qual abordagem storytelling vai mais fundo?","choices":[
+    {"label":"🏅 Atletas profissionais usando o tênis em competições de elite","result":"Alta aspiração, mas baixa identificação. A distância entre o consumidor médio e um atleta olímpico é grande demais para a simulação neural. O consumidor admira — mas não se vê ali. Funciona para construção de marca, pouco para conversão.","quality":"neutral"},
+    {"label":"🧑 'Eu nunca fui de correr. Aos 42, comecei com 2km. Hoje faço maratonas.' — consumidor real","result":"Poderoso! A história real de alguém similar ao consumidor ativa neurônios-espelho com máxima eficiência. A jornada de transformação completa o monomito. O consumidor não está comprando um tênis — está comprando a possibilidade de ser aquela versão transformada de si mesmo.","quality":"good"},
+    {"label":"📊 Dados de performance: amortecimento 38% melhor, durabilidade 2x maior","result":"Funciona para alta racionalidade e alta intenção (quem já quer comprar e está comparando). Mas como 'entrada' para quem ainda não considerou a marca, dados falam ao córtex enquanto a decisão já foi tomada (ou não) pelo sistema emocional.","quality":"neutral"},
+   ]},
+   {"type":"insight_stack","title":"O que a neurociência sabe sobre histórias","insights":[
+    {"emoji":"🔗","title":"Acoplamento neural (Neural coupling)","text":"Uri Hasson (Princeton) mostrou que quando alguém conta uma história, o cérebro do ouvinte sincroniza com o do narrador — mesmas regiões ativas, mesmos padrões. É literalmente transmissão de experiência."},
+    {"emoji":"💉","title":"Oxitocina e narrativa","text":"Paul Zak descobriu que histórias com tensão narrativa aumentam ocitocina no sangue dos espectadores — e ocitocina alta prediz comportamento pró-social (doação, compra, recomendação)."},
+    {"emoji":"🧠","title":"Transporte narrativo","text":"Pessoas 'transportadas' por uma história (completamente absortas) têm menor resistência persuasiva e maior intenção de mudança de comportamento. Quanto mais imersiva, mais influente."},
+    {"emoji":"📱","title":"Histórias de 6 palavras","text":"Hemingway: 'For sale: baby shoes, never worn.' Neuralmente, o cérebro completa a história. Mecanismo de fechamento (Gestalt) cria engajamento mais poderoso que a história explicitada."},
+   ]},
+   {"type":"quiz","q":"Por que campanhas com 1 criança patrocinada (com nome, foto e história) geram mais doações que campanhas que mostram '1 milhão de crianças em situação de risco'?","opts":["Pessoas preferem casos individuais por egoísmo","O 'efeito de vítima identificável': o cérebro processa 1 pessoa concreta com empatia máxima; grandes números ativam o córtex analítico, que processa distância emocional","Fotos de crianças são mais atraentes visualmente"],"correct":1,"why":"Paul Slovic documentou o 'collapse of compassion' — empatia NÃO escala. 1 criança > 2 > 3 em termos de ativação emocional e doação. O sistema emocional processa indivíduos concretos; grandes números são abstratos para o sistema emocional."},
+   {"type":"apply","text":"Escreva a história da sua marca usando o monomito em 5 frases: (1) Quem é o herói (seu consumidor)? (2) Qual é o mundo dele antes? (3) Qual o problema/chamado? (4) Como sua marca é o mentor que dá a ferramenta? (5) Quem ele se torna? Valide: a marca é o mentor, nunca o herói."},
+  ]
+ },
+ "ml10":{
+  "title":"Neurociência e Persuasão","emoji":"🎯",
+  "key":"Persuasão ética usa a ciência do cérebro para facilitar decisões que beneficiam o consumidor — não para sequestrar sua agência.",
+  "stages":[
+   {"type":"hook","content":"Robert Cialdini estudou por 3 anos, infiltrado, os mestres da persuasão — vendedores, marqueteiros, arrecadadores de doações. O resultado: 6 princípios universais que funcionam porque se conectam a necessidades neurais evolutivamente profundas. Mas esses mesmos princípios podem ser usados para ajudar ou para manipular.","question":"Qual é a linha entre persuasão ética e manipulação?"},
+   {"type":"conceito","title":"Os 7 princípios de Cialdini (incluindo o novo)","content":"2021: Cialdini adicionou um 7º princípio ao seu modelo clássico:","items":[
+    {"emoji":"🎁","label":"1. Reciprocidade","text":"Dar primeiro cria obrigação inconsciente. Conteúdo gratuito, amostra, brinde. Neuronal: ocitocina e senso de dívida social."},
+    {"emoji":"🔗","label":"2. Compromisso & Coerência","text":"Após um pequeno 'sim', a pessoa mantém consistência. Onboarding que pede pequenas ações cria comprometimento crescente."},
+    {"emoji":"👥","label":"3. Prova Social","text":"Seguimos o que 'pessoas como nós' fazem. Poderoso quando a referência é específica ('clientes do seu setor') não genérica."},
+    {"emoji":"🎓","label":"4. Autoridade","text":"Especialistas, certificações, dados. Reduz o esforço cognitivo de avaliar — o cérebro delega a avaliação."},
+    {"emoji":"💛","label":"5. Afinidade / Afeição","text":"Compramos de quem gostamos. Similaridade, elogio genuíno, rapport. Ativa neurônios-espelho e empatia."},
+    {"emoji":"⏳","label":"6. Escassez","text":"Raro é mais valioso. Ativa amígdala e aversão à perda. O mais poderoso — e o mais abusado."},
+    {"emoji":"🤝","label":"7. Unidade (NOVO)","text":"Não é apenas afinidade — é identidade compartilhada. 'Nós' vs. 'eles'. Pertencer ao mesmo grupo cria confiança profunda. Comunidades de marca ativam este princípio."},
+   ]},
+   {"type":"quiz","q":"Qual versão de um email de vendas usa Cialdini mais efetivamente?","opts":["'Nossa solução tem 98% de satisfação. Clique aqui para conhecer.'","'João, vi que você é do setor de educação — 84% das EdTechs que usam nossa plataforma triplicaram retenção em 90 dias. Posso te mostrar o caso da [empresa similar à sua]?'","'Oferta exclusiva por 24 horas! Não perca!'"],"correct":1,"why":"A segunda versão usa nome (afinidade), prova social específica ao setor (prova social + autoridade), dado concreto (autoridade) e referência personalizada (unidade + afinidade). É muito mais persuasiva que a urgência vazia da terceira."},
+   {"type":"scenario","title":"Ética da persuasão","context":"Você tem um produto SaaS que é genuinamente bom mas tem uma interface desafiadora. As avaliações mencionam a curva de aprendizado. Como você usa persuasão eticamente?","choices":[
+    {"label":"🚫 Esconder ou minimizar o feedback negativo sobre a curva de aprendizado","result":"Dark pattern ético. Viola a confiança e cria dissonância cognitiva pós-compra quando a dificuldade aparece. O consumidor se sentiu enganado. Churn e reviews negativos são consequências certas.","quality":"warning"},
+    {"label":"✅ Antecipar a objeção: 'Sim, tem curva de aprendizado. Veja o que clientes dizem após 30 dias.'","result":"Persuasão ética e muito mais eficaz! Antecipar objeções (inoculação de objeção) reduz resistência. A honestidade inesperada cria credibilidade — o que dito negativo sobre si mesmo é processado como mais verdadeiro. E os depoimentos pós-30-dias endereçam exatamente o medo.","quality":"good"},
+    {"label":"🎮 Gamificar o onboarding para tornar a curva menos dolorosa","result":"Boa estratégia complementar! Mas por si só não é persuasão — é melhoria de produto. Combine com a abordagem anterior para o impacto máximo.","quality":"neutral"},
+   ]},
+   {"type":"apply","text":"Faça o audit de persuasão da sua comunicação atual. Para cada um dos 7 princípios de Cialdini, identifique: (1) Você usa? (2) Onde? (3) É específico ou genérico? (4) Está dentro da ética? A grande maioria das comunicações usa apenas 1-2 princípios. Ativar 4+ de forma integrada pode dobrar conversão."},
+  ]
+ },
+ "ml11":{
+  "title":"Nudges, Gatilhos e Consumo","emoji":"👋",
+  "key":"Nudge não é manipulation — é arquitetura de escolha que facilita a decisão que o próprio consumidor deseja tomar.",
+  "stages":[
+   {"type":"hook","content":"Em 2012, o governo inglês criou o 'Behavioural Insights Team' (Nudge Unit). Resultado: doações de órgãos subiram 96.000 por ano com uma única mudança — a opção padrão. Nenhuma obrigação. Nenhuma multa. Apenas arquitetura de escolha. Nudges são a política pública mais eficiente que existe — e também a ferramenta de marketing mais subestimada.","question":"Quantas decisões do seu consumidor você poderia facilitar — sem mudar o produto?"},
+   {"type":"conceito","title":"Os tipos de nudge com maior eficácia comprovada","content":"Richard Thaler e Cass Sunstein (Nobel, 2017) mapearam os nudges mais eficazes:","items":[
+    {"emoji":"📌","label":"Default (Opção Padrão)","text":"A escolha que já vem selecionada. O mais poderoso de todos. Doação de órgãos opt-out vs. opt-in: diferença de 30% para 90% de participação. Para marcas: plano recomendado, configurações pré-definidas."},
+    {"emoji":"📏","label":"Simplificação","text":"Quanto mais simples a decisão, mais ela é tomada. Reduzir campos de cadastro de 10 para 4 pode dobrar conversão. Tornar um comportamento 'fácil' aumenta sua frequência."},
+    {"emoji":"💬","label":"Norma Social","text":"'90% dos seus vizinhos já pagaram a conta de energia deste mês.' Mais eficaz que multa. A pressão normativa é neurologicamente mais poderosa que a financeira."},
+    {"emoji":"⏰","label":"Timing","text":"O mesmo nudge tem eficácia diferente em momentos diferentes. Pedir doação imediatamente após uma boa notícia. Oferecer upgrade no momento de maior satisfação (pós-solução de problema)."},
+    {"emoji":"🧭","label":"Saliência","text":"Tornar a informação relevante mais visível no momento da decisão. Nutri-score, calorias no cardápio, custo total em vez de parcela."},
+   ]},
+   {"type":"quiz","q":"Uma academia quer reduzir cancelamentos. Qual nudge tem mais evidência de eficácia?","opts":["Oferecer desconto de renovação no mês do aniversário do cliente","Enviar mensagem de texto na manhã do dia em que o cliente costuma ir à academia ('Bom dia! Hoje é seu dia de treino') — reforçando o hábito existente","Criar programa de pontos por check-in"],"correct":1,"why":"O SMS de implementação de intenção ('quando X acontecer, farei Y') tem evidência robusta de adesão a comportamentos de saúde. O simples reminder no timing exato do hábito aumenta frequência de visitas em 20-35% em estudos peer-reviewed."},
+   {"type":"scenario","title":"Nudge ético vs. dark pattern","context":"Uma plataforma de streaming quer reduzir churn no momento de cancelamento. Quais das seguintes práticas são nudges éticos?","choices":[
+    {"label":"⏸️ Oferecer 'pausar assinatura' em vez de só 'cancelar'","result":"Nudge ético claro! Adiciona uma opção intermediária que serve genuinamente o consumidor que quer uma pausa temporária. Reduz churn real. Serve o interesse do usuário.","quality":"good"},
+    {"label":"😢 Mostrar imagem emotiva ('Vamos sentir sua falta!') e esconder o botão de cancelamento","result":"Dark pattern. Usar emoção para dificultar o exercício de um direito é manipulação. Viola princípios de design ético e em muitos países já é ilegal (EU Digital Markets Act, LGPD).","quality":"warning"},
+    {"label":"📊 Mostrar quantas horas de conteúdo o usuário tem disponível que ainda não assistiu","result":"Nudge ético com eficácia comprovada. Saliência de valor: lembrar o que o usuário já pagou e ainda não usou ativa aversão à perda genuína — mas de algo real. É informação relevante apresentada no momento certo.","quality":"good"},
+   ]},
+   {"type":"apply","text":"Identifique 3 pontos de decisão na jornada do seu consumidor (cadastro, primeira compra, renovação, reativação). Para cada um: (1) Qual é o comportamento desejado? (2) Qual default você poderia criar? (3) Qual norma social poderia citar? (4) Como simplificar o caminho? Implemente e meça."},
+  ]
+ },
+ "ml12":{
+  "title":"Neurociência e Vendas","emoji":"🤝",
+  "key":"Vender é criar alinhamento neural entre o estado do comprador e a solução. Os melhores vendedores fazem isso intuitivamente — a ciência explica por que funciona.",
+  "stages":[
+   {"type":"hook","content":"Pesquisa de 2018 (Openview Partners): vendedores de alto desempenho têm uma característica neural incomum — muito baixa atividade da amígdala (alarme de ameaça) em conversas de alta pressão. Eles literalmente não sentem o 'medo de rejeição' do mesmo jeito. Mas o mais importante: eles treinaram isso, não nasceram assim.","question":"O que os melhores vendedores fazem neurologicamente — que outros não fazem?"},
+   {"type":"flow","title":"O processo neural de uma venda","steps":[
+    {"icon":"🤝","label":"Rapport (Espelhamento)","text":"Matching de tom, ritmo e postura ativa neurônios-espelho. Cria senso inconsciente de similaridade. O comprador relaxa — a amígdala baixa o alarme."},
+    {"icon":"🎯","label":"Descoberta (Escuta Ativa)","text":"Perguntas abertas ativam o modo narrativo do comprador. Quando alguém fala de si mesmo, o cérebro libera dopamina — a conversa se torna prazerosa."},
+    {"icon":"💡","label":"Insight (O 'A-ha!')","text":"O melhor momento para a solução não é quando o vendedor a apresenta — é quando o comprador a descobre. Perguntas que levam ao insight são mais poderosas que demonstrações."},
+    {"icon":"🎭","label":"Storytelling de caso","text":"Um cliente similar que resolveu o mesmo problema. Neurônios-espelho simulam a experiência. É mais convincente que dados porque cria empatia e identificação."},
+    {"icon":"✅","label":"Comprometimento incremental","text":"Pequenos 'sins' ao longo da conversa criam coerência. O grande 'sim' do fechamento é precedido por 7-12 microcompromissos."},
+   ]},
+   {"type":"conceito","title":"PNL e neuromarketing em vendas — o que funciona","content":"Distinguindo ciência de mito:","items":[
+    {"emoji":"✅","label":"O que funciona (evidenciado)","text":"Espelhamento postural aumenta rapport. Usar o nome do interlocutor ativa atenção preferencial. Perguntar antes de afirmar aumenta persuasão. Timing de oferta após momento positivo aumenta aceitação."},
+    {"emoji":"⚠️","label":"O que é exagerado (parcial)","text":"Padrões de movimento ocular como indicadores de mentira: sem consistência em estudos controlados. PNL como 'ciência' da mente: muitas afirmações sem replicação."},
+    {"emoji":"🔬","label":"O que claramente funciona: oxitocina","text":"Toque físico leve aumenta oxitocina e aceitação de pedidos. Um toque no ombro por 1-2 segundos aumenta pedidos atendidos em 22% (estudos de gorjeta, 1988)."},
+   ]},
+   {"type":"quiz","q":"Em uma negociação, quando é o melhor momento para fazer uma concessão?","opts":["No início, para criar boa vontade","Após o outro lado fazer uma concessão — e verbalmente nomear isso como reciprocidade","No final, quando o acordo está quase fechado"],"correct":1,"why":"A reciprocidade funciona melhor quando: (1) a concessão é inesperada, (2) é nomeada explicitamente ('estou fazendo isso porque você caminhou em X'), e (3) vem após uma concessão do outro lado. A sequência ativa o senso de obrigação e move o sistema límbico para modo colaborativo."},
+   {"type":"apply","text":"Grave (com permissão) 3 conversas de venda. Analise: (1) Em que % do tempo o vendedor fala vs. ouve? (ideal: 40% fala, 60% ouve) (2) Quantas perguntas abertas por conversa? (3) Em que momento a solução é apresentada? (4) O cliente teve algum 'A-ha' espontâneo? Ajuste e compare resultados na semana seguinte."},
+  ]
+ },
+ "ml13":{
+  "title":"Synapticbrain: Marcas e o Cérebro","emoji":"🔗",
+  "key":"Uma marca forte é uma rede neural — quanto mais conexões cria, mais forte e resistente ela fica.",
+  "stages":[
+   {"type":"hook","content":"Em experimento clássico (McClure et al., 2004), pessoas preferiam Pepsi em teste cego. Com o logo visível, preferiam Coca-Cola — com ativação diferente do córtex pré-frontal medial. Não é fidelidade irracional: a marca Coca-Cola ativou redes neurais de memória, identidade e recompensa que a Pepsi não tinha construído. O logo não é visual — é um gatilho neural.","question":"O que seu logo dispara no cérebro — e por quê?"},
+   {"type":"conceito","title":"Neurobranding: como marcas vivem no cérebro","content":"Uma marca forte é uma constelação de associações neurais:","items":[
+    {"emoji":"🌐","label":"Redes associativas","text":"Cada exposição à marca fortalece sinapses entre ela e atributos (velocidade, confiança, diversão). A Nike ativou 'superação pessoal' por décadas — agora 'Just Do It' ativa isso automaticamente."},
+    {"emoji":"🎨","label":"Encoding sensorial","text":"Cor, forma, som e cheiro são encodados junto com a emoção da experiência. Por isso o vermelho da Coca-Cola e o amarelo do McDonald's não são 'apenas cores' — são gatilhos condicionados."},
+    {"emoji":"👤","label":"Self-concept e identidade","text":"Marcas com as quais o consumidor se identifica são processadas na mesma região que processa o 'eu'. Atacar a Apple é como atacar um fã da Apple pessoalmente — literalmente, neuralmente."},
+    {"emoji":"🛡️","label":"Memória implícita de marca","text":"Você 'pensa em sapatos esportivos' e uma marca vem antes que você decida pensar nela. Isso é memória implícita — o nível mais profundo de construção de marca."},
+   ]},
+   {"type":"scenario","title":"Extensão de marca — quando o cérebro aceita ou rejeita","context":"Uma marca premium de roupas quer lançar uma linha de eletrodomésticos. O CEO quer usar o mesmo nome e logo. O que o neuromarketing prevê?","choices":[
+    {"label":"✅ A marca forte facilita a entrada no novo mercado","result":"Parcialmente verdadeiro e perigoso. A consciência de marca facilita — mas se a rede associativa da marca é 'elegância + moda + status social', eletrodoméstico não ativa essas associações. Pior: pode diluir as associações de moda. O fit precisa ser testado antes.","quality":"neutral"},
+    {"label":"🔬 Depende do fit de associações — teste com neuromarketing primeiro","result":"Correto! Kevin Lane Keller (brand equity) e estudos de fMRI mostram que extensão de marca funciona quando há congruência de associações. Virgin do disco para avião (experiência premium) funcionou. Virgin para vodka funcionou menos. O critério é: as mesmas redes neurais fazem sentido?","quality":"good"},
+    {"label":"🚫 Não — criar sub-marca separada é sempre melhor","result":"Conservador demais. Marcas com brand equity forte podem e devem explorar extensões — mas com teste de congruência. Toyota criou Lexus separado para o premium justamente porque 'Toyota' não ativava as redes de luxo no Japão. Estratégia correta para o contexto deles.","quality":"neutral"},
+   ]},
+   {"type":"quiz","q":"Por que o slogan de uma marca pode ser mais memorável quando musicado?","opts":["Música chama mais atenção","Música codifica informação em múltiplas regiões cerebrais simultaneamente (auditiva, emocional, motora), criando mais pontos de acesso para recuperação — é como ter 4 caminhos para a mesma memória em vez de 1","Pessoas gostam mais de música que texto"],"correct":1,"why":"Jingles ativam córtex auditivo, sistema límbico (emoção), cerebelo (ritmo e timing) e frequentemente córtex motor (vontade de cantar junto). Esta codificação multi-modal cria memória mais robusta e mais acessos de recuperação."},
+   {"type":"apply","text":"Mapeie as associações da sua marca em 3 camadas: (1) Associações explícitas (o que você quer que pensem — sua identidade declarada), (2) Associações implícitas (o que provavelmente pensam — baseado em comunicação e experiência real), (3) Gap entre 1 e 2. O gap é o maior problema estratégico da sua marca."},
+  ]
+ },
+ "ml14":{
+  "title":"UX, IA e Gamificação","emoji":"🎮",
+  "key":"Gamificação real não é adicionar pontos — é projetar loops de recompensa que fazem o comportamento desejado se tornar intrinsecamente satisfatório.",
+  "stages":[
+   {"type":"hook","content":"A empresa Opower usou um simples relatório de energia com a comparação 'seus vizinhos usam X kWh a menos que você' e economizou mais de 6 terawatts-hora de energia — equivalente a fechar 2 usinas nucleares. Sem gamificação explícita. Apenas psicologia aplicada ao design. UX é neurociência aplicada.","question":"O que faz um produto ser impossível de parar de usar — e como você projeta isso?"},
+   {"type":"conceito","title":"O loop de engajamento (Fogg Behavior Model)","content":"BJ Fogg (Stanford) descobriu que comportamento = Motivação × Habilidade × Prompt. Um produto só é adotado quando os três se alinham:","items":[
+    {"emoji":"🔥","label":"Motivação","text":"Prazer/dor, esperança/medo, aceitação/rejeição social. A motivação pode ser aumentada por storytelling, status e recompensa variável."},
+    {"emoji":"💪","label":"Habilidade","text":"Quanto mais simples, mais adotado. Cada passo a mais cobre exponencialmente o funil. O Fogg diz: quando motivação é baixa, facilite ao máximo."},
+    {"emoji":"⏰","label":"Prompt (Trigger)","text":"O gatilho certo no momento certo. Notificações, emails, lembretes. O mais eficaz é o trigger interno (emoção própria) — mas o externo bem cronometrado também funciona."},
+   ]},
+   {"type":"conceito","title":"Gamificação neurociência — o que funciona de verdade","content":"Separando gamificação real de superficial:","items":[
+    {"emoji":"✅","label":"Recompensa variável (slot machine)","text":"Imprevisível = mais dopamina. Por isso notificações de redes sociais são mais viciantes que de email: você nunca sabe o que vai encontrar."},
+    {"emoji":"✅","label":"Progresso visível","text":"Barras de progresso e conquistas ativam dopamina de antecipação. Quanto mais perto da meta, mais motivação (gradiente de meta)."},
+    {"emoji":"✅","label":"Status social","text":"Leaderboards, badges visíveis para outros. Serotonina e pertencimento ao grupo. Mas atenção: leaderboards onde a maioria 'perde' desmotivam."},
+    {"emoji":"⚠️","label":"Pontos sem sentido","text":"Pontos por si só, sem valor real ou social, não sustentam engajamento. O cérebro aprende rápido quando a recompensa é vazia."},
+   ]},
+   {"type":"quiz","q":"Por que o Duolingo usa 'streaks' (sequência de dias consecutivos) como mecanismo central de retenção?","opts":["É fácil de implementar tecnicamente","Streaks ativam aversão à perda (não quero perder a sequência) e efeito de dotação (o streak 'me pertence') — dois dos vieses mais poderosos. Perder a sequência dói mais do que o benefício de ter continuado alegra","Usuários pediram essa feature"],"correct":1,"why":"O Duolingo documentou que streaks são o preditor individual mais forte de retenção. O mecanismo neural: o streak acumula valor como 'posse' (efeito de dotação) e ameaça de perda o torna altamente motivador (aversão à perda). É a gamificação mais eficiente por menor custo de implementação."},
+   {"type":"apply","text":"Mapeie o produto ou serviço que você trabalha com o Fogg Behavior Model. Para o comportamento mais importante que você quer que o usuário adote: (1) A motivação está clara e presente? (2) O caminho é simples o suficiente? (3) O trigger chega no momento certo? Identifique o elo mais fraco dos três."},
+  ]
+ },
+ "ml15":{
+  "title":"Consumo sob a Ótica da Neurociência","emoji":"🛍️",
+  "key":"Consumo é identidade, pertencimento e regulação emocional — muito mais que satisfação de necessidade.",
+  "stages":[
+   {"type":"hook","content":"Abraham Maslow propôs a hierarquia das necessidades em 1943. Mas estudos modernos de neuroimagem mostram que necessidades de status e pertencimento ativam regiões cerebrais mais primitivas e mais urgentes do que ele imaginou. Consumimos para regular emoções, construir identidade e sinalizar posição social — muito antes de 'necessitar' do produto.","question":"Por que você compra o que compra — realmente?"},
+   {"type":"flow","title":"As camadas do consumo contemporâneo","steps":[
+    {"icon":"🛒","label":"Necessidade Funcional","text":"O que o produto faz objetivamente. Cada vez menos diferenciador — commoditização rápida. Necessário mas insuficiente."},
+    {"icon":"😊","label":"Necessidade Hedônica","text":"O prazer da experiência de compra e uso. Estética, sensorialidade, conveniência. Aqui começa a diferenciação real."},
+    {"icon":"🪞","label":"Necessidade de Identidade","text":"'Que tipo de pessoa compra isso?' Consumo como auto-expressão e construção de narrativa pessoal. Muito mais emocionalmente poderoso."},
+    {"icon":"👥","label":"Necessidade Social","text":"Sinalização de status, pertencimento a grupo, distinção. O cérebro é profundamente social — consumo é comunicação."},
+   ]},
+   {"type":"conceito","title":"Os 5 sentidos e o comportamento de compra","content":"Spence (2015): 'Atmospherics' — o ambiente de compra age em todos os sentidos simultaneamente:","items":[
+    {"emoji":"👁️","label":"Visão","text":"O mais explorado. Cor, layout, iluminação. Mas: iluminação quente aumenta conforto e tempo de permanência em lojas. Luz fria aumenta alerta e velocidade de decisão."},
+    {"emoji":"👂","label":"Audição","text":"Ritmo musical controla velocidade de consumo. Música lenta: consumidores ficam mais tempo e gastam mais. Música clássica em vinícola: vendas de vinhos caros sobem."},
+    {"emoji":"👃","label":"Olfato","text":"O único sentido sem intermediário tálâmico — vai direto ao sistema límbico. Cheiro de baunilha em loja aumenta tempo de permanência. Aroma de pão em supermercado aumenta compras não planejadas."},
+    {"emoji":"👄","label":"Paladar","text":"Sampling (degustação) usa reciprocidade + posse prévia. Uma vez experimentado, o produto 'pertence' psicologicamente."},
+    {"emoji":"✋","label":"Tato","text":"Tocar o produto aumenta percepção de posse e disposição a pagar. Por isso e-commerce tem desvantagem estrutural — e fotos de produto hiper-realistas compensam parcialmente."},
+   ]},
+   {"type":"quiz","q":"Por que compras impulsivas aumentam nos caixas de supermercados?","opts":["É onde há mais variedade de produto","Cansaço de decisão (ego depletion): após tomar dezenas de decisões pelo mercado, o córtex pré-frontal está exausto e o sistema impulsivo do accumbens domina. Além disso, barras e doces estão na altura visual enquanto você espera, ocioso.","Os produtos nos caixas são mais baratos"],"correct":1,"why":"Roy Baumeister documentou o 'ego depletion' — a capacidade de autocontrole é um recurso finito que se esgota com uso. O supermercado é projetado para esgotar esse recurso antes do checkout, quando produtos de impulso de alto margem estão estrategicamente posicionados."},
+   {"type":"apply","text":"Faça uma auditoria sensorial do seu ponto de venda (físico ou digital). Para cada sentido: (1) O que está acontecendo? (2) É intencional ou acidental? (3) Como está impactando a experiência e a decisão? Um ambiente de compra não neutro — cada escolha é uma intervenção no sistema nervoso do consumidor."},
+  ]
+ },
+ "ml16":{
+  "title":"Pesquisa de Marketing com Neurociência","emoji":"🔭",
+  "key":"Neuromarketing é o único método que acessa o que o consumidor realmente pensa — não o que ele declara pensar.",
+  "stages":[
+   {"type":"hook","content":"Quando a New Coke foi lançada em 1985, os grupos focais amaram. A pesquisa dizia sucesso garantido. Resultado: o maior fracasso de marketing da história, com a empresa sendo forçada a voltar à Coca-Cola Classic em 79 dias. O que os grupos focais não capturaram: a resposta emocional e de identidade que o cérebro guarda, não a língua.","question":"Como pesquisar o que o consumidor não sabe que sente?"},
+   {"type":"conceito","title":"As ferramentas de pesquisa neuro — guia prático","content":"Cada ferramenta acessa uma camada diferente da experiência:","items":[
+    {"emoji":"🧠","label":"fMRI (Ressonância Magnética Funcional)","text":"Mede fluxo sanguíneo em regiões cerebrais. Alta resolução espacial — você sabe ONDE o cérebro reage. Desvantagem: lento, caro, claustrofóbico, não ecologicamente válido."},
+    {"emoji":"⚡","label":"EEG (Eletroencefalograma)","text":"Mede atividade elétrica. Alta resolução temporal — você sabe QUANDO o cérebro reage (até 1ms). Pode ser usado em ambientes reais. Mais acessível que fMRI."},
+    {"emoji":"👁️","label":"Eye-Tracking","text":"Rastreia movimento ocular. Revela atenção real vs. declarada. Disponível em desktop, mobile e óculos portáteis para varejo físico. Muito mais acessível."},
+    {"emoji":"❤️","label":"GSR (Galvânica / Biometria)","text":"Mede ativação emocional via condutância da pele. Simples e acessível. Não diz se é positivo ou negativo — apenas intensidade. Precisa ser combinado com outro dado."},
+    {"emoji":"🎭","label":"Facial Coding","text":"Analisa microexpressões faciais. Software como Affectiva identifica emoções em tempo real. Útil para reação a anúncios em escala."},
+   ]},
+   {"type":"scenario","title":"Você tem R$50k de budget para pesquisa. Como alocar?","context":"Sua marca quer entender por que os consumidores não estão convertendo após ver o anúncio novo. Você precisa de insights acionáveis em 30 dias.","choices":[
+    {"label":"🧠 fMRI com 20 participantes","result":"Muito caro para o insight gerado aqui. fMRI responde bem à questões de percepção de produto e identidade de marca — não de conversão de anúncio. A falta de validade ecológica (ambiente artificial) diminui a aplicabilidade. Budget melhor alocado em outras ferramentas para esta questão.","quality":"warning"},
+    {"label":"👁️ Eye-tracking do anúncio + EEG + questionário de memória implícita","result":"Excelente combinação! Eye-tracking mostra onde a atenção vai (e não vai) no anúncio. EEG mostra quando o engajamento sobe e cai. Memória implícita testa o que ficou no sistema emocional pós-exposição. Você vai saber exatamente em qual frame/elemento o problema está.","quality":"good"},
+    {"label":"📊 Pesquisa quantitativa online com 1.000 participantes","result":"Alta escala, baixo custo, mas captura apenas intenção declarada. Útil para medir awareness e atitude — mas não vai revelar o mecanismo inconsciente de rejeição ao anúncio. Complementar, não substituto.","quality":"neutral"},
+   ]},
+   {"type":"quiz","q":"O que o método ZMET (Zaltman Metaphor Elicitation) revela que pesquisas tradicionais não conseguem?","opts":["Dados quantitativos de larga escala","Estruturas mentais inconscientes através de imagens — o que as pessoas pensam 'abaixo da linguagem'. Metáforas são a linguagem do inconsciente.","Intenção de compra declarada"],"correct":1,"why":"Gerald Zaltman (Harvard) desenvolveu ZMET baseado na descoberta de que 95% do pensamento é não-verbal. Ao pedir imagens em vez de palavras, você acessa associações que o participante não consegue (ou não quer) verbalizar. Empresas como Coca-Cola e P&G usam extensivamente."},
+   {"type":"apply","text":"Implemente uma pesquisa neuro de baixo custo: (1) Selecione 5-8 participantes do seu público, (2) Peça que escolham 5 imagens (de revista, internet, qualquer fonte) que 'representam como se sentem em relação ao [seu produto/categoria]', (3) Conduza uma entrevista em profundidade sobre as imagens, (4) Analise os temas recorrentes nas imagens — não nas palavras. Compare com o que sua comunicação está transmitindo."},
+  ]
+ },
+ "ml17":{
+  "title":"Ética em Neuromarketing","emoji":"⚖️",
+  "key":"Com grande poder neural vem grande responsabilidade — o neuromarketing ético distingue influência de manipulação.",
+  "stages":[
+   {"type":"hook","content":"O Comitê de Ética em Pesquisa em Neurociência do Consumo tem um dilema real: as mesmas técnicas que revelam como ajudar consumidores a fazer melhores escolhas também revelam como contornar sua agência. A diferença entre 'facilitar a decisão que o consumidor quer tomar' e 'induzir uma decisão que ele não tomaria de outra forma' é onde a ética começa.","question":"Onde está a linha entre persuasão legítima e manipulação?"},
+   {"type":"conceito","title":"O framework ético do neuromarketing","content":"Três critérios para distinguir uso ético de antiético:","items":[
+    {"emoji":"✅","label":"1. Critério de Transparência","text":"O consumidor poderia consentir à técnica se soubesse que ela está sendo usada? Usar cores que aumentam apetite numa rede de restaurantes: sim. Usar EEG implantado sem consentimento: não."},
+    {"emoji":"✅","label":"2. Critério de Alinhamento de Interesses","text":"A técnica beneficia o consumidor além da marca? Nudge de default em doação de órgãos: beneficia socialmente. Dark pattern de cancelamento difícil: apenas a empresa."},
+    {"emoji":"✅","label":"3. Critério de Reversibilidade","text":"O consumidor pode facilmente mudar a decisão se quiser? Comprar com 1 clique mas cancelar com 7 telas: assimétrico e não ético. Comprar fácil e sair igualmente fácil: ético."},
+   ]},
+   {"type":"scenario","title":"Análise ética de práticas reais","context":"Avalie as seguintes práticas de neuromarketing. Qual é claramente antiética?","choices":[
+    {"label":"🏥 Hospital usa framing positivo: '90% de recuperação' em vez de '10% de mortalidade'","result":"Ético na medida em que a informação é verdadeira e o paciente pode pedir a versão alternativa. O framing positivo reduz ansiedade e pode facilitar decisões de saúde mais racionais. Porém: sempre com a informação completa disponível.","quality":"good"},
+    {"label":"😴 App de sono usa técnicas de notificação noturna para criar compulsão de uso","result":"Claramente antiético! Um app de SONO que usa técnicas de engajamento compulsivo é diretamente contraditório com o bem-estar do usuário — e consequentemente com o critério de alinhamento de interesses. Isso é o que Tristan Harris chama de 'produto que devora o que produz'.","quality":"warning"},
+    {"label":"🛒 E-commerce mostra 'Seus amigos compraram isto' usando dados de redes sociais integradas","result":"Zona cinzenta. Prova social é legítima — mas o uso de dados de terceiros sem consentimento explícito para isso pode violar LGPD/GDPR. A ética depende do consent flow que o usuário passou.","quality":"neutral"},
+   ]},
+   {"type":"quiz","q":"A Resolução 196/96 do CNS e as regulamentações da LGPD impactam pesquisas de neuromarketing porque:","opts":["Proíbem qualquer pesquisa com seres humanos","Exigem consentimento informado, minimização de danos e tratamento adequado dos dados neurais — que são dados sensíveis por natureza","São apenas para pesquisas médicas"],"correct":1,"why":"Dados neurais (EEG, fMRI) são classificados como dados biométricos sensíveis pela LGPD. Pesquisas que os coletam precisam de: TCLE (Termo de Consentimento Livre e Esclarecido), aprovação de CEP para estudos com humanos, e protocolo claro de uso, armazenamento e descarte."},
+   {"type":"apply","text":"Conduza um audit ético da sua comunicação e estratégia de marketing atual. Para cada técnica de influência que você usa, aplique os 3 critérios: Transparência, Alinhamento de Interesses, Reversibilidade. Identifique uma prática que pode estar na zona cinzenta e defina o que precisaria mudar para ela ser claramente ética."},
+  ]
+ },
+ "ml18":{
+  "title":"Integração Cérebro-Máquina e Futuro do Consumo","emoji":"🚀",
+  "key":"O futuro da interface cérebro-máquina não é ficção científica — é o próximo capítulo do neuromarketing, e as implicações são profundas.",
+  "stages":[
+   {"type":"hook","content":"Em 2023, o primeiro paciente com o chip Neuralink conseguiu controlar um cursor de computador com o pensamento. Em 2024, um segundo paciente. Meta e Apple investem bilhões em interfaces neurais para óculos e headsets. O 'consumer brain data' pode ser a próxima fronteira do marketing — e das regulamentações. O futuro chegou mais cedo do que você pensa.","question":"Quando o consumidor pensar no produto, a marca já vai saber?"},
+   {"type":"flow","title":"A evolução das interfaces humano-tecnologia","steps":[
+    {"icon":"🖱️","label":"Hoje: Interface física","text":"Clique, toque, voz. O dispositivo registra ações deliberadas."},
+    {"icon":"😊","label":"Próximos 2-5 anos: Biometria contínua","text":"Câmeras e wearables registram frequência cardíaca, expressão facial, eye-tracking em tempo real durante a navegação. Já existe — ainda subutilizado."},
+    {"icon":"🥽","label":"5-10 anos: XR e presença imersiva","text":"Realidade aumentada e virtual criam experiências de produto imersivas. O 'try-before-you-buy' virtual ativa respostas de posse sem o produto físico."},
+    {"icon":"🧠","label":"10-20 anos: BCI (Brain-Computer Interface)","text":"Interfaces que leem intenção e estado emocional diretamente. Já existem versões primitivas (Neuralink, Emotiv). O marketing 'pré-click' pode capturar interesse antes da ação."},
+   ]},
+   {"type":"conceito","title":"Tendências que já estão moldando o consumo","content":"O futuro não é uniforme — algumas tendências já chegaram:","items":[
+    {"emoji":"🤖","label":"IA Generativa no Marketing","text":"Personalização de conteúdo em escala nunca antes possível. Risco: se toda marca é 'personalizada', o diferencial volta a ser autenticidade e valores genuínos."},
+    {"emoji":"🌐","label":"Ambiente Phygital","text":"A fronteira físico-digital desapareceu. O consumidor espera a mesma fluidez de experiência num QR Code do produto no supermercado que no site. Pós-pandemia: aceleração definitiva."},
+    {"emoji":"🎯","label":"Zero-Party Data","text":"Com o fim dos cookies de terceiros, o dado mais valioso é o que o consumidor voluntariamente compartilha. Quem tem relação direta e confiança, tem o ativo mais valioso."},
+    {"emoji":"🛒","label":"Social Commerce","text":"A compra acontece dentro do conteúdo — sem sair da rede social. O funil colapsou: awareness e conversão acontecem no mesmo momento."},
+   ]},
+   {"type":"quiz","q":"Por que o conceito de 'Zero Party Data' se torna mais estratégico conforme a privacidade é regulada?","opts":["Porque é mais barato que dados de terceiros","Porque dados voluntariamente compartilhados pelo consumidor têm maior precisão, legalidade garantida e geram confiança — o ativo mais escasso no ecossistema de marketing digital","Porque é exigido por lei"],"correct":1,"why":"Forrester cunhou o termo: zero-party data é informação que o consumidor intencionalmente compartilha (preferências, intenções, contexto). Com LGPD e fim de cookies, quem tem relação direta com o consumidor tem vantagem competitiva estrutural."},
+   {"type":"apply","text":"Escreva o cenário de consumo do seu produto em 10 anos. Que tecnologias existirão? Como o consumidor vai descobrir, avaliar e comprar? O que da neurociência que você aprendeu ainda vai ser válido (princípios fundamentais do cérebro não mudam — ferramentas mudam)? Use isso para identificar onde sua marca precisa investir hoje."},
+  ]
+ },
+};
+
+
 export default function App() {
   return (
     <GameProvider>
@@ -2944,64 +3368,61 @@ function Shell() {
         {tab === "cerebro" && <Cerebro />}
         {tab === "comportamento" && <Comportamento />}
         {tab === "praticar" && <Jogos />}
+        {tab === "mba" && <MBATrilha />}
         {tab === "perfil" && <Perfil />}
       </main>
 
       <nav style={styles.nav}>
-        <NavBtn active={tab === "trilha"} onClick={() => setTab("trilha")} icon={<MapIcon size={20} />} label="Trilha" />
-        <NavBtn active={tab === "cerebro"} onClick={() => setTab("cerebro")} icon={<Brain size={20} />} label="Cérebro" />
-        <NavBtn active={tab === "comportamento"} onClick={() => setTab("comportamento")} icon={<Lightbulb size={20} />} label="Comportar" />
-        <NavBtn active={tab === "praticar"} onClick={() => setTab("praticar")} icon={<Dumbbell size={20} />} label="Praticar" />
-        <NavBtn active={tab === "perfil"} onClick={() => setTab("perfil")} icon={<Trophy size={20} />} label="Perfil" badge={badgeCount || null} />
+        <NavBtn active={tab === "trilha"} onClick={() => setTab("trilha")} icon={<MapIcon size={18} />} label="Trilha" compact />
+        <NavBtn active={tab === "cerebro"} onClick={() => setTab("cerebro")} icon={<Brain size={18} />} label="Cérebro" compact />
+        <NavBtn active={tab === "comportamento"} onClick={() => setTab("comportamento")} icon={<Lightbulb size={18} />} label="Comportar" compact />
+        <NavBtn active={tab === "praticar"} onClick={() => setTab("praticar")} icon={<Dumbbell size={18} />} label="Praticar" compact />
+        <NavBtn active={tab === "mba"} onClick={() => setTab("mba")} icon={<GraduationCap size={18} />} label="MBA" compact />
+        <NavBtn active={tab === "perfil"} onClick={() => setTab("perfil")} icon={<Trophy size={18} />} label="Perfil" badge={badgeCount || null} compact />
       </nav>
     </div>
   );
 }
 
-function NavBtn({ active, onClick, icon, label, badge }) {
+function NavBtn({ active, onClick, icon, label, badge, compact }) {
   return (
     <button onClick={onClick} style={{ ...styles.navBtn, color: active ? "#ffce6b" : "#7c7c84" }}>
       <div style={{ position: "relative" }}>
         {icon}
         {badge ? <span style={styles.navBadge}>{badge}</span> : null}
       </div>
-      <span style={{ fontSize: 10.5, fontWeight: active ? 700 : 500 }}>{label}</span>
+      <span style={{ fontSize: compact ? 9 : 10.5, fontWeight: active ? 700 : 500, letterSpacing: compact ? -0.2 : 0 }}>{label}</span>
     </button>
   );
 }
 
-// =========================================================================
-//  TRILHA
-// =========================================================================
 
-function Trilha() {
+// ── MBA Trilha ─────────────────────────────────────────────────────────────
+const MBA_ORDER = MBA_MODULES.flatMap((m) => m.lessons);
+
+function MBATrilha() {
   const { progress, completeLesson } = useGame();
-  const [openLesson, setOpenLesson] = useState(null);
+  const [open, setOpen] = useState(null);
 
-  const isDone = (id) => !!progress.lessons[id];
-  const firstUndone = LESSON_ORDER.find((id) => !isDone(id));
-  const isUnlocked = (id) => {
-    const idx = LESSON_ORDER.indexOf(id);
-    if (idx === 0) return true;
-    return isDone(LESSON_ORDER[idx - 1]);
-  };
+  const key = (id) => "mba_" + id;
+  const isDone = (id) => !!progress.lessons[key(id)];
+  const isUnlocked = (id) => { const i = MBA_ORDER.indexOf(id); return i === 0 || isDone(MBA_ORDER[i - 1]); };
+  const firstUndone = MBA_ORDER.find((id) => !isDone(id));
+  const doneCount = MBA_ORDER.filter(isDone).length;
 
-  if (openLesson) {
-    return <LessonView id={openLesson}
-      onClose={() => setOpenLesson(null)}
-      onComplete={() => { completeLesson(openLesson); setOpenLesson(null); }} />;
+  if (open) {
+    return <LessonView id={open} lessons={MBA_LESSONS}
+      onClose={() => setOpen(null)}
+      onComplete={() => { completeLesson(key(open)); setOpen(null); }} />;
   }
-
-  const doneCount = LESSON_ORDER.filter(isDone).length;
 
   return (
     <div className="fade">
       <div style={styles.trilhaHead}>
-        <h2 style={styles.h2}>Trilha de Aprendizado</h2>
-        <p style={styles.pMuted}>{doneCount}/{LESSON_ORDER.length} lições · cada uma tem múltiplas etapas com fixação</p>
+        <h2 style={styles.h2}>MBA — Neurociência, Consumo e Marketing</h2>
+        <p style={styles.pMuted}>{doneCount}/{MBA_ORDER.length} aulas · cenários reais + descobertas + fixação</p>
       </div>
-
-      {MODULES.map((m) => {
+      {MBA_MODULES.map((m) => {
         const modDone = m.lessons.every(isDone);
         return (
           <div key={m.id} style={{ marginBottom: 26 }}>
@@ -3009,40 +3430,31 @@ function Trilha() {
               <span style={{ fontSize: 22 }}>{m.emoji}</span>
               <div style={{ flex: 1 }}>
                 <b style={{ fontSize: 15, color: "#e6eefc" }}>{m.title}</b>
-                <span style={{ display: "block", fontSize: 11.5, color: "#8aa0c4" }}>
-                  {m.lessons.filter(isDone).length}/{m.lessons.length} concluídas
-                </span>
+                <span style={{ display: "block", fontSize: 11.5, color: "#8aa0c4" }}>{m.lessons.filter(isDone).length}/{m.lessons.length} aulas</span>
               </div>
               {modDone && <Check size={18} style={{ color: m.color }} />}
             </div>
-
             <div style={styles.path}>
               {m.lessons.map((id, i) => {
-                const L = LESSONS[id];
-                if (!L) return null;
-                const done = isDone(id);
-                const unlocked = isUnlocked(id);
-                const current = id === firstUndone;
+                const L = MBA_LESSONS[id]; if (!L) return null;
+                const done = isDone(id), unlocked = isUnlocked(id), current = id === firstUndone;
                 const side = i % 2 === 0 ? "flex-start" : "flex-end";
                 const stageCount = (L.stages || []).length;
+                const hasSc = (L.stages || []).some(s => s.type === "scenario");
+                const hasIs = (L.stages || []).some(s => s.type === "insight_stack");
                 return (
-                  <div key={id} style={{ display: "flex", justifyContent: side, position: "relative" }}>
-                    <button
-                      disabled={!unlocked}
-                      onClick={() => unlocked && setOpenLesson(id)}
+                  <div key={id} style={{ display: "flex", justifyContent: side }}>
+                    <button disabled={!unlocked} onClick={() => unlocked && setOpen(id)}
                       className={current ? "pulse-node" : ""}
-                      style={{
-                        ...styles.lessonNode,
-                        borderColor: done ? "#4ade80" : current ? m.color : "rgba(255,255,255,0.12)",
-                        background: done ? "#4ade8018" : current ? m.color + "22" : GLASS,
-                        backdropFilter: GBLUR, WebkitBackdropFilter: GBLUR,
-                        opacity: unlocked ? 1 : 0.5,
-                        cursor: unlocked ? "pointer" : "not-allowed",
-                      }}>
+                      style={{ ...styles.lessonNode, borderColor: done ? "#4ade80" : current ? m.color : "rgba(255,255,255,0.12)", background: done ? "#4ade8018" : current ? m.color + "22" : GLASS, backdropFilter: GBLUR, WebkitBackdropFilter: GBLUR, opacity: unlocked ? 1 : 0.5, cursor: unlocked ? "pointer" : "not-allowed", width: "68%" }}>
                       <span style={{ fontSize: 26 }}>{done ? "✅" : unlocked ? L.emoji : "🔒"}</span>
-                      <span style={styles.lessonTitle}>{L.title}</span>
-                      {unlocked && !done && stageCount > 0 && (
-                        <span style={{ fontSize: 10, color: m.color, fontWeight: 700 }}>{stageCount} etapas</span>
+                      <span style={{ ...styles.lessonTitle, fontSize: 11.5 }}>{L.title}</span>
+                      {unlocked && !done && (
+                        <div style={{ display: "flex", gap: 4, flexWrap: "wrap", justifyContent: "center" }}>
+                          <span style={{ fontSize: 9.5, color: m.color, fontWeight: 700 }}>{stageCount} etapas</span>
+                          {hasSc && <span style={{ fontSize: 9.5, color: "#a5b4fc" }}>· cenário</span>}
+                          {hasIs && <span style={{ fontSize: 9.5, color: "#6ee7b7" }}>· descobertas</span>}
+                        </div>
                       )}
                     </button>
                   </div>
@@ -3055,6 +3467,7 @@ function Trilha() {
     </div>
   );
 }
+
 
 function LessonVisual({ id }) {
   const VB = "0 0 320 150";
@@ -3368,11 +3781,79 @@ function StageLink({ stage }) {
   );
 }
 
-function LessonView({ id, onClose, onComplete }) {
+function StageScenario({ stage, onPick, picked }) {
+  const chosen = picked !== undefined ? stage.choices[picked] : null;
+  const qualColor = { good: "#4ade80", neutral: "#ffce6b", warning: "#fb7185" };
+  const qualEmoji = { good: "✅", neutral: "💡", warning: "⚠️" };
+  return (
+    <div className="fade">
+      <div style={{ ...styles.stageQuizBadge, background: "rgba(99,102,241,0.18)", borderColor: "rgba(99,102,241,0.45)", color: "#a5b4fc" }}>🎬 Cenário</div>
+      <h3 style={{ ...styles.stageTitle, marginTop: 8 }}>{stage.title}</h3>
+      <div style={{ padding: "12px 14px", borderRadius: 14, background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.10)", marginBottom: 14 }}>
+        <p style={{ fontSize: 14, color: "#e6eefc", lineHeight: 1.6, margin: 0 }}>{stage.context}</p>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        {stage.choices.map((c, i) => {
+          const isChosen = picked === i;
+          const isOther = picked !== undefined && !isChosen;
+          const qc = qualColor[c.quality] || "#ffce6b";
+          return (
+            <button key={i} onClick={() => picked === undefined && onPick(i)} disabled={picked !== undefined}
+              style={{ ...styles.quizOpt, textAlign: "left", borderColor: isChosen ? qc : isOther ? "rgba(255,255,255,0.06)" : "rgba(255,255,255,0.12)", background: isChosen ? qc + "12" : isOther ? "rgba(255,255,255,0.01)" : "rgba(255,255,255,0.03)", opacity: isOther ? 0.5 : 1 }}>
+              {c.label}
+            </button>
+          );
+        })}
+      </div>
+      {chosen && (
+        <div className="fade" style={{ marginTop: 12, padding: "14px", borderRadius: 14, border: "1px solid " + (qualColor[chosen.quality] || "#ffce6b") + "55", background: (qualColor[chosen.quality] || "#ffce6b") + "10" }}>
+          <b style={{ color: qualColor[chosen.quality] || "#ffce6b", fontSize: 13 }}>{qualEmoji[chosen.quality] || "💡"} {chosen.quality === "good" ? "Boa escolha!" : chosen.quality === "warning" ? "Cuidado!" : "Parcialmente certo"}</b>
+          <p style={{ fontSize: 13.5, color: "#dbe4f3", lineHeight: 1.55, margin: "7px 0 0" }}>{chosen.result || chosen.content}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function StageInsightStack({ stage }) {
+  const [rev, setRev] = useState(0);
+  const ins = stage.insights || [];
+  return (
+    <div className="fade">
+      <div style={{ ...styles.stageQuizBadge, background: "rgba(52,211,153,0.14)", borderColor: "rgba(52,211,153,0.4)", color: "#6ee7b7" }}>💡 Descobertas</div>
+      <h3 style={{ ...styles.stageTitle, marginTop: 8 }}>{stage.title}</h3>
+      <div style={{ display: "flex", flexDirection: "column", gap: 10, marginTop: 4 }}>
+        {ins.slice(0, rev + 1).map((it, i) => (
+          <div key={i} className="fade" style={{ padding: "13px 14px", borderRadius: 14, background: i === rev ? "rgba(52,211,153,0.08)" : "rgba(255,255,255,0.04)", border: i === rev ? "1px solid rgba(52,211,153,0.35)" : "1px solid rgba(255,255,255,0.08)" }}>
+            <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+              <span style={{ fontSize: 24, flexShrink: 0 }}>{it.emoji}</span>
+              <div>
+                <b style={{ color: i === rev ? "#6ee7b7" : "#ffce6b", fontSize: 13.5, display: "block", marginBottom: 4 }}>{it.title}</b>
+                <p style={{ fontSize: 13, color: "#c8d4ea", lineHeight: 1.5, margin: 0 }}>{it.text}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      {rev < ins.length - 1 && (
+        <button onClick={() => setRev(r => r + 1)} className="fade"
+          style={{ ...styles.ctrlBtn, width: "100%", marginTop: 12, borderColor: "rgba(52,211,153,0.4)", color: "#6ee7b7" }}>
+          Próxima descoberta ({rev + 1}/{ins.length}) →
+        </button>
+      )}
+      {rev === ins.length - 1 && ins.length > 1 && (
+        <p style={{ ...styles.pMuted, textAlign: "center", marginTop: 10 }}>✓ Todas as descobertas reveladas</p>
+      )}
+    </div>
+  );
+}
+
+function LessonView({ id, onClose, onComplete, lessons }) {
   const { addXp } = useGame();
-  const L = LESSONS[id];
+  const L = (lessons || LESSONS)[id];
   const [si, setSi] = useState(0);
   const [answers, setAnswers] = useState({});
+  const [scenarioPicks, setScenarioPicks] = useState({});
   useBackHandler(true, onClose);
 
   if (!L || !L.stages) return null;
@@ -3381,66 +3862,58 @@ function LessonView({ id, onClose, onComplete }) {
   const stage = stages[si];
   const isLast = si === stages.length - 1;
   const isQuiz = stage.type === "quiz";
+  const isScenario = stage.type === "scenario";
   const answered = answers[si] !== undefined;
-  const canNext = !isQuiz || answered;
+  const scenarioPicked = scenarioPicks[si] !== undefined;
+  const canNext = (!isQuiz || answered) && (!isScenario || scenarioPicked);
 
   const next = () => {
     if (isLast) { addXp(20, "Lição!"); onComplete(); }
     else setSi(s => s + 1);
   };
 
-  const answerQuiz = (i) => {
-    if (answered) return;
-    setAnswers({ ...answers, [si]: i });
+  const STAGE_LABELS = {
+    hook: "Introdução", conceito: "Conceito", flow: "Como funciona",
+    compare: "Comparação", quiz: "Fixação", real: "Na prática",
+    apply: "Aplicar", link: "Próximos passos",
+    scenario: "Cenário real", insight_stack: "Descobertas",
   };
-
-  const STAGE_LABELS = { hook: "Introdução", conceito: "Conceito", flow: "Como funciona", compare: "Comparação", quiz: "Fixação", real: "Na prática", apply: "Aplicar", link: "Próximos passos" };
 
   return (
     <div className="fade">
       <button onClick={onClose} style={styles.backBtn}><ArrowLeft size={16} /> Voltar</button>
-
       <div style={{ textAlign: "center", margin: "4px 0 16px" }}>
         <div style={{ fontSize: 38 }}>{L.emoji}</div>
         <h2 style={{ ...styles.h2, fontSize: 20, margin: "6px 0 4px" }}>{L.title}</h2>
       </div>
-
-      {/* progress dots */}
       <div style={{ display: "flex", gap: 5, justifyContent: "center", marginBottom: 18 }}>
         {stages.map((st, i) => (
-          <div key={i} title={STAGE_LABELS[st.type] || st.type} style={{
-            width: i === si ? 22 : 8, height: 8, borderRadius: 99, transition: "all .25s",
-            background: i < si ? "#4ade80" : i === si ? "#ffce6b" : "rgba(255,255,255,0.15)"
-          }} />
+          <div key={i} style={{ width: i === si ? 22 : 8, height: 8, borderRadius: 99, transition: "all .25s", background: i < si ? "#4ade80" : i === si ? "#ffce6b" : "rgba(255,255,255,0.15)" }} />
         ))}
       </div>
-
-      {/* stage label */}
       <div style={{ fontSize: 11, fontWeight: 800, color: "#8aa0c4", letterSpacing: 1, textTransform: "uppercase", marginBottom: 10 }}>
         {STAGE_LABELS[stage.type] || stage.type} · {si + 1}/{stages.length}
       </div>
 
-      {/* render stage */}
-      {stage.type === "hook"    && <StageHook stage={stage} />}
-      {stage.type === "conceito" && <StageConceito stage={stage} />}
-      {stage.type === "flow"    && <StageFlow stage={stage} />}
-      {stage.type === "compare" && <StageCompareLesson stage={stage} />}
-      {stage.type === "quiz"    && <StageQuiz stage={stage} onAnswer={answerQuiz} answered={answered} picked={answers[si]} />}
-      {stage.type === "real"    && <StageReal stage={stage} />}
-      {stage.type === "apply"   && <StageApply stage={stage} />}
-      {stage.type === "link"    && <StageLink stage={stage} />}
+      {stage.type === "hook"          && <StageHook stage={stage} />}
+      {stage.type === "conceito"      && <StageConceito stage={stage} />}
+      {stage.type === "flow"          && <StageFlow stage={stage} />}
+      {stage.type === "compare"       && <StageCompareLesson stage={stage} />}
+      {stage.type === "quiz"          && <StageQuiz stage={stage} onAnswer={(i) => { if (!answered) setAnswers({ ...answers, [si]: i }); }} answered={answered} picked={answers[si]} />}
+      {stage.type === "real"          && <StageReal stage={stage} />}
+      {stage.type === "apply"         && <StageApply stage={stage} />}
+      {stage.type === "link"          && <StageLink stage={stage} />}
+      {stage.type === "scenario"      && <StageScenario stage={stage} onPick={(i) => { if (!scenarioPicked) setScenarioPicks({ ...scenarioPicks, [si]: i }); }} picked={scenarioPicks[si]} />}
+      {stage.type === "insight_stack" && <StageInsightStack stage={stage} />}
 
-      {/* next button */}
       {canNext && (
-        <button onClick={next} className="fade"
-          style={{ ...styles.ctrlBtn, ...styles.playBtn, width: "100%", marginTop: 20 }}>
-          {isLast ? "Concluir lição (+20 XP) 🎉" : stage.type === "quiz" ? "Continuar →" : "Próximo →"}
+        <button onClick={next} className="fade" style={{ ...styles.ctrlBtn, ...styles.playBtn, width: "100%", marginTop: 20 }}>
+          {isLast ? "Concluir lição (+20 XP) 🎉" : "Próximo →"}
           <ChevronRight size={17} />
         </button>
       )}
-      {isQuiz && !answered && (
-        <p style={{ ...styles.pMuted, textAlign: "center", marginTop: 12 }}>Escolha uma resposta para continuar</p>
-      )}
+      {(isQuiz && !answered) && <p style={{ ...styles.pMuted, textAlign: "center", marginTop: 12 }}>Escolha uma resposta para continuar</p>}
+      {(isScenario && !scenarioPicked) && <p style={{ ...styles.pMuted, textAlign: "center", marginTop: 12 }}>Escolha uma opção para ver a análise</p>}
     </div>
   );
 }
@@ -4459,9 +4932,9 @@ function AITutor() {
     setLoading(true); setErr(false); setFeedback(null);
     try {
       const prompt = `Você é um tutor de neurociência gentil para iniciantes, em português do Brasil. A pergunta foi: "${q}". O aluno respondeu: "${answer}". Dê um feedback curto e encorajador em no máximo 4 frases: comece dizendo o que ele acertou, depois corrija ou complete o que faltou de forma simples e clara, sem jargão pesado. Não invente fatos. Termine com uma frase de incentivo.`;
-      const res = await fetch("/api/tutor", {
+      const res = await fetch("https://api.anthropic.com/v1/messages", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt }),
+        body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1000, messages: [{ role: "user", content: prompt }] }),
       });
       const data = await res.json();
       const text = (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("\n").trim();
