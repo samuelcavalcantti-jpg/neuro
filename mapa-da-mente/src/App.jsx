@@ -3400,6 +3400,62 @@ function NavBtn({ active, onClick, icon, label, badge, compact }) {
 // ── MBA Trilha ─────────────────────────────────────────────────────────────
 const MBA_ORDER = MBA_MODULES.flatMap((m) => m.lessons);
 
+function Trilha() {
+  const { progress, completeLesson } = useGame();
+  const [openLesson, setOpenLesson] = useState(null);
+  const isDone = (id) => !!progress.lessons[id];
+  const firstUndone = LESSON_ORDER.find((id) => !isDone(id));
+  const isUnlocked = (id) => { const idx = LESSON_ORDER.indexOf(id); return idx === 0 || isDone(LESSON_ORDER[idx - 1]); };
+  if (openLesson) {
+    return <LessonView id={openLesson} lessons={LESSONS}
+      onClose={() => setOpenLesson(null)}
+      onComplete={() => { completeLesson(openLesson); setOpenLesson(null); }} />;
+  }
+  const doneCount = LESSON_ORDER.filter(isDone).length;
+  return (
+    <div className="fade">
+      <div style={styles.trilhaHead}>
+        <h2 style={styles.h2}>Trilha de Aprendizado</h2>
+        <p style={styles.pMuted}>{doneCount}/{LESSON_ORDER.length} lições · cada uma tem múltiplas etapas</p>
+      </div>
+      {MODULES.map((m) => {
+        const modDone = m.lessons.every(isDone);
+        return (
+          <div key={m.id} style={{ marginBottom: 26 }}>
+            <div style={{ ...styles.modHead, borderColor: m.color + "55", background: m.color + "12" }}>
+              <span style={{ fontSize: 22 }}>{m.emoji}</span>
+              <div style={{ flex: 1 }}>
+                <b style={{ fontSize: 15, color: "#e6eefc" }}>{m.title}</b>
+                <span style={{ display: "block", fontSize: 11.5, color: "#8aa0c4" }}>{m.lessons.filter(isDone).length}/{m.lessons.length} concluídas</span>
+              </div>
+              {modDone && <Check size={18} style={{ color: m.color }} />}
+            </div>
+            <div style={styles.path}>
+              {m.lessons.map((id, i) => {
+                const L = LESSONS[id]; if (!L) return null;
+                const done = isDone(id), unlocked = isUnlocked(id), current = id === firstUndone;
+                const side = i % 2 === 0 ? "flex-start" : "flex-end";
+                const stageCount = (L.stages || []).length;
+                return (
+                  <div key={id} style={{ display: "flex", justifyContent: side }}>
+                    <button disabled={!unlocked} onClick={() => unlocked && setOpenLesson(id)}
+                      className={current ? "pulse-node" : ""}
+                      style={{ ...styles.lessonNode, borderColor: done ? "#4ade80" : current ? m.color : "rgba(255,255,255,0.12)", background: done ? "#4ade8018" : current ? m.color + "22" : GLASS, backdropFilter: GBLUR, WebkitBackdropFilter: GBLUR, opacity: unlocked ? 1 : 0.5, cursor: unlocked ? "pointer" : "not-allowed" }}>
+                      <span style={{ fontSize: 26 }}>{done ? "✅" : unlocked ? L.emoji : "🔒"}</span>
+                      <span style={styles.lessonTitle}>{L.title}</span>
+                      {unlocked && !done && stageCount > 0 && <span style={{ fontSize: 10, color: m.color, fontWeight: 700 }}>{stageCount} etapas</span>}
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function MBATrilha() {
   const { progress, completeLesson } = useGame();
   const [open, setOpen] = useState(null);
